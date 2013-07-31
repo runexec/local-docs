@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en"><script id="bug.surrogate">var urchinTracker=function(){},_gaq={push:function(){try {if(arguments[0][0]=='_link')window.location.href=arguments[0][1]}catch(er){}}},_gat={_createTracker:function(){}, _getTracker:function(){return{__noSuchMethod__:function(){},_link:function(o){if(o)location.href=o;},_linkByPost:function(){return true;},_getLinkerUrl:function(o){return o;},_trackEvent:function(){}}}}; if (document.location.host == 'www.salon.com') {var _ga_ = document.querySelectorAll('script[src$=ga\\.js]')[0], ga_e = document.createEvent('Event'); ga_e.initEvent('load', true, true);_ga_.dispatchEvent(ga_e);}</script><script id="bug.surrogate">FB={Event:{subscribe:function(){}},UIServer:{},XFBML:{parse:function(){}},init:function(){},__noSuchMethod__:function(){}}; if (document.location.host == 'news.yahoo.com') {var fb = document.querySelectorAll('script[src$=connect\\.facebook\\.net\\/en_US\\/all\\.js]')[0], le = document.createEvent('Event');le.initEvent('load', true, true);fb.dispatchEvent(le);}</script><script id="bug.surrogate">var gapi={plusone:{render:function(){},go:function(){}}};</script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Making HTTP requests from ClojureScript with core.async</title>
+    
+    <meta name="author" content="Dmitry Kakurin">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="Making%20HTTP%20requests%20from%20ClojureScript%20with%20core.async_files/bootstrap.css" rel="stylesheet">
+    <link href="Making%20HTTP%20requests%20from%20ClojureScript%20with%20core.async_files/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="Making%20HTTP%20requests%20from%20ClojureScript%20with%20core.async_files/syntax.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  <style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style><script src="Making%20HTTP%20requests%20from%20ClojureScript%20with%20core.async_files/widgets.js" id="twitter-wjs"></script></head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="http://dimagog.github.io/">Dimagog Blog</a>
+          <ul class="nav">
+            
+            
+            
+
+
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="http://dimagog.github.io/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="http://dimagog.github.io/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="http://dimagog.github.io/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="http://dimagog.github.io/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Making HTTP requests from ClojureScript with core.async <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <p>I’ve always been a big fan of <code>async/await</code> feature in C# (long before it was publicly available). So, naturally, I was very excited to read the <a href="http://clojure.com/blog/2013/06/28/clojure-core-async-channels.html">announcement</a> about Clojure <a href="https://github.com/clojure/core.async">core.async</a> library. Even more so after I’ve learned that it works for ClojureScript as well.</p>
+
+<p>Here is an example of using <a href="https://github.com/clojure/core.async">core.async</a> to convert callback-based <code>goog.net.XhrIo</code> <code>send</code> API to sequential-looking one.</p>
+
+<h2 id="leningen_config_boring_stuff">Leningen config (boring stuff)</h2>
+
+<p><em>Note: Code samples include only interesting parts, <a href="#src">full source code is available below</a>.</em></p>
+<div class="highlight"><pre><code class="clojure"><span class="p">(</span><span class="kd">defproject </span><span class="nv">...</span>
+  <span class="ss">:repositories</span> <span class="p">{</span>
+    <span class="s">"sonatype-oss-public"</span> <span class="s">"https://oss.sonatype.org/content/groups/public/"</span>
+  <span class="p">}</span>
+  <span class="ss">:dependencies</span> <span class="p">[</span>
+    <span class="p">[</span><span class="nv">org.clojure/clojure</span> <span class="s">"1.5.1"</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">org.clojure/clojurescript</span> <span class="s">"0.0-1820"</span><span class="p">]</span> 
+    <span class="p">[</span><span class="nv">org.clojure/core.async</span> <span class="s">"0.1.0-SNAPSHOT"</span><span class="p">]</span>
+  <span class="nv">...</span>
+</code></pre></div>
+<p>We need Sonatype because it is hosting SNAPSHOTs, and there is no release version of <a href="https://github.com/clojure/core.async">core.async</a> available yet. Also I’m not using the latest version of ClojureScript because <a href="http://www.lighttable.com/">Light Table</a> does not like it.</p>
+
+<h2 id="defining_get_function_cool_stuff">Defining GET function (cool stuff)</h2>
+
+<p>First the <code>ns</code> header:</p>
+<div class="highlight"><pre><code class="clojure"><span class="p">(</span><span class="kd">ns </span><span class="nv">app</span>
+  <span class="p">(</span><span class="ss">:require</span>
+    <span class="p">[</span><span class="nv">goog.net.XhrIo</span> <span class="ss">:as</span> <span class="nv">xhr</span><span class="p">]</span>
+    <span class="p">[</span><span class="nv">cljs.core.async</span> <span class="ss">:as</span> <span class="nv">async</span> <span class="ss">:refer</span> <span class="p">[</span><span class="nv">chan</span> <span class="nv">close!</span><span class="p">]])</span>
+  <span class="p">(</span><span class="ss">:require-macros</span>
+    <span class="p">[</span><span class="nv">cljs.core.async.macros</span> <span class="ss">:refer</span> <span class="p">[</span><span class="nv">go</span> <span class="nv">alt!</span><span class="p">]]))</span>
+</code></pre></div>
+<p>It’s not idiomatic to have all uppercase function names in Clojure, 
+but since this function mimics http GET method we’ll make an exception 
+for it.</p>
+
+<p>The idea is to return a channel from GET function that will have a result of <code>send</code> call when it completes. The callback simply extracts the result and writes it to the channel:</p>
+<div class="highlight"><pre><code class="clojure"><span class="p">(</span><span class="kd">defn </span><span class="nv">GET</span> <span class="p">[</span><span class="nv">url</span><span class="p">]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ch</span> <span class="p">(</span><span class="nf">chan</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="p">(</span><span class="nf">xhr/send</span> <span class="nv">url</span>
+              <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">event</span><span class="p">]</span>
+                <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">res</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="nv">event</span> <span class="nv">.-target</span> <span class="nv">.getResponseText</span><span class="p">)]</span>
+                  <span class="p">(</span><span class="nf">go</span> <span class="p">(</span><span class="nf">&gt;!</span> <span class="nv">ch</span> <span class="nv">res</span><span class="p">)</span>
+                      <span class="p">(</span><span class="nf">close!</span> <span class="nv">ch</span><span class="p">)))))</span>
+    <span class="nv">ch</span><span class="p">))</span>
+</code></pre></div>
+<p>We create channel <code>ch</code> of size 1 (default is 0) because 
+there is no reason to block callback until reader arrives. Instead it 
+writes the response once it becomes available and disappears.</p>
+
+<p>You may think that callback could be simplified as:</p>
+<div class="highlight"><pre><code class="clojure"><span class="c1">; WARNING: Broken code</span>
+              <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">event</span><span class="p">]</span>
+                <span class="p">(</span><span class="nf">go</span> <span class="p">(</span><span class="nf">&gt;!</span> <span class="nv">ch</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="nv">event</span> <span class="nv">.-target</span> <span class="nv">.getResponseText</span><span class="p">))</span>
+                    <span class="p">(</span><span class="nf">close!</span> <span class="nv">ch</span><span class="p">)))))</span>
+</code></pre></div>
+<p><strong>but that does not work</strong>. This version tries to extract result from <code>event</code> inside <code>go</code> routine which will execute <em>eventually</em>. By the time it runs <code>event</code> does not have the result anymore.</p>
+
+<p>Also it’s a good idea to <code>close!</code> the channel <code>ch</code> after we write the result <code>res</code>, so if anyone tries to read from <code>ch</code> again by mistake, they will get <code>nil</code> returned immediately.</p>
+
+<h2 id="using_get_function_even_cooler_stuff">Using GET function (even cooler stuff)</h2>
+
+<p>Let’s define a helper <code>log</code> function first:</p>
+<div class="highlight"><pre><code class="clojure"><span class="p">(</span><span class="kd">defn </span><span class="nv">log</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span>
+  <span class="p">(</span><span class="nf">.log</span> <span class="nv">js/console</span> <span class="p">(</span><span class="nb">str </span><span class="nv">s</span><span class="p">))))</span>
+</code></pre></div>
+<p>And now we can call our <code>GET</code> function and print the result:</p>
+<div class="highlight"><pre><code class="clojure"><span class="p">(</span><span class="nf">go</span>
+  <span class="p">(</span><span class="nf">log</span> <span class="p">(</span><span class="nf">&lt;!</span> <span class="p">(</span><span class="nf">GET</span> <span class="s">"http://dimagog.github.io/sitemap.txt"</span><span class="p">))))</span>
+</code></pre></div>
+<p>We have sequential-looking code that looks like it’s blocking, but it’s not. It is fully asyncronous!</p>
+
+<h2 id="_source_code"><a name="src"> </a> Source code</h2>
+
+<p>Full source code <a href="https://github.com/Dimagog/AsyncGET">can be found on GitHub</a>.</p>
+
+<p>If you want to build and run it locally, execute:</p>
+
+<pre><code>git clone https://github.com/Dimagog/AsyncGET.git
+cd AsyncGET
+lein ring server</code></pre>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="http://dimagog.github.io/blog/personal/2013/07/12/about-me" title="About Me">← Previous</a></li>
+      
+        <li><a href="http://dimagog.github.io/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="http://dimagog.github.io/blog/clojure/2013/07/14/clojure-all-the-way-the-server" title="Clojure All The Way - The Server">Next →</a></li>
+      
+      </ul>
+    </div>
+    
+      <hr>
+      
+
+
+  <div id="disqus_thread"><iframe style="width: 100%; border: 1px solid rgb(204, 204, 204); height: 80px; background: none repeat scroll 0% 0% rgb(255, 255, 255);" id="ghostery-Disqus-message-14798"></iframe></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'dimagogblog'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+    
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>12 July 2013</span></div>
+    <div><i>by Dmitry Kakurin</i></div>
+    <p>
+
+    
+
+      </p><div>
+      <img id="abTwitterBadge_0" abpl="1" abtwitterbadge="1" style="cursor:pointer;background:none;padding-Left:1px;padding-Right:1px;width:55px;height:20px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAUCAIAAACmgTKJAAAABGdBTUEAALGPC/xhBQAAAzdJREFUSEvVl01IVFEUx23bolWLRPqyIIiCol1tIiIw2rRoEbaJWgRCEIVYCm1yKjIkU8xIm1JbWE3B5MegZkzOWPYyQUeLqWlCRkRGxmaajyyp3/M8L6+ZgYGB4jUc9Lxzzz33d//n3ue4IvVjcTQU/RhOFFjys3n1yh1FqwpeBSMjoW+/rPqBDcKCNi1kVUKDC8L/hzK5sGhlM7TMidjmmbA5h3zTkZyZfyPBoIymfiqzvxwLzSfNkf31XUVV7ftqHprjpB203TdbXZfXPCsPXwvOIUTmRIMyklhQVvFkqPBs06l7rp6xIMHq/okNtc/XX+0uqrCX3nKqNCqi7oUHvWtOXi5r7sIffB8y18nDP3SljVKZE7NQspWt1zoRD6wyx/Duu6+LG4c31nvWXnoKfSAcG5mal0I0dyr8FUqvfxofLas6XhBH8r0X7wi0U5ssrXuEc7NH23O+gThNmIl9J9I7GiipthNkq0Qcw5Obymq2nL4OK4qaWQ1Kksw28Hlue4Mb/VARxOImjZ/4oBeeaWwZeKeSKQdl/3iQCMuzhjgiMD6IxxseyxAcDq+PIYfmpxU4bMw98WXnuXpAKQUx3OSwTzNPdkoEO9H5QecTxCVDzm03+g7fdtW6tKyUlGZhzglk6AEWdZAHOZEQVjaDwUECWDCBSKS8tZs0aqqOp6lmULIAxv7EwRC8pGNcIUrTOaPEKaHS6L5oKRGWR0Ii8EGJL+pCCROgGEGkhYwhFeGoMJ27yKgqrpw/KP2z8aNNzyo7Pe1aoNw1uWtZRRGSw8raaSWkcYpSGgoTaYIrqwIBJdPZZLPrDc3lUDLK2eVAIzaPpKGlHMq0VQzKQCSJMUahY63udTYnWKrd+AdaBrkiesJSpjI2hiSwqgo8ctp4pJtysfCRE9l4lD2QT4Q0iTAFStJ4K0tEFZSyy5ThGOuBiDGf21M58OmIw4dxQO1v9cuhT1hKSDP+1sr2xOJJ/f6K6vhqCM30oWicfCklbwkSVAVWIQdLW8ugBNFsoqs6wjymJeT9mFkK3JzVslPmnPaPEwxK30zcyqZT8h2zzz/LzbKmwaZ/C04kU/ziBWFNg43/eX4DKuVtXDsPfl0AAAAASUVORK5CYII=" width="55px" height="20px"><a abtwitterbadge="1" style="display: none;" href="https://twitter.com/share" class="twitter-share-button" data-via="DimaPhone">Tweet</a>
+      </div>
+      
+      <div class="g-plusone" data-size="medium"><iframe style="width: 30px; height: 19px; border: 0px none;" id="ghostery-Google +1-message-75137"></iframe></div>
+      
+      <div id="fb-root"></div>
+      <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"><iframe style="width: 30px; height: 19px; border: 0px none;" id="ghostery-Facebook Connect-message-64598"></iframe></div>
+      
+      <div>
+          
+      </div>
+    
+    
+    <p>
+
+  
+    </p><h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="http://dimagog.github.io/tags.html#clojure-ref">clojure <span>4</span></a></li>
+     
+    	<li><a href="http://dimagog.github.io/tags.html#clojurescript-ref">clojurescript <span>3</span></a></li>
+     
+    	<li><a href="http://dimagog.github.io/tags.html#async-ref">async <span>2</span></a></li>
+     
+    	<li><a href="http://dimagog.github.io/tags.html#core.async-ref">core.async <span>2</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+      </div>
+
+      <footer>
+        <p>© Dmitry Kakurin 2013. <a href="http://dimagog.github.io/rss.xml">RSS</a>, <a href="http://dimagog.github.io/atom.xml">Atom</a></p> 
+        <p>
+          <small>Using <a href="http://jekyllbootstrap.com/" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a><small>
+        </small></small></p><small><small>
+      </small></small></footer><small><small>
+
+    </small></small></div><small><small> <!-- /container -->
+
+    
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42417659-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  
+
+
+</small></small></body></html>

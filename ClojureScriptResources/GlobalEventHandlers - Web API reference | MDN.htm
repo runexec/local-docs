@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html class=" no-details" dir="ltr" id="developer-mozilla-org" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" lang="en-US"><script id="bug.surrogate">var urchinTracker=function(){},_gaq={push:function(){try {if(arguments[0][0]=='_link')window.location.href=arguments[0][1]}catch(er){}}},_gat={_createTracker:function(){}, _getTracker:function(){return{__noSuchMethod__:function(){},_link:function(o){if(o)location.href=o;},_linkByPost:function(){return true;},_getLinkerUrl:function(o){return o;},_trackEvent:function(){}}}}</script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+          
+  
+    <title>GlobalEventHandlers - Web API reference | MDN</title>
+  
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="#copyright">
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon.ico">
+
+        <!--[if !IE 6]><!-->
+  <link rel="stylesheet" media="screen,projection,tv" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/mdn-min.css">
+      <link rel="stylesheet" media="screen,projection,tv" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/wiki-min.css">
+    <!--<![endif]-->
+  <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie.css"><![endif]-->
+  <!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie7.css"><![endif]-->
+  <!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie6.css"><![endif]-->
+  <link rel="stylesheet" type="text/css" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/font-awesome.css">
+  <link rel="stylesheet" type="text/css" media="print" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/mdn-print.css">
+  <link rel="stylesheet" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/tabzilla-min.css">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network">
+  
+    <link rel="stylesheet" media="print" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/wiki-print-min.css">
+          <link rel="stylesheet" type="text/css" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/TemplateCustomCSS.css">
+    
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script src="https://developer.mozilla.org/https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    // This represents the site configuration
+    // TODO:  Move this to its own module when we're AMD-ready
+    window.mdn = {
+      build: '5b8af24',
+      // Setting these objects up for later use
+      ckeditor: {},
+      mediaPath: 'https://developer.cdn.mozilla.net/media/',
+      wiki: {
+        autosuggestTitleUrl: '/en-US/docs/get-documents'
+      }
+    };
+  </script>
+
+    <link rel="alternate" type="application/json" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">
+
+  <meta property="og:title" content="GlobalEventHandlers">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://developer.mozilla.org/media/img/mdn-logo-sm.png">
+  <meta property="og:site_name" content="Mozilla Developer Network">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">
+  <meta name="twitter:title" content="GlobalEventHandlers">
+  <meta name="twitter:image" content="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png">
+  <meta name="twitter:site" content="@mozhacks">
+  <meta name="twitter:creator" content="@mozhacks">
+
+    <meta property="og:description" content="The GlobalEventHandlers interface describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can implement more event handlers.">
+  <meta name="description" content="The GlobalEventHandlers interface describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can implement more event handlers.">
+  <meta name="twitter:description" content="The GlobalEventHandlers interface describes the event handlers common to several interfaces like HTMLElement, Document, or Window. Each of these interfaces can implement more event handlers.">
+  
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  <style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style><script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/jquery-1.js"></script></head>
+
+<body id="" class="html-ltr document hasJS" role="document"><div id="tabzilla-panel" class="tabzilla-closed" tabindex="-1">  <div id="tabzilla-contents">    <div id="tabzilla-promo">      <div class="snippet" id="tabzilla-promo-fxos">        <a href="https://www.mozilla.org/firefox/os/?icn=tabz">          <h4>Look ahead</h4>          <p>Learn all about Firefox OS »</p>        </a>      </div>    </div>    <div id="tabzilla-nav">      <ul>        <li><h2>Mozilla</h2>          <div>            <ul>              <li><a href="https://www.mozilla.org/mission/?icn=tabz">Mission</a></li>              <li><a href="https://www.mozilla.org/about/?icn=tabz">About</a></li>              <li><a href="https://www.mozilla.org/projects/?icn=tabz">Projects</a></li>              <li><a href="https://support.mozilla.org/?icn=tabz">Support</a></li>              <li><a href="https://developer.mozilla.org/?icn=tabz">Developer Network</a></li>            </ul>          </div>        </li>        <li><h2>Products</h2>          <div>            <ul>              <li><a href="https://www.mozilla.org/firefox/?icn=tabz">Firefox</a></li>              <li><a href="https://www.mozilla.org/thunderbird/?icn=tabz">Thunderbird</a></li>              <li><a href="https://www.mozilla.org/firefox/os/?icn=tabz">Firefox OS</a></li>            </ul>          </div>        </li>        <li><h2>Innovations</h2>          <div>            <ul>              <li><a href="https://webfwd.org/?icn=tabz">WebFWD</a></li>              <li><a href="https://mozillalabs.com/?icn=tabz">Labs</a></li>              <li><a href="https://webmaker.org/?icn=tabz">Webmaker</a></li>              <li><a href="https://www.mozilla.org/research/?icn=tabz">Research</a></li>            </ul>          </div>        </li>        <li><h2>Get Involved</h2>          <div>            <ul>              <li><a href="https://www.mozilla.org/contribute/?icn=tabz">Volunteer</a></li>              <li><a href="https://www.mozilla.org/en-US/about/careers.html?icn=tabz">Careers</a></li>              <li><a href="https://www.mozilla.org/en-US/about/mozilla-spaces/?icn=tabz">Find us</a></li>              <li><a href="https://sendto.mozilla.org/Join-Tabzilla/?icn=tabz">Donate</a></li>              <li><a href="https://www.mozilla.org/about/partnerships/?icn=tabz">Partner</a></li>            </ul>          </div>        </li>        <li id="tabzilla-search">          <a href="https://www.mozilla.org/community/directory.html?icn=tabz">Website Directory</a>          <form title="Search Mozilla sites" role="search" action="//www.google.com/cse">            <input value="002443141534113389537:ysdmevkkknw" name="cx" type="hidden">            <input value="FORID:0" name="cof" type="hidden">            <label for="q">Search</label>            <input placeholder="Search" id="q" name="q" type="search">          </form>        </li>      </ul>    </div>  </div></div>
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of Microsoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p></div></noscript>
+<![endif]-->
+  <header id="masthead" class="minor new-menu">
+    <div class="wrap">
+      <ul id="nav-access">
+        <li><a href="#language">Select language</a></li>
+                  <li><a href="#q">Skip to search</a></li>
+                <li><a href="#content">Skip to main content</a></li>
+      </ul>
+    
+      <div id="branding">
+                <div id="logo"><a href="https://developer.mozilla.org/en-US/"><img src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71"> Mozilla Developer Network</a></div>
+              </div>
+      
+              <nav id="nav">
+          <ul id="nav-main" role="menubar">
+            <li id="nav-main-docs" class="menu" rel="menuitem"><a href="#nav-sub-docs" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-docs" title="Read Documentation">Read<br><em>Docs</em></a>
+              <div style="display: none;" id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+                <ul>
+                  <li>
+                    <ul>
+
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML?menu">HTML</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS?menu">CSS</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript?menu">JavaScript</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics?menu">Graphics</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API?menu">APIs / DOM</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Apps?menu">Apps</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/tools?menu">Dev Tools</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML?menu">MathML</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials?menu">Tutorials</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference?menu">References</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide?menu">Developer Guides</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Accessibility?menu">Accessibility</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/demos/?menu">Demos</a></li>
+                      <li><br><br><a href="https://developer.mozilla.org/en-US/docs?menu">...more docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="nav-main-apps"><a href="https://marketplace.firefox.com/developers/?menu">Make<br><em>Apps</em></a>
+            </li>
+            <li id="nav-main-firefox" class="menu" role="menuitem"><a href="#nav-sub-firefox" class="firefox toggle" aria-haspopup="true" aria-labelledby="nav-main-firefox">Build &amp; Use<br><em>Firefox</em></a>
+              <ul aria-hidden="true" style="display: none;" id="nav-sub-firefox" class="sub-menu">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS?menu">Firefox OS</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox?menu">Firefox Desktop</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile?menu">Mobile</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons?menu">Add-ons</a></li>
+              </ul>
+            </li>
+            <li id="nav-main-demos" role="menuitem"><a href="https://developer.mozilla.org/en-US/demos/?menu" class="demos">See &amp; Submit<br><em>Demos</em></a></li>
+            <li id="nav-main-community" class="menu" role="menuitem"><a href="#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Get<br><em>Involved</em></a>
+              <ul aria-hidden="true" style="display: none;" id="nav-sub-community" class="sub-menu">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing/Join_the_community?menu">Join the Community</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing?menu">Contribute to MDN</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/events?menu">Events</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing/Follow_what_s_happening?menu">Tweets, Blogs, and More</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+            
+            <ul class="user-state signed-out">
+    <li class="user-signin menu">
+    <form class="browserid" action="/en-US/users/browserid_verify" method="POST">
+        <input id="next" name="next" value="/en-US/docs/Web/API/GlobalEventHandlers" type="hidden">
+        <input required="required" name="assertion" id="id_assertion" type="hidden">
+                        <a href="#" target="_blank" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with Persona">Sign in</a>
+                <div style="display: none;" class="browserid-info sub-menu" aria-hidden="true">
+                <h3>What's this?</h3> <p>MDN has switched to <a href="https://persona.org/" target="_blank" rel="external">Persona</a>, a safe and simple way to sign in with just your e-mail address. <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using Persona</a>.</p> <p><strong>Returning members:</strong> sign in with Persona and you'll be connected to your MDN profile (all your information is still here).</p> <p><strong>New members:</strong> sign in with Persona first, then you'll be able to set up your new MDN profile.</p>          <p><a href="#" target="_blank" class="browserid-signin" title="Sign in with Persona">Sign in</a></p>
+        </div>
+              </form>
+    </li>
+  </ul>
+      
+      <form id="site-search" method="get" action="/en-US/search">
+        <p>
+          <input role="search" placeholder="Search MDN" id="q" name="q" type="search">
+          <noscript><button type="submit">Search</button></noscript>
+        </p>
+        
+                <div id="site-search-gg"><div class="gsc-branding"><table class="gsc-branding" cellpadding="0" cellspacing="0"><tbody><tr><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img-noclear"><img class="gsc-branding-img-noclear" src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/small-logo.png"></td></tr></tbody></table></div></div>
+              </form>
+      
+      <a aria-label="Mozilla links" href="https://www.mozilla.org/" id="tabzilla">mozilla</a>
+    </div>
+  </header>
+
+    
+
+<!-- top toolbar -->
+<section id="nav-toolbar"><div><div class="wrap">
+  <!-- right floated navigation -->
+  <nav id="tool-menus" role="navigation">
+    <ul id="tools">
+      <li class="menu">
+        <a href="#page-tools" class="toggle">This page</a>
+        <ul aria-hidden="true" style="display: none;" id="page-tools" class="sub-menu">
+          <li class="page-print"> <a href="#" onclick="return window.print();" title="Print page">Print this page</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/new?parent=79567">New sub-page</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/new?clone=79567">Clone this page</a></li>
+                                      </ul>
+      </li>
+            <li class="menu">
+        <a href="#" class="toggle">Languages</a>
+        <ul id="translations">
+                    
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers$locales">Add translation</a></li>
+                  </ul>
+      </li>
+          </ul>
+  </nav>
+  
+  <!-- left crumb navigation -->
+  <nav class="crumbs" role="navigation">
+    <ol>
+              <li class="crumb"><a href="https://developer.mozilla.org/en-US/docs/Web">Web technology for developers</a></li>
+              <li class="crumb"><a href="https://developer.mozilla.org/en-US/docs/Web/API">Web API reference</a></li>
+            <li class="crumb">GlobalEventHandlers</li>
+    </ol>
+  </nav>
+  
+</div></div></section>
+
+
+
+<section id="content">
+  <div class="wrap">
+    <div id="content-main" class="full">
+      <article class="article" role="main" data-current-revision="438067" data-refresh-message="Your changes were merged. However, something else has been edited, so this page will be refreshed to reflect the changes." data-cancel-edit-message="Abort editing in progress? Your unsaved changes will be discarded.">
+      <header id="article-head">
+        <div class="title">
+            <h1 class="page-title">GlobalEventHandlers</h1>
+                        <div class="offline-notice">
+              <a href="javascript:;" id="offline-notice-link"><i class="icon-book"></i>Read content offline</a>
+            </div>
+
+            <div id="offline-dialog-content" title="Read MDN Offline">
+              <p>Did you know that you can read content offline by using
+ one of these tools? If you would like to read offline MDN content in 
+another format, let us know by commenting on <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665750" data-title="Bug 665750">Bug 665750</a>.</p>
+              <a href="https://itunes.apple.com/us/app/dash-docs-snippets/id458034879?mt=12" class="offline-dialog-mac" data-title="Dash App">
+                <img src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/dash-app.png" alt="Dash App">
+              </a>
+              <a href="https://github.com/rgarcia/dochub#runnning-locally" target="_blank" class="offline-dialog-others" data-title="DocHub">
+                <i class="icon-book" style="font-size: 160px;"></i>
+              </a>
+            </div>
+            
+                                </div>
+        <ul id="page-buttons">
+            <li class="page-history"><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers$history"><i class="icon-book"></i>History</a></li>
+            
+                                                                      <li class="page-edit"><a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers$edit"><i class="icon-pencil"></i>Edit</a></li>
+                    </ul>
+
+        
+               </header>
+
+           
+                                  
+            
+      <div id="wikiArticle" class="page-content boxed">
+                <div id="article-nav">
+          <div class="page-toc">
+            <h2>Table of Contents</h2>
+            <ol>
+              <code></code><code></code><code></code><code></code><code></code><li><a href="#Properties" rel="internal">Properties</a><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code><code></code></li><li><a href="#Methods" rel="internal">Methods</a></li><li><a href="#Specifications" rel="internal">Specifications</a></li><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><code></code><code></code><code></code><code></code></li><li><a href="#See_also" rel="internal">See also</a><code></code>
+            </li></ol>
+          </div>
+          <ul class="page-anchors">
+            <li class="anchor-tags">
+                              <i class="icon-tags off"></i><span title="This document has no tags">Tags</span>
+                          </li>
+            <li class="anchor-files">
+                              <i class="icon-paper-clip off"></i><span title="This document has no attachments">Files</span>
+                          </li>
+          </ul>
+        </div>
+                                <div>
+  <span class="breadcrumbs domRef_breadcrumbs">«&nbsp;<a href="https://developer.mozilla.org/en-US/docs/DOM/DOM_Reference">DOM Reference</a></span></div>
+<p>The <strong><code>GlobalEventHandlers</code></strong> interface describes the event handlers common to several interfaces like <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" title="/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" title="/en-US/docs/Web/API/Document"><code>Document</code></a>, or <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window" title="/en-US/docs/Web/API/Window"><code>Window</code></a>. Each of these interfaces can implement more event handlers.</p>
+<p><code>GlobalEventHandlers</code> is a raw interface and no object of this type can be created.</p>
+<h2 id="Properties">Properties</h2>
+<p>The events properties, of the form <code>onXYZ</code>, are defined on the <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers" title="/en-US/docs/Web/API/GlobalEventHandlers"><code>GlobalEventHandlers</code></a>, and implemented by <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" title="/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" title="/en-US/docs/Web/API/Document"><code>Document</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window" title="/en-US/docs/Web/API/Window"><code>Window</code></a>.</p>
+<dl>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onabort" title="/en-US/docs/Web/API/GlobalEventHandlers.onabort"><code>GlobalEventHandlers.onabort</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/abort" title="/en-US/docs/Web/Reference/Events/abort">abort</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onblur" title="/en-US/docs/Web/API/GlobalEventHandlers.onblur"><code>GlobalEventHandlers.onblur</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/blur" title="/en-US/docs/Web/Reference/Events/blur">blur</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onerror" title="/en-US/docs/Web/API/GlobalEventHandlers.onerror"><code>GlobalEventHandlers.onerror</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/OnErrorEventHandler" title="/en-US/docs/Web/API/OnErrorEventHandler"><code>OnErrorEventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/error" title="/en-US/docs/Web/Reference/Events/error">error</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onfocus" title="/en-US/docs/Web/API/GlobalEventHandlers.onfocus"><code>GlobalEventHandlers.onfocus</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/focus" title="/en-US/docs/Web/Reference/Events/focus">focus</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oncancel" title="/en-US/docs/Web/API/GlobalEventHandlers.oncancel"><code>GlobalEventHandlers.oncancel</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/cancel" title="/en-US/docs/Web/Reference/Events/cancel">cancel</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oncanplay" title="/en-US/docs/Web/API/GlobalEventHandlers.oncanplay"><code>GlobalEventHandlers.oncanplay</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/canplay" title="/en-US/docs/Web/Reference/Events/canplay">canplay</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oncanplaythrough" title="/en-US/docs/Web/API/GlobalEventHandlers.oncanplaythrough"><code>GlobalEventHandlers.oncanplaythrough</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/canplaythrough" title="/en-US/docs/Web/Reference/Events/canplaythrough">canplaythrough</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onchange" title="/en-US/docs/Web/API/GlobalEventHandlers.onchange"><code>GlobalEventHandlers.onchange</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/change" title="/en-US/docs/Web/Reference/Events/change">change</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onclick" title="/en-US/docs/Web/API/GlobalEventHandlers.onclick"><code>GlobalEventHandlers.onclick</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/click" title="/en-US/docs/Web/Reference/Events/click">click</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onclose" title="/en-US/docs/Web/API/GlobalEventHandlers.onclose"><code>GlobalEventHandlers.onclose</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/close" title="/en-US/docs/Web/Reference/Events/close">close</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oncontextmenu" title="/en-US/docs/Web/API/GlobalEventHandlers.oncontextmenu"><code>GlobalEventHandlers.oncontextmenu</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/contextmenu" title="/en-US/docs/Web/Reference/Events/contextmenu">contextmenu</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oncuechange" title="/en-US/docs/Web/API/GlobalEventHandlers.oncuechange"><code>GlobalEventHandlers.oncuechange</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/cuechange" title="/en-US/docs/Web/Reference/Events/cuechange">cuechange</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondblclick" title="/en-US/docs/Web/API/GlobalEventHandlers.ondblclick"><code>GlobalEventHandlers.ondblclick</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dblclick" title="/en-US/docs/Web/Reference/Events/dblclick">dblclick</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondrag" title="/en-US/docs/Web/API/GlobalEventHandlers.ondrag"><code>GlobalEventHandlers.ondrag</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/drag" title="/en-US/docs/Web/Reference/Events/drag">drag</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondragend" title="/en-US/docs/Web/API/GlobalEventHandlers.ondragend"><code>GlobalEventHandlers.ondragend</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dragend" title="/en-US/docs/Web/Reference/Events/dragend">dragend</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondragenter" title="/en-US/docs/Web/API/GlobalEventHandlers.ondragenter"><code>GlobalEventHandlers.ondragenter</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dragenter" title="/en-US/docs/Web/Reference/Events/dragenter">dragenter</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondragexit" title="/en-US/docs/Web/API/GlobalEventHandlers.ondragexit"><code>GlobalEventHandlers.ondragexit</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dragexit" title="/en-US/docs/Web/Reference/Events/dragexit">dragexit</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondragleave" title="/en-US/docs/Web/API/GlobalEventHandlers.ondragleave"><code>GlobalEventHandlers.ondragleave</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dragleave" title="/en-US/docs/Web/Reference/Events/dragleave">dragleave</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondragover" title="/en-US/docs/Web/API/GlobalEventHandlers.ondragover"><code>GlobalEventHandlers.ondragover</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dragover" title="/en-US/docs/Web/Reference/Events/dragover">dragover</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondragstart" title="/en-US/docs/Web/API/GlobalEventHandlers.ondragstart"><code>GlobalEventHandlers.ondragstart</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/dragstart" title="/en-US/docs/Web/Reference/Events/dragstart">dragstart</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondrop" title="/en-US/docs/Web/API/GlobalEventHandlers.ondrop"><code>GlobalEventHandlers.ondrop</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/drop" title="/en-US/docs/Web/Reference/Events/drop">drop</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ondurationchange" title="/en-US/docs/Web/API/GlobalEventHandlers.ondurationchange"><code>GlobalEventHandlers.ondurationchange</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/durationchange" title="/en-US/docs/Web/Reference/Events/durationchange">durationchange</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onemptied" title="/en-US/docs/Web/API/GlobalEventHandlers.onemptied"><code>GlobalEventHandlers.onemptied</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/emptied" title="/en-US/docs/Web/Reference/Events/emptied">emptied</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onended" title="/en-US/docs/Web/API/GlobalEventHandlers.onended"><code>GlobalEventHandlers.onended</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/ended" title="/en-US/docs/Web/Reference/Events/ended">ended</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oninput" title="/en-US/docs/Web/API/GlobalEventHandlers.oninput"><code>GlobalEventHandlers.oninput</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/input" title="/en-US/docs/Web/Reference/Events/input">input</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.oninvalid" title="/en-US/docs/Web/API/GlobalEventHandlers.oninvalid"><code>GlobalEventHandlers.oninvalid</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/invalid" title="/en-US/docs/Web/Reference/Events/invalid">invalid</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onkeydown" title="/en-US/docs/Web/API/GlobalEventHandlers.onkeydown"><code>GlobalEventHandlers.onkeydown</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keydown" title="/en-US/docs/Web/Reference/Events/keydown">keydown</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onkeypress" title="/en-US/docs/Web/API/GlobalEventHandlers.onkeypress"><code>GlobalEventHandlers.onkeypress</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress" title="/en-US/docs/Web/Reference/Events/keypress">keypress</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onkeyup" title="/en-US/docs/Web/API/GlobalEventHandlers.onkeyup"><code>GlobalEventHandlers.onkeyup</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keyup" title="/en-US/docs/Web/Reference/Events/keyup">keyup</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onload" title="/en-US/docs/Web/API/GlobalEventHandlers.onload"><code>GlobalEventHandlers.onload</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/load" title="/en-US/docs/Web/Reference/Events/load">load</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onloadeddata" title="/en-US/docs/Web/API/GlobalEventHandlers.onloadeddata"><code>GlobalEventHandlers.onloadeddata</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/loadeddata" title="/en-US/docs/Web/Reference/Events/loadeddata">loadeddata</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onloadedmetadata" title="/en-US/docs/Web/API/GlobalEventHandlers.onloadedmetadata"><code>GlobalEventHandlers.onloadedmetadata</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/loadedmetadata" title="/en-US/docs/Web/Reference/Events/loadedmetadata">loadedmetadata</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onloadstart" title="/en-US/docs/Web/API/GlobalEventHandlers.onloadstart"><code>GlobalEventHandlers.onloadstart</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/loadsart" title="/en-US/docs/Web/Reference/Events/loadsart">loadsart</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmousedown" title="/en-US/docs/Web/API/GlobalEventHandlers.onmousedown"><code>GlobalEventHandlers.onmousedown</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mousedown" title="/en-US/docs/Web/Reference/Events/mousedown">mousedown</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmouseenter" title="/en-US/docs/Web/API/GlobalEventHandlers.onmouseenter"><code>GlobalEventHandlers.onmouseenter</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mouseenter" title="/en-US/docs/Web/Reference/Events/mouseenter">mouseenter</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmouseleave" title="/en-US/docs/Web/API/GlobalEventHandlers.onmouseleave"><code>GlobalEventHandlers.onmouseleave</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mouseleave" title="/en-US/docs/Web/Reference/Events/mouseleave">mouseleave</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmousemove" title="/en-US/docs/Web/API/GlobalEventHandlers.onmousemove"><code>GlobalEventHandlers.onmousemove</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mousemove" title="/en-US/docs/Web/Reference/Events/mousemove">mousemove</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmouseout" title="/en-US/docs/Web/API/GlobalEventHandlers.onmouseout"><code>GlobalEventHandlers.onmouseout</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mouseout" title="/en-US/docs/Web/Reference/Events/mouseout">mouseout</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmouseover" title="/en-US/docs/Web/API/GlobalEventHandlers.onmouseover"><code>GlobalEventHandlers.onmouseover</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mouseover" title="/en-US/docs/Web/Reference/Events/mouseover">mouseover</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmouseup" title="/en-US/docs/Web/API/GlobalEventHandlers.onmouseup"><code>GlobalEventHandlers.onmouseup</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mouseup" title="/en-US/docs/Web/Reference/Events/mouseup">mouseup</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onmousewheel" title="/en-US/docs/Web/API/GlobalEventHandlers.onmousewheel"><code>GlobalEventHandlers.onmousewheel</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/mousewheel" title="/en-US/docs/Web/Reference/Events/mousewheel">mousewheel</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onpause" title="/en-US/docs/Web/API/GlobalEventHandlers.onpause"><code>GlobalEventHandlers.onpause</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/pause" title="/en-US/docs/Web/Reference/Events/pause">pause</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onplay" title="/en-US/docs/Web/API/GlobalEventHandlers.onplay"><code>GlobalEventHandlers.onplay</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/play" title="/en-US/docs/Web/Reference/Events/play">play</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onplaying" title="/en-US/docs/Web/API/GlobalEventHandlers.onplaying"><code>GlobalEventHandlers.onplaying</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/playing" title="/en-US/docs/Web/Reference/Events/playing">playing</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onprogress" title="/en-US/docs/Web/API/GlobalEventHandlers.onprogress"><code>GlobalEventHandlers.onprogress</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/progress" title="/en-US/docs/Web/Reference/Events/progress">progress</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onratechange" title="/en-US/docs/Web/API/GlobalEventHandlers.onratechange"><code>GlobalEventHandlers.onratechange</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/ratechange" title="/en-US/docs/Web/Reference/Events/ratechange">ratechange</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onreset" title="/en-US/docs/Web/API/GlobalEventHandlers.onreset"><code>GlobalEventHandlers.onreset</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/reset" title="/en-US/docs/Web/Reference/Events/reset">reset</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onscroll" title="/en-US/docs/Web/API/GlobalEventHandlers.onscroll"><code>GlobalEventHandlers.onscroll</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/scroll" title="/en-US/docs/Web/Reference/Events/scroll">scroll</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onseeked" title="/en-US/docs/Web/API/GlobalEventHandlers.onseeked"><code>GlobalEventHandlers.onseeked</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/seeked" title="/en-US/docs/Web/Reference/Events/seeked">seeked</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onseeking" title="/en-US/docs/Web/API/GlobalEventHandlers.onseeking"><code>GlobalEventHandlers.onseeking</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/seeking" title="/en-US/docs/Web/Reference/Events/seeking">seeking</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onselect" title="/en-US/docs/Web/API/GlobalEventHandlers.onselect"><code>GlobalEventHandlers.onselect</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/select" title="/en-US/docs/Web/Reference/Events/select">select</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onshow" title="/en-US/docs/Web/API/GlobalEventHandlers.onshow"><code>GlobalEventHandlers.onshow</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/show" title="/en-US/docs/Web/Reference/Events/show">show</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onsort" title="/en-US/docs/Web/API/GlobalEventHandlers.onsort"><code>GlobalEventHandlers.onsort</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a class="new" href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/sort" title="/en-US/docs/Web/Reference/Events/sort">sort</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onstalled" title="/en-US/docs/Web/API/GlobalEventHandlers.onstalled"><code>GlobalEventHandlers.onstalled</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/stalled" title="/en-US/docs/Web/Reference/Events/stalled">stalled</a></code> event is raised.</dd>
+  <dt>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onsubmit" title="/en-US/docs/Web/API/GlobalEventHandlers.onsubmit"><code>GlobalEventHandlers.onsubmit</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/submit" title="/en-US/docs/Web/Reference/Events/submit">submit</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onsuspend" title="/en-US/docs/Web/API/GlobalEventHandlers.onsuspend"><code>GlobalEventHandlers.onsuspend</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/suspend" title="/en-US/docs/Web/Reference/Events/suspend">suspend</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.ontimeupdate" title="/en-US/docs/Web/API/GlobalEventHandlers.ontimeupdate"><code>GlobalEventHandlers.ontimeupdate</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/timeupdate" title="/en-US/docs/Web/Reference/Events/timeupdate">timeupdate</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onvolumechange" title="/en-US/docs/Web/API/GlobalEventHandlers.onvolumechange"><code>GlobalEventHandlers.onvolumechange</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/volumechange" title="/en-US/docs/Web/Reference/Events/volumechange">volumechange</a></code> event is raised.</dd>
+  <dt>
+    <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onwaiting" title="/en-US/docs/Web/API/GlobalEventHandlers.onwaiting"><code>GlobalEventHandlers.onwaiting</code></a></dt>
+  <dd>
+    Is an <a class="new" href="https://developer.mozilla.org/en-US/docs/Web/API/EventHandler" title="/en-US/docs/Web/API/EventHandler"><code>EventHandler</code></a> representing the code to be called whent the <code><a href="https://developer.mozilla.org/en-US/docs/Web/Reference/Events/waiting" title="/en-US/docs/Web/Reference/Events/waiting">waiting</a></code> event is raised.</dd>
+</dl>
+<h2 id="Methods">Methods</h2>
+<p><em>This interface defines no method.</em></p>
+<h2 id="Specifications">Specifications</h2>
+<table class="standard-table">
+  <thead>
+    <tr>
+      <th scope="col">Specification</th>
+      <th scope="col">Status</th>
+      <th scope="col">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#globaleventhandlers" title="The definition of 'HTMLElement' in that specification." lang="en">WHATWG HTML Living Standard</a></td>
+      <td><span class="spec-Living">Living Standard</span></td>
+      <td>Initial definition</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+<p>Though browsers do not explicitely use the <code>GlobalEventHandlers</code>, the properties defined here are implemented on <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement" title="/en-US/docs/Web/API/HTMLElement"><code>HTMLElement</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" title="/en-US/docs/Web/API/Document"><code>Document</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window" title="/en-US/docs/Web/API/Window"><code>Window</code></a>.</p>
+<p></p><div class="htab"> 
+    <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li class="selected"><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+<div style="display: block;" id="compat-desktop">
+  <table class="compat-table">
+    <tbody>
+      <tr>
+        <th>Feature</th>
+        <th>Firefox (Gecko)</th>
+        <th>Chrome</th>
+        <th>Internet Explorer</th>
+        <th>Opera</th>
+        <th>Safari</th>
+      </tr>
+      <tr>
+        <td>Basic support</td>
+        <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+        <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div><div style="display: none;" id="compat-mobile">
+  <table class="compat-table">
+    <tbody>
+      <tr>
+        <th>Feature</th>
+        <th>Firefox Mobile (Gecko)</th>
+        <th>Android</th>
+        <th>IE Mobile</th>
+        <th>Opera Mobile</th>
+        <th>Safari Mobile</th>
+      </tr>
+      <tr>
+        <td>Basic support</td>
+        <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+        <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div></div><p></p>
+
+
+<h2 id="See_also">See also</h2>
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element" title="/en-US/docs/Web/API/Element"><code>Element</code></a></li>
+</ul>
+                  </div>
+    
+    <section class="page-meta">
+      
+      
+      
+      <section id="doc-contributors" role="contentinfo">
+        Contributors to this page: <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>
+                          <br>
+          Last updated by:  
+          <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>, 
+          <time datetime="2013-07-05T05:35:50-07:00">Jul 5, 2013 5:35:50 AM</time>
+                      <br>
+            Last reviewed by:  
+            <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>, 
+            <time datetime="2013-07-05T05:35:50-07:00">Jul 5, 2013 5:35:50 AM</time>
+                        </section>
+    </section>
+  </article>
+  <form id="wiki-page-edit" class="editing" method="post" action="/en-US/docs/Web/API/GlobalEventHandlers$edit">
+      <input name="form" id="form" value="rev" type="hidden">
+      <input name="content" id="content" value="" type="hidden">
+  </form>
+      </div>
+   </div>
+    </section>
+
+<section id="footbar">
+<div class="wrap">
+  <p>
+  Is MDN helpful to you? Please <a href="https://developer.mozilla.org/en-US/docs/Project:Feedback">share your feedback</a> with us. Or join our <a id="dev-mdc-link" href="https://lists.mozilla.org/listinfo/dev-mdc">mailing list about improving MDN content</a>.  </p>
+</div>
+</section>
+<footer id="site-info" class="footer" role="contentinfo">
+<div class="wrap">
+    <div id="legal">
+      <img src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/mdn-logo-tiny.png" alt="" width="42" height="48">
+      <p id="copyright">© 2005 - 2013 Mozilla Developer Network and individual contributors</p>
+      <p>
+      Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:Copyrights">these licenses</a>      • <a href="https://developer.mozilla.org/en-US/docs/Project:About">About MDN</a>
+      • <a href="https://github.com/mozilla/kuma">Contribute to the code</a>
+      • <a href="https://www.mozilla.org/en-US/privacy">Privacy Policy</a>
+    </p></div>
+                <form class="languages go" method="get" action="/en-US/docs">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option value="/en-US/docs/Web/API/GlobalEventHandlers" selected="selected">
+          English (US)
+        </option>
+              </select>
+      <noscript><button type="submit">Go</button></noscript>
+    </form>
+      </div>
+</footer>
+
+<script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/build5b8af24"></script><div style="display: block; opacity: 0.9; position: fixed; z-index: 2147483647; top: 15px; right: 20px; left: auto; background: none repeat scroll 0% 0% rgb(51, 0, 51); padding: 7px 10px; color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); text-decoration: none ! important; text-align: left; font: 13px Arial,Helvetica; border-radius: 5px 5px 5px 5px; box-shadow: 0px 0px 20px rgb(0, 0, 0); text-transform: none; cursor: pointer; width: auto; height: auto;" id="ghostery-purple-bubble"><span style="font-size: 0px;">Ghostery has found the following on this page:</span><span style="background-color: rgb(51, 0, 51); display: inline; color: rgb(119, 119, 119); text-decoration: line-through;">Google Analytics</span><br style="display: block ! important;"><span style="background-color: rgb(51, 0, 51); display: inline; color: rgb(119, 119, 119); text-decoration: line-through;">Optimizely</span><br style="display: block ! important;"></div>
+  <script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/tabzilla.js" async=""></script>
+  <script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/jsapi" type="text/javascript"></script>
+  <script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/include.js" type="text/javascript"></script>
+  <script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/mdn-min.js"></script><script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/a" type="text/javascript"></script><script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/defaulten.js" type="text/javascript"></script>
+      <script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/wiki-min.js"></script>
+  
+  <script type="text/javascript">
+    // Event tracking for the new menu
+    $(function() {
+      $('#nav-main').on('click', 'a', function(e) {
+        window._gaq && _gaq.push(['_trackEvent', 'Menu', 'Click', e.target.innerHTML, e.target.href]);
+      });
+    });
+  </script>
+        <!-- include syntax highlighting scripts -->
+<link rel="stylesheet" media="screen,projection,tv" href="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/syntax-prism-min.css">
+<script type="text/javascript" src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/prism.js" data-manual=""></script>
+<script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/syntax-prism-min.js"></script><script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/prism-line-highlight.js"></script>
+        <script type="text/javascript">
+      (function($, ga) {
+        $('#offline-notice-link').on('click', function() {
+          // Open the dialog first
+          $('#offline-dialog-content').dialog({ 
+            width: 540, 
+            modal: true, 
+            buttons: { 
+              Ok: function() { 
+                $(this).dialog('close'); 
+              } 
+            } 
+          });
+          // Record opening of the menu
+          ga.push(['_trackEvent', 'Offline Content Dialog - Open', 'Click', 'Offline content link', '1']);
+        });
+
+        $('#offline-dialog-content').on('click', 'a', function(e, c) {
+          // Record if they go to any of the links (bug link or either option)
+          var title = $(e.currentTarget).attr('data-title');
+          ga.push(['_trackEvent', 'Offline Content Dialog - ' + title, 'Click', title, '1']);
+        });
+      })(jQuery, window._gaq || []);
+    </script>
+    
+<script src="GlobalEventHandlers%20-%20Web%20API%20reference%20%7C%20MDN_files/waffles.js" type="text/javascript" async=""></script>
+
+</body></html>

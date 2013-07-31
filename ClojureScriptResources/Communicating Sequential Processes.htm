@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><script id="bug.surrogate">var urchinTracker=function(){},_gaq={push:function(){try {if(arguments[0][0]=='_link')window.location.href=arguments[0][1]}catch(er){}}},_gat={_createTracker:function(){}, _getTracker:function(){return{__noSuchMethod__:function(){},_link:function(o){if(o)location.href=o;},_linkByPost:function(){return true;},_getLinkerUrl:function(o){return o;},_trackEvent:function(){}}}}; if (document.location.host == 'www.salon.com') {var _ga_ = document.querySelectorAll('script[src$=ga\\.js]')[0], ga_e = document.createEvent('Event'); ga_e.initEvent('load', true, true);_ga_.dispatchEvent(ga_e);}</script><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Communicating Sequential Processes</title>
+        <meta name="author" content="David Nolen">
+        <link href="http://swannodette.github.com/atom.xml" rel="alternate" title="dosync" type="application/atom+xml">
+        <link href="Communicating%20Sequential%20Processes_files/css.css" rel="stylesheet" type="text/css">
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="Communicating%20Sequential%20Processes_files/syntax.css" type="text/css">
+
+        <!-- Homepage CSS -->
+        <link rel="stylesheet" href="Communicating%20Sequential%20Processes_files/screen.css" type="text/css" media="screen, projection">
+
+        <!-- MathJax -->
+        <script type="text/x-mathjax-config;executed=true">
+          MathJax.Hub.Config({
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              processEscapes: true
+            }
+          });
+        </script>
+        <script type="text/javascript" src="Communicating%20Sequential%20Processes_files/MathJax.js"></script>
+        
+        <!-- Typekit -->
+        <!--
+        <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        -->
+    <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style></head>
+    <body><div style="display: none;" id="MathJax_Message"></div>
+
+        <div class="site">
+            <div class="title">
+                <a href="http://swannodette.github.io/">dosync</a>
+
+                <a class="extra" href="http://swannodette.github.io/archive.html">Archive</a>
+                <a class="extra" href="">Pages</a>
+                <a class="extra" href="http://swannodette.github.io/categories.html">Categories</a>
+                <a class="extra" href="http://swannodette.github.io/tags.html">Tags</a>
+            </div>
+            
+            
+<div id="post">
+    <h1>Communicating Sequential Processes</h1>
+    <p class="meta">
+        12 July 2013 
+        
+    </p>
+    <style>
+  #ex0 #ex0-out {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.3em;
+  }
+  .proc-1 {
+    color: #ff6666;
+  }
+  .proc-2 {
+    color: #66ff66;
+  }
+  .proc-3 {
+    color: #6666ff;
+  }
+  .example {
+    position: relative;
+    margin-top: 20px;
+    height: 200px;
+    border: 1px solid #ccc;
+    background: #efefef;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  .out {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    color: #666;
+    text-align: center;
+    line-height: 200px;
+    font-family: 'Inconsolata', sans-serif; font-size: 72px;
+  }
+  #ex4 {
+    height: 100px;
+    text-align: center;
+  }
+  #ex4 button:active {
+    background-color: #ccc;
+  }
+  #ex4 button {
+    margin-top: 15px;
+    font-size: 18px;
+    padding: 6px 15px;
+    background-color: white;
+    border: 1px solid #333;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+  }
+  #ex4 #ex4-out {
+    margin-top: 20px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.3em;
+    color: #666;
+  }
+</style>
+
+<p>With the arrival of
+<a href="http://github.com/clojure/core.async">core.async</a>,
+<a href="http://github.com/clojure/clojurescript">ClojureScript</a> provides a
+powerful advantage over other popular compile to JavaScript languages
+like <a href="http://coffeescript.org/">CoffeeScript</a>,
+<a href="http://www.dartlang.org/">Dart</a>, and
+<a href="http://www.typescriptlang.org/">TypeScript</a>. These languages fail to
+address the single largest source of incidental complexity for any
+sizeable client side application - concurrency. In my experience no
+amount of simple syntactic sugar, class abstraction, or type annotation can
+plug this particular geyser of incidental complexity. These languages
+offer no tools beyond the weak ones already offered by JavaScript
+libraries or JavaScript itself -
+<a href="http://github.com/promises-aplus/promises-spec">promises</a> and
+<a href="http://wiki.ecmascript.org/doku.php?id=harmony:generators">generators</a>.</p>
+
+<p>JavaScript promises don't solve the inversion of control problem -
+callback hell is unnested but it's still callback hell. ECMAScript 6
+generators suffer in various ways from being too simplistic, you need
+to manage coordination by hand or provide your own scheduler. You can
+<a href="http://jlongster.com/A-Study-on-Solving-Callbacks-with-JavaScript-Generators">combine generators with promises</a>
+but now you're managing two abstractions instead of one (Dart
+<a href="http://api.dartlang.org/docs/releases/latest/dart_async/Stream.html">appears to suffer from the same dualism</a>
+but there it's Future/Stream).</p>
+
+<p>Enough rhetoric, let's see how core.async works in practice.</p>
+
+<p>First let's start off with something dramatic (in fact something that
+should seem impossible for those familiar with JavaScript). We will
+coordinate three independent processes running at three different
+speeds via a fourth process which shows the results of the
+coordination <em>without any obvious use of mutation</em> - only recursion.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(def c (chan))
+
+(defn render [q]
+  (apply str
+    (for [p (reverse q)]
+      (str "&lt;div class='proc-" p "'&gt;Process " p "&lt;/div&gt;"))))
+
+(go (while true (&lt;! (timeout 250)) (&gt;! c 1)))
+(go (while true (&lt;! (timeout 1000)) (&gt;! c 2)))
+(go (while true (&lt;! (timeout 1500)) (&gt;! c 3)))
+
+(defn peekn
+  "Returns vector of (up to) n items from the end of vector v"
+  [v n]
+  (if (&gt; (count v) n)
+    (subvec v (- (count v) n))
+    v))
+
+(let [el  (by-id "ex0")
+      out (by-id "ex0-out")]
+  (go (loop [q []]
+        (set-html out (render q))
+        (recur (-&gt; (conj q (&lt;! c)) (peekn 10))))))
+</code></pre></div>
+<div id="ex0" class="example">
+    <div id="ex0-out" class="out"><div class="proc-1">Process 1</div><div class="proc-2">Process 2</div><div class="proc-3">Process 3</div><div class="proc-1">Process 1</div><div class="proc-1">Process 1</div><div class="proc-1">Process 1</div><div class="proc-1">Process 1</div><div class="proc-2">Process 2</div><div class="proc-1">Process 1</div><div class="proc-3">Process 3</div></div>
+</div>
+
+<p>As expected we see process 1 more often than process 2, and process 2
+more often than process 3. It appears that we have independent
+processes, we can coordinate them, and there's not a callback in
+sight.</p>
+
+<p>If you haven't fallen out of your chair, let's look at some simpler
+examples to build up our intuition.</p>
+
+<p>The code snippets in this post may look familiar to fans of
+<a href="http://reactive-extensions.github.io/RxJS/">functional reactive programming</a>,
+but fear not, we'll get to the good stuff eventually.</p>
+
+<p>The following code convert events on a DOM element into a channel
+we can read from:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(defn event-chan [el type]
+  (let [c (chan)]
+    (.addEventListener el type #(put! c %))
+    c)))
+</code></pre></div>
+<p>I've intentionally kept the code as simple as possible to limit the amount
+of novelty that we need to introduce (nearly everything I will show
+can look prettier/shorter either with more higher order channel operations or
+a touch of sweetening via macro sugar). <code>event-chan</code> takes a DOM element
+and an event type. The event listener callback puts the DOM event into the
+channel, since we're not in a <code>go</code> block we do this with an async <code>put!</code>.</p>
+
+<p>Channels are like the channels found in
+<a href="http://www.usingcsp.com/cspbook.pdf">Tony Hoare's Communicating Sequential Processes</a>. The
+<a href="http://golang.org/">Go community</a> is visibly enjoying the benefits of
+Hoare's abstraction - but of course programming languages have offered
+its treasures since the 1980s (<a href="http://en.wikipedia.org/wiki/Occam-">occam-pi</a>,
+<a href="http://cml.cs.uchicago.edu/">Concurrent ML</a>,
+<a href="http://www.cs.kent.ac.uk/projects/ofa/jcsp/">JCSP</a>). Interestingly both
+<a href="http://swtch.com/%7Ersc/thread/cws.pdf">Rob Pike</a> and
+<a href="http://alleystoughton.us/eXene/1991-ml-workshop.pdf">John Reppy</a> have
+both discussed the applicability of CSP for the coordination of user
+interfaces - user interfaces are inherently asynchronous and thus concurrent.</p>
+
+<p>Let's see <code>event-chan</code> in action:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(let [el  (by-id "ex1")
+      out (by-id "ex1-mouse")
+      c   (event-chan el "mousemove")]
+  (go (loop []
+        (let [e (&lt;! c)]
+          (set-html out (str (.-pageX e) ", " (.-pageY e)))
+          (recur))))))
+</code></pre></div>
+<p>Mouse over the grey box below:</p>
+
+<div id="ex1" class="example">
+    <div id="ex1-mouse" class="out"></div>
+</div>
+
+<p>Only in <code>go</code> blocks can we appear to read and write synchronously (via
+<span class="code">&lt;!</span> and <span class="code">&gt;!</span> respectively) to a
+channel. This allows us to fully escape callback hell in our
+coordination code.</p>
+
+<p>Note that the above example is showing the position of the mouse in
+the window instead of relative to the element we care about - let's
+fix this with our first higher order channel operation <code>map-chan</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(defn map-chan [f in]
+  (let [c (chan)]
+    (go (loop []
+          (&gt;! c (f (&lt;! in)))
+          (recur)))
+    c))
+</code></pre></div>
+<p><code>map-chan</code> takes a function <code>f</code> and a channel <code>in</code> and returns a new
+channel. All the magic happens once again inside the <code>go</code> block, we
+can read values out of the <code>in</code> channel as they appear, apply <code>f</code> and
+write the result to the channel we returned. This works just as well
+for mouse events or asynchronous results from I/O or an
+<code>XMLHttpRequest</code>.</p>
+
+<p>Let's use <code>map-chan</code>:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(defn offset [el]
+  (fn [e]
+    {:x (- (.-pageX e) (.-offsetLeft el))
+     :y (- (.-pageY e) (.-offsetTop el))}))
+
+(let [el  (by-id "ex2")
+      out (by-id "ex2-mouse")
+      c   (map-chan (offset el)
+            (event-chan el "mousemove"))]
+  (go (loop []
+        (let [e (&lt;! c)]
+          (set-html out (str (:x e) ", " (:y e)))
+          (recur)))))
+</code></pre></div>
+<p>Mouse over the grey box below to confirm that this works:</p>
+
+<div id="ex2" class="example">
+    <div id="ex2-mouse" class="out"></div>
+</div>
+
+<p>It's important to understand that <code>go</code> blocks paired with <code>loop/recur</code>
+allow us to create <em>local</em> event loops. Normally when writing client
+side code you are participating in a <em>global</em> event loop. As with
+global mutable variables, global event loops defy local reasoning. As
+JavaScript developers we work around the global event loop by
+coordinating through mutable locals or mutable object fields or by
+adding coordination methods to our API. With core.async all these
+ad-hoc methods disappear because we don't need them.</p>
+
+<p>To further illustrate, let's see the coordination of two different
+streams in the <em>same logical local event loop</em>.</p>
+
+<p>Say we want to handle both mouse and key events:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(let [el   (by-id "ex3")
+      outm (by-id "ex3-mouse")
+      outk (by-id "ex3-key")
+      mc   (map-chan (offset el)
+             (event-chan el "mousemove"))
+      kc   (event-chan js/window "keyup")]
+  (go (loop []
+        (let [[v c] (alts! [mc kc])]
+          (condp = c
+            mc (set-html outm (str (:x v) ", " (:y v)))
+            kc (set-html outk (str (.-keyCode v))))
+          (recur)))))
+</code></pre></div>
+<p>Make sure the window is focused and mouse over the following grey box
+and type at the same time:</p>
+
+<div id="ex3" class="example">
+    <div class="out">
+        <span id="ex3-mouse"></span> : <span id="ex3-key"></span>
+    </div>
+</div>
+
+<p><code>alts!</code> gives us non-deterministic choice over multiple streams. We will
+read from whichever channel has information. When reading from a
+channel <code>alts!</code> will return a tuple, the first element is the value
+read from the channel and the second element is the channel that was
+read from. This allows us to conditionally handle results from different
+channels as you can see with our use of <code>condp</code>.</p>
+
+<p>Note this is quite different from the usual JavaScript solutions where we
+tend to smear our asynchronous handling across the code base.</p>
+
+<p>Let's end with a final dramatic example, we present a port of
+<a href="http://talks.golang.org/2012/concurrency.slide#50">Rob Pike's Go code</a>
+that demonstrates parallel search with timeouts:</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">(defn fake-search [kind]
+  (fn [c query]
+    (go
+     (&lt;! (timeout (rand-int 100)))
+     (&gt;! c [kind query]))))
+
+(def web1 (fake-search :web1))
+(def web2 (fake-search :web2))
+(def image1 (fake-search :image1))
+(def image2 (fake-search :image2))
+(def video1 (fake-search :video1))
+(def video2 (fake-search :video2))
+
+(defn fastest [query &amp; replicas]
+  (let [c (chan)]
+    (doseq [replica replicas]
+      (replica c query))
+    c))
+
+(defn google [query]
+  (let [c (chan)
+        t (timeout 80)]
+    (go (&gt;! c (&lt;! (fastest query web1 web2))))
+    (go (&gt;! c (&lt;! (fastest query image1 image2))))
+    (go (&gt;! c (&lt;! (fastest query video1 video2))))
+    (go (loop [i 0 ret []]
+          (if (= i 3)
+            ret
+            (recur (inc i) (conj ret (alt! [c t] ([v] v)))))))))
+
+(let [el (by-id "ex4-out")
+      c  (event-chan (by-id "search") "click")]
+  (go (loop []
+        (&lt;! c)
+        (set-html el (pr-str (&lt;! (google "clojure"))))
+        (recur))))
+</code></pre></div>
+<p>Click the search button below multiple times:</p>
+
+<div id="ex4" class="example">
+    <button id="search">Search</button>
+    <div id="ex4-out"></div>
+</div>
+
+<p>We can run 3 pairs of requests in parallel, choosing the fastest of
+each pair. In addition we set a timeout of 80 milliseconds for the
+whole process.</p>
+
+<p>Just to drive the point home all of the examples we have covered are
+all running at once, including the original process example at the top
+of the page.</p>
+
+<p>Still so far we've only seen what I would consider very trivial if
+impressive examples. In the next post we'll look at an advanced
+example - a non-toy autocompleter input field. We will see core.async's
+advantage over traditional object oriented approaches as well
+as purely reactive approaches.</p>
+
+<script type="text/javascript" src="Communicating%20Sequential%20Processes_files/csp.js"></script>
+
+</div>
+
+<div id="related">
+    <h2>Related Posts</h2>
+    <ul class="posts">
+        
+        <li><span>07 Feb 2013</span> » <a href="http://swannodette.github.io/2013/02/07/a-new-blog">A New Blog</a></li>
+        
+        <li><span>08 Feb 2013</span> » <a href="http://swannodette.github.io/nominal%20logic/2013/02/08/the-simply-typed-lambda-calculus-in-20-lines-redux">The Simply Typed Lambda Calculus in 20 Lines Redux</a></li>
+        
+        <li><span>09 Mar 2013</span> » <a href="http://swannodette.github.io/2013/03/09/logic-programming-is-underrated">Logic Programming is Underrated</a></li>
+        
+    </ul>
+</div>
+
+
+
+
+            
+            <div class="footer">
+                <div class="contact">
+                    <p>
+                        <!--
+                        David Nolen<br />
+                        Lisp, Logic & JavaScript<br />
+                        -->
+                        <a href="http://swannodette.github.com/atom.xml">RSS</a>
+                        <a href="mailto:"></a>
+                    </p>
+                </div>
+                <div class="contact">
+                    <p>
+                        <a href="http://github.com/swannodette/">github.com/swannodette</a><br>
+                        <a href="http://twitter.com/swannodette/">twitter.com/swannodette</a><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-123-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+    
+
+
+</body></html>

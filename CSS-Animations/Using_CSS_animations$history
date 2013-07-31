@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" id="developer-mozilla-org" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+<head>
+          <script src="https://cdn.optimizely.com/js/237572123.js"></script>
+  
+    <title>Revision History | Using CSS animations | MDN</title>
+  
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="Using_CSS_animations$history#copyright">
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon.ico">
+
+        <!--[if !IE 6]><!-->
+  <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=0151529" />
+      <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=0151529" />
+    <!--<![endif]-->
+  <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie.css"><![endif]-->
+  <!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie7.css"><![endif]-->
+  <!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie6.css"><![endif]-->
+  <link rel="stylesheet" type="text/css" href="https://developer.cdn.mozilla.net/media/css/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" media="print" href="https://developer.cdn.mozilla.net/media/css/mdn-print.css">
+  <link rel="stylesheet" href="https://mozorg.cdn.mozilla.net/media/css/tabzilla-min.css">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network" />
+  
+    <link rel="stylesheet" media="print" href="https://developer.cdn.mozilla.net/media/css/wiki-print-min.css?build=0151529" />
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script src="https://developer.mozilla.org/https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+  // This represents the site configuration
+  // TODO:  Move this to its own module when we're AMD-ready
+  window.mdn = {
+    build: '0151529',
+    ckeditor: {},
+    mediaPath: 'https://developer.cdn.mozilla.net/media/',
+    wiki: {
+      autosuggestTitleUrl: '/en-US/docs/get-documents'
+    }
+  };
+</script>
+  
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  </head>
+
+<body id="" class="html-ltr " role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of Microsoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p></div></noscript>
+<![endif]-->
+  <header id="masthead" class="minor new-menu">
+    <div class="wrap">
+      <ul id="nav-access">
+        <li><a href="Using_CSS_animations$history#language">Select language</a></li>
+                  <li><a href="Using_CSS_animations$history#q">Skip to search</a></li>
+                <li><a href="Using_CSS_animations$history#content">Skip to main content</a></li>
+      </ul>
+    
+      <div id="branding">
+                <div id="logo"><a href="https://developer.mozilla.org/en-US/"><img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71"> Mozilla Developer Network</a></div>
+              </div>
+      
+              <nav id="nav">
+          <ul id="nav-main" role="menubar">
+            <li id="nav-main-docs" class="menu" rel="menuitem"><a href="Using_CSS_animations$history#nav-sub-docs" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-docs" title="Read Documentation">Read<br /><em>Docs</em></a>
+              <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+                <ul>
+                  <li>
+                    <ul>
+
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML?menu">HTML</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS?menu">CSS</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript?menu">JavaScript</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics?menu">Graphics</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API?menu">APIs / DOM</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Apps?menu">Apps</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/tools?menu">Dev Tools</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML?menu">MathML</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials?menu">Tutorials</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference?menu">References</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide?menu">Developer Guides</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Accessibility?menu">Accessibility</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/demos/?menu">Demos</a></li>
+                      <li><br /><br /><a href="https://developer.mozilla.org/en-US/docs?menu">...more docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="nav-main-apps"><a href="https://marketplace.firefox.com/developers/?menu">Make<br /><em>Apps</em></a>
+            </li>
+            <li id="nav-main-firefox" class="menu" role="menuitem"><a href="Using_CSS_animations$history#nav-sub-firefox" class="firefox toggle" aria-haspopup="true" aria-labelledby="nav-main-firefox">Build & Use<br /><em>Firefox</em></a>
+              <ul id="nav-sub-firefox" class="sub-menu">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS?menu">Firefox OS</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox?menu">Firefox Desktop</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile?menu">Mobile</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons?menu">Add-ons</a></li>
+              </ul>
+            </li>
+            <li id="nav-main-demos" role="menuitem"><a href="https://developer.mozilla.org/en-US/demos/?menu" class="demos">See & Submit<br /><em>Demos</em></a></li>
+            <li id="nav-main-community" class="menu" role="menuitem"><a href="Using_CSS_animations$history#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Get<br /><em>Involved</em></a>
+              <ul id="nav-sub-community" class="sub-menu">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing/Join_the_community?menu">Join the Community</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing?menu">Contribute to MDN</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/events?menu">Events</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing/Follow_what_s_happening?menu">Tweets, Blogs, and More</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+            
+            <ul class="user-state signed-out">
+    <li class="user-signin menu">
+    <form class="browserid" action="https://developer.mozilla.org/en-US/users/browserid_verify" method="POST">
+        <input id="next" name="next" type="hidden" value="/en-US/docs/Web/Guide/CSS/Using_CSS_animations$history"/>
+        <input required="required" type="hidden" name="assertion" id="id_assertion" />
+                        <a href="Using_CSS_animations$history#" target="_blank" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with Persona">Sign in</a>
+                <div class="browserid-info sub-menu" aria-hidden="true">
+                <h3>What's this?</h3> <p>MDN has switched to <a href="https://persona.org/" target="_blank" rel="external">Persona</a>, a safe and simple way to sign in with just your e-mail address. <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using Persona</a>.</p> <p><strong>Returning members:</strong> sign in with Persona and you'll be connected to your MDN profile (all your information is still here).</p> <p><strong>New members:</strong> sign in with Persona first, then you'll be able to set up your new MDN profile.</p>          <p><a href="Using_CSS_animations$history#" target="_blank" class="browserid-signin" title="Sign in with Persona">Sign in</a></p>
+        </div>
+              </form>
+    </li>
+  </ul>
+      
+      <form id="site-search" method="get" action="http://www.google.com/search"
+              data-url="/en-US/search">
+        <p>
+          <input type="search" role="search" placeholder="Search MDN" id="q" name="q" value="">
+          <noscript><button type="submit">Search</button></noscript>
+        </p>
+        <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+                <div id="site-search-gg"></div>
+              </form>
+      
+      <a href="https://www.mozilla.org/" id="tabzilla">mozilla</a>
+    </div>
+  </header>
+
+    
+<section id="content">
+  <div class="wrap">
+    <div id="content-main" class="full">
+  <article id="revision-history" role="main">
+    <h1 class="title">History of <a href="Using_CSS_animations">Using CSS animations</a></h1>
+    
+    <div class="choice-list">
+      <label>Revision history for:</label>
+      <ul>
+                <li>
+          <span>English (US)</span>
+        </li>
+      </ul>
+    </div>
+    <div id="revision-list">
+              <form action="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations$compare" method="get" class="nodisable">
+                      <div class="compare top">
+              <input type="submit" class="link-btn" value="Compare Selected Revisions" />
+            </div>
+                                                                  <ul>            <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="430795"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="430795" checked="checked" />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/430795" rel="nofollow, noindex"><time datetime="2013-06-17T16:43:47-07:00">Jun 17, 2013 4:43:47 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/Wonko">Wonko</a>
+              </div>
+              <div class="comment">
+                Removed the David Walsh blog post link. It&#39;s about CSS transitions, not CSS animations.
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="392003" checked="checked" />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="392003"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/392003" rel="nofollow, noindex"><time datetime="2013-05-09T13:59:44-07:00">May 9, 2013 1:59:44 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>
+              </div>
+              <div class="comment">
+                
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="391745"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="391745"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/391745" rel="nofollow, noindex"><time datetime="2013-05-09T12:16:58-07:00">May 9, 2013 12:16:58 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>
+              </div>
+              <div class="comment">
+                
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="391737"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="391737"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/391737" rel="nofollow, noindex"><time datetime="2013-05-09T12:15:51-07:00">May 9, 2013 12:15:51 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>
+              </div>
+              <div class="comment">
+                The CSS Animations Spec states that from/0% and to/100% are optional, not required. See http://www.w3.org/TR/css3-animations/#keyframes and http://lea.verou.me/2012/12/animations-with-one-keyframe/#more-1975<span class="slug-change">Moved From <strong>CSS/Tutorials/Using_CSS_animations</strong> to <strong>Web/Guide/CSS/Using_CSS_animations</strong></span>
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="364097"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="364097"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/364097" rel="nofollow, noindex"><time datetime="2013-03-08T20:30:51-08:00">Mar 8, 2013 8:30:51 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/bmorearty">bmorearty</a>
+              </div>
+              <div class="comment">
+                The CSS Animations Spec states that from/0% and to/100% are optional, not required. See http://www.w3.org/TR/css3-animations/#keyframes and http://lea.verou.me/2012/12/animations-with-one-keyframe/#more-1975
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="351843"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="351843"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/351843" rel="nofollow, noindex"><time datetime="2013-02-07T23:17:13-08:00">Feb 7, 2013 11:17:13 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>
+              </div>
+              <div class="comment">
+                Revert to revision of 2012-12-22 09:19:49 by teoli
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="351833"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="351833"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/351833" rel="nofollow, noindex"><time datetime="2013-02-07T18:00:58-08:00">Feb 7, 2013 6:00:58 PM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/penter">penter</a>
+              </div>
+              <div class="comment">
+                
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="341543"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="341543"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/341543" rel="nofollow, noindex"><time datetime="2012-12-22T09:19:49-08:00">Dec 22, 2012 9:19:49 AM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>
+              </div>
+              <div class="comment">
+                
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="341465"  />              </div>
+              <div class="radio">
+                <input type="radio" name="to" value="341465"  />              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/341465" rel="nofollow, noindex"><time datetime="2012-12-22T04:19:26-08:00">Dec 22, 2012 4:19:26 AM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>
+              </div>
+              <div class="comment">
+                <span class="slug-change">Moved From <strong>CSS/Using_CSS_animations</strong> to <strong>CSS/Tutorials/Using_CSS_animations</strong></span>
+              </div>
+                          </li>
+                                                                      <li class="">
+              <div class="radio">
+                <input type="radio" name="from" value="317293"  />              </div>
+              <div class="radio">
+                              </div>
+              <div class="date">
+                <a href="Using_CSS_animations$revision/317293" rel="nofollow, noindex"><time datetime="2012-10-08T05:09:47-07:00">Oct 8, 2012 5:09:47 AM</time></a>
+              </div>
+              <div class="significance">
+                                  &nbsp;
+                              </div>
+              <div class="creator">
+                <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>
+              </div>
+              <div class="comment">
+                
+              </div>
+                          </li>
+            </ul>                                <div class="compare bottom">
+              <input type="submit" class="link-btn" value="Compare Selected Revisions" />
+            </div>
+                  </form>
+          </div>
+  </article>
+                <ol class="pagination">
+          <li class="selected">
+      <a href="Using_CSS_animations$history?page=1">1</a>
+    </li>
+      <li >
+      <a href="Using_CSS_animations$history?page=2">2</a>
+    </li>
+      <li >
+      <a href="Using_CSS_animations$history?page=3">3</a>
+    </li>
+      <li >
+      <a href="Using_CSS_animations$history?page=4">4</a>
+    </li>
+      <li >
+      <a href="Using_CSS_animations$history?page=5">5</a>
+    </li>
+          <li class="next">
+      <a href="Using_CSS_animations$history?page=2">
+        Next
+      </a>
+    </li>
+    </ol>
+
+
+      
+    </div>
+   </div>
+</section>
+
+<section id="footbar">
+<div class="wrap">
+  <p>
+  Is MDN helpful to you? Please <a href="https://developer.mozilla.org/en-US/docs/Project:Feedback">share your feedback</a> with us. Or join our <a id="dev-mdc-link" href="https://lists.mozilla.org/listinfo/dev-mdc">mailing list about improving MDN content</a>.  </p>
+</div>
+</section>
+<footer id="site-info" class="footer" role="contentinfo">
+<div class="wrap">
+    <div id="legal">
+      <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+      <p id="copyright">&copy; 2005 - 2013 Mozilla Developer Network and individual contributors</p>
+      <p>
+      Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:Copyrights">these licenses</a>      &bull; <a href="https://developer.mozilla.org/en-US/docs/Project:About">About MDN</a>
+      &bull; <a href="https://github.com/mozilla/kuma">Contribute to the code</a>
+      &bull; <a href="https://www.mozilla.org/en-US/privacy">Privacy Policy</a>
+    </div>
+                    <form class="languages go" method="get" action="Using_CSS_animations$history#">
+  <label for="language">Other languages:</label>
+  <select id="language" name="lang" dir="ltr">
+    <option value="ar" >
+        عربي
+      </option><option value="bn-BD" >
+        বাংলা (বাংলাদেশ)
+      </option><option value="ca" >
+        català
+      </option><option value="cs" >
+        Čeština
+      </option><option value="de" >
+        Deutsch
+      </option><option value="el" >
+        Ελληνικά
+      </option><option value="en-US" selected>
+        English
+      </option><option value="es" >
+        Español
+      </option><option value="fa" >
+        فارسی
+      </option><option value="fi" >
+        suomi
+      </option><option value="fr" >
+        Français
+      </option><option value="fy-NL" >
+        Frysk
+      </option><option value="ga-IE" >
+        Gaeilge (Éire)
+      </option><option value="he" >
+        עברית
+      </option><option value="hr" >
+        Hrvatski
+      </option><option value="hu" >
+        Magyar
+      </option><option value="id" >
+        Bahasa Indonesia
+      </option><option value="it" >
+        Italiano
+      </option><option value="ja" >
+        日本語
+      </option><option value="ka" >
+        ქართული
+      </option><option value="ko" >
+        한국어
+      </option><option value="ms" >
+        ﺐﻫﺎﺳ ﻡﻼﻳﻭ
+      </option><option value="nl" >
+        Nederlands
+      </option><option value="pl" >
+        Polski
+      </option><option value="pt-BR" >
+        Português (do Brasil)
+      </option><option value="pt-PT" >
+        Português (Europeu)
+      </option><option value="ro" >
+        română
+      </option><option value="ru" >
+        Русский
+      </option><option value="sq" >
+        Shqip
+      </option><option value="th" >
+        ไทย
+      </option><option value="tr" >
+        Türkçe
+      </option><option value="vi" >
+        Tiếng Việt
+      </option><option value="zh-CN" >
+        中文 (简体)
+      </option><option value="zh-TW" >
+        正體中文 (繁體)
+      </option>  </select>
+  <noscript><button type="submit">Go</button></noscript>
+</form>          </div>
+</footer>
+
+<script src="https://developer.mozilla.org/en-US/jsi18n/build:0151529"></script>
+    <script src="https://mozorg.cdn.mozilla.net/en-US/tabzilla/tabzilla.js" async></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  <script src="https://login.persona.org/include.js" type="text/javascript"></script>
+  <script src="https://developer.cdn.mozilla.net/media/js/mdn-min.js?build=0151529"></script>
+      <script src="https://developer.cdn.mozilla.net/media/js/wiki-min.js?build=0151529"></script>
+  
+  <script type="text/javascript">
+    // Event tracking for the new menu
+    $(function() {
+      $('#nav-main').on('click', 'a', function(e) {
+        window._gaq && _gaq.push(['_trackEvent', 'Menu', 'Click', e.target.innerHTML, e.target.href]);
+      });
+    });
+  </script>
+
+  <script src="https://developer.cdn.mozilla.net/media/js/framebuster-min.js?build=0151529"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      function gettext(a){return a}
+      var pagination = $('.pagination'),
+        next = pagination.find('.next');
+      if(next.length) {
+        pagination.append('<li><a href="Using_CSS_animations$history?limit=all" id="pagination-all">' + gettext('View All') + '</a></li>');
+      }
+    });
+  </script>
+
+<script src="https://developer.mozilla.org/en-US/waffles.js" type="text/javascript" async></script>
+</body>
+</html>
+ 

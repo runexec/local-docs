@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" id="developer-mozilla-org" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+<head>
+          <script src="https://cdn.optimizely.com/js/237572123.js"></script>
+  
+    <title>Revision 40539 | Using CSS animations | Uncategorized | MDN</title>
+  
+  <meta charset="utf-8">
+  <meta name="robots" content="index, follow">
+  <link rel="home" href="https://developer.mozilla.org/en-US/">
+  <link rel="copyright" href="40539#copyright">
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/media/img/favicon.ico">
+
+        <!--[if !IE 6]><!-->
+  <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/mdn-min.css?build=0151529" />
+      <link rel="stylesheet" media="screen,projection,tv" href="https://developer.cdn.mozilla.net/media/css/wiki-min.css?build=0151529" />
+    <!--<![endif]-->
+  <!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie.css"><![endif]-->
+  <!--[if lte IE 7]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie7.css"><![endif]-->
+  <!--[if lte IE 6]><link rel="stylesheet" type="text/css" media="all" href="https://developer.cdn.mozilla.net/media/css/ie6.css"><![endif]-->
+  <link rel="stylesheet" type="text/css" href="https://developer.cdn.mozilla.net/media/css/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" media="print" href="https://developer.cdn.mozilla.net/media/css/mdn-print.css">
+  <link rel="stylesheet" href="https://mozorg.cdn.mozilla.net/media/css/tabzilla-min.css">
+  
+  <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="Mozilla Developer Network" />
+  
+    <link rel="stylesheet" media="print" href="https://developer.cdn.mozilla.net/media/css/wiki-print-min.css?build=0151529" />
+          <link rel="stylesheet" type="text/css"
+            href="https://developer.mozilla.org/en-US/docs/Template:CustomCSS?raw=1" />
+    
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script src="https://developer.mozilla.org/https://developer.cdn.mozilla.net/media/js/libs/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript">
+  // This represents the site configuration
+  // TODO:  Move this to its own module when we're AMD-ready
+  window.mdn = {
+    build: '0151529',
+    ckeditor: {},
+    mediaPath: 'https://developer.cdn.mozilla.net/media/',
+    wiki: {
+      autosuggestTitleUrl: '/en-US/docs/get-documents'
+    }
+  };
+</script>
+  
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36116321-5']);
+  _gaq.push(['_trackPageview']);
+
+  (function(a, d) {
+    var ga = d.createElement(a); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == d.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = d.getElementsByTagName(a)[0]; s.parentNode.insertBefore(ga, s);
+  })('script', document);
+
+</script>
+  </head>
+
+<body id="" class="html-ltr " role="document">
+<!--[if lte IE 8]>
+<noscript><div class="global-notice">
+<p><strong>Warning:</strong> The Mozilla Developer Network website employs emerging web standards that may not be fully supported in some versions of Microsoft Internet Explorer. You can improve your experience of this website by enabling JavaScript.</p></div></noscript>
+<![endif]-->
+  <header id="masthead" class="minor new-menu">
+    <div class="wrap">
+      <ul id="nav-access">
+        <li><a href="40539#language">Select language</a></li>
+                  <li><a href="40539#q">Skip to search</a></li>
+                <li><a href="40539#content">Skip to main content</a></li>
+      </ul>
+    
+      <div id="branding">
+                <div id="logo"><a href="https://developer.mozilla.org/en-US/"><img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="62" height="71"> Mozilla Developer Network</a></div>
+              </div>
+      
+              <nav id="nav">
+          <ul id="nav-main" role="menubar">
+            <li id="nav-main-docs" class="menu" rel="menuitem"><a href="40539#nav-sub-docs" class="toggle" aria-haspopup="true" aria-labelledby="nav-main-docs" title="Read Documentation">Read<br /><em>Docs</em></a>
+              <div id="nav-sub-docs" class="sub-menu" aria-hidden="true">
+                <ul>
+                  <li>
+                    <ul>
+
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML?menu">HTML</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS?menu">CSS</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript?menu">JavaScript</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics?menu">Graphics</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API?menu">APIs / DOM</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Apps?menu">Apps</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/tools?menu">Dev Tools</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML?menu">MathML</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials?menu">Tutorials</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference?menu">References</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide?menu">Developer Guides</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/docs/Accessibility?menu">Accessibility</a></li>
+                      <li><a href="https://developer.mozilla.org/en-US/demos/?menu">Demos</a></li>
+                      <li><br /><br /><a href="https://developer.mozilla.org/en-US/docs?menu">...more docs</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li id="nav-main-apps"><a href="https://marketplace.firefox.com/developers/?menu">Make<br /><em>Apps</em></a>
+            </li>
+            <li id="nav-main-firefox" class="menu" role="menuitem"><a href="40539#nav-sub-firefox" class="firefox toggle" aria-haspopup="true" aria-labelledby="nav-main-firefox">Build & Use<br /><em>Firefox</em></a>
+              <ul id="nav-sub-firefox" class="sub-menu">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS?menu">Firefox OS</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox?menu">Firefox Desktop</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Mobile?menu">Mobile</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons?menu">Add-ons</a></li>
+              </ul>
+            </li>
+            <li id="nav-main-demos" role="menuitem"><a href="https://developer.mozilla.org/en-US/demos/?menu" class="demos">See & Submit<br /><em>Demos</em></a></li>
+            <li id="nav-main-community" class="menu" role="menuitem"><a href="40539#nav-sub-community" class="community toggle" aria-haspopup="true" aria-labelledby="nav-main-community">Get<br /><em>Involved</em></a>
+              <ul id="nav-sub-community" class="sub-menu">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing/Join_the_community?menu">Join the Community</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing?menu">Contribute to MDN</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/events?menu">Events</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Project:MDN/Contributing/Follow_what_s_happening?menu">Tweets, Blogs, and More</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+            
+            <ul class="user-state signed-out">
+    <li class="user-signin menu">
+    <form class="browserid" action="https://developer.mozilla.org/en-US/users/browserid_verify" method="POST">
+        <input id="next" name="next" type="hidden" value="/en-US/docs/Web/Guide/CSS/Using_CSS_animations$revision/40539"/>
+        <input required="required" type="hidden" name="assertion" id="id_assertion" />
+                        <a href="40539#" target="_blank" class="browserid-signin toggle" aria-haspopup="true" title="Sign in with Persona">Sign in</a>
+                <div class="browserid-info sub-menu" aria-hidden="true">
+                <h3>What's this?</h3> <p>MDN has switched to <a href="https://persona.org/" target="_blank" rel="external">Persona</a>, a safe and simple way to sign in with just your e-mail address. <a href="http://identity.mozilla.com/post/12950196039/deploying-browserid-at-mozilla" rel="external">Learn more about why Mozilla is using Persona</a>.</p> <p><strong>Returning members:</strong> sign in with Persona and you'll be connected to your MDN profile (all your information is still here).</p> <p><strong>New members:</strong> sign in with Persona first, then you'll be able to set up your new MDN profile.</p>          <p><a href="40539#" target="_blank" class="browserid-signin" title="Sign in with Persona">Sign in</a></p>
+        </div>
+              </form>
+    </li>
+  </ul>
+      
+      <form id="site-search" method="get" action="http://www.google.com/search"
+              data-url="/en-US/search">
+        <p>
+          <input type="search" role="search" placeholder="Search MDN" id="q" name="q" value="">
+          <noscript><button type="submit">Search</button></noscript>
+        </p>
+        <input type="hidden" name="sitesearch" value="developer.mozilla.org">
+                <div id="site-search-gg"></div>
+              </form>
+      
+      <a href="https://www.mozilla.org/" id="tabzilla">mozilla</a>
+    </div>
+  </header>
+
+    
+<section id="content">
+  <div class="wrap">
+    <div id="content-main" class="full">
+  <article id="wiki-doc">
+    <h1 class="title">Using CSS animations</h1>
+    <details class="h2" open="open">
+      <summary>Revision Information</summary>
+      <div class="revision-info">
+        <ul>
+          <li>
+            <mark>Revision slug:</mark>
+            <span>CSS/CSS_animations</span>
+          </li>
+          <li>
+            <mark>Revision title:</mark>
+            <span>CSS animations</span>
+          </li>
+          <li class="revision-id">
+            <mark>Revision id:</mark>
+            <span>40539</span>
+          </li>
+          <li class="revision-created">
+            <mark>Created:</mark>
+            <span><time datetime="2011-04-20T20:23:23-07:00">Apr 20, 2011 8:23:23 PM</time></span>
+          </li>
+          <li>
+            <mark>Creator:</mark>
+            <span>Sheppy</span>
+            
+          </li>
+          <li class="revision-is-reviewed">
+            <mark>Is reviewed?</mark>
+            <span>Yes</span>
+          </li>
+                      <li class="revision-reviewed">
+              <mark>Reviewed:</mark>
+              <span><time datetime="2011-04-20T20:23:23-07:00">Apr 20, 2011 8:23:23 PM</time></span>
+            </li>
+            <li>
+              <mark>Reviewed by:</mark>
+              <span>Jay</span>
+            </li>
+            <li class="revision-is-current">
+              <mark>Is approved?</mark>
+              <span>Yes</span>
+            </li>
+            <li>
+              <mark>Is current revision?</mark>
+              <span>No</span>
+            </li>
+            <li>
+              <mark>Comment</mark>
+              <span>1 words added, 1 words removed</span>
+            </li>
+                            </ul>
+      </div>
+    </details>
+    <details class="h2">
+      <summary>Revision Source</summary>
+      <div id="doc-source">
+        <textarea readonly="readonly">
+&lt;p&gt;{{ draft() }}&lt;/p&gt;
+&lt;p&gt;CSS animations make it possible to animate transitions from one CSS style configuration to another. Animations consist of two components: A style describing the animation and a set of keyframes that indicate the start and end states of the animation&#39;s CSS style, as well as possible intermediate waypoints along the way.&lt;/p&gt;
+&lt;h2&gt;Configuring the animation&lt;/h2&gt;
+&lt;p&gt;To create a CSS animation sequence, you style the element you want to animate with the {{ cssxref(&#34;animation&#34;) }} property or its sub-properties. This lets you configure the timing and duration of the animation, as well as other details of how the animation sequence should progress. This does &lt;strong&gt;not&lt;/strong&gt; configure the actual appearance of the animation, which is done using the {{ cssxref(&#34;@keyframes&#34;) }} at-rule as described in {{ anch(&#34;Defining the animation sequence using keyframes&#34;) }} below.&lt;/p&gt;
+&lt;p&gt;The sub-properties of the {{ cssxref(&#34;animation&#34;) }} property are:&lt;/p&gt;
+&lt;dl&gt; &lt;dt&gt;{{ cssxref(&#34;animation-delay&#34;) }}&lt;/dt&gt; &lt;dd&gt;Configures the delay between the time the element is loaded and the beginning of the animation sequence.&lt;/dd&gt; &lt;dt&gt;{{ cssxref(&#34;animation-direction&#34;) }}&lt;/dt&gt; &lt;dd&gt;Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.&lt;/dd&gt; &lt;dt&gt;{{ cssxref(&#34;animation-iteration-count&#34;) }}&lt;/dt&gt; &lt;dd&gt;Configures the number of times the animation should repeat; you can specify &lt;code&gt;infinite&lt;/code&gt; to repeat the animation indefinitely.&lt;/dd&gt; &lt;dt&gt;{{ cssxref(&#34;animation-name&#34;) }}&lt;/dt&gt; &lt;dd&gt;Specifies the name of the {{ cssxref(&#34;@keyframes&#34;) }} at-rule describing the animation&#39;s keyframes.&lt;/dd&gt; &lt;dt&gt;{{ cssxref(&#34;animation-play-state&#34;) }}&lt;/dt&gt; &lt;dd&gt;Lets you pause and resume the animation sequence.&lt;/dd&gt; &lt;dt&gt;{{ cssxref(&#34;animation-timing-function&#34;) }}&lt;/dt&gt; &lt;dd&gt;Configures the timing of the animation; that is, how the animation transitions through keyframes, by establishing acceleration curves.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2&gt;Defining the animation sequence using keyframes&lt;/h2&gt;
+&lt;p&gt;Once you&#39;ve configured the animation&#39;s timing, you need to define the appearance of the animation. This is done by establishing two or more keyframes using the {{ cssxref(&#34;@keyframes&#34;) }} at-rule. Each keyframe describes how the animated element should render at a given time during the animation sequence.&lt;/p&gt;
+&lt;p&gt;Since the timing of the animation is defined in the CSS style that configures the animation, keyframes use a {{ cssxref(&#34;percentage&#34;) }} to indicate the time during the animation sequence at which they take place. 0% indicates the first moment of the animation sequence, while 100% indicates the final state of the animation. These two times must be specified so that the browser knows where the animation should start and finish; because they&#39;re so important, these two times have special aliases: &lt;code&gt;from&lt;/code&gt; and &lt;code&gt;to&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can optionally include additional keyframes that describe intermediate steps along the way from the starting point to the ending point of the animation.&lt;/p&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;note&#34;&gt;&lt;strong&gt;Note:&lt;/strong&gt; The examples here use the &lt;code&gt;-moz-&lt;/code&gt; prefix on the animation CSS properties for brevity; the live examples you can click to see in your browser also include the &lt;code&gt;-webkit-&lt;/code&gt; prefixed versions.&lt;/div&gt;
+&lt;h3&gt;Making text slide across the browser window&lt;/h3&gt;
+&lt;p&gt;This simple example styles the {{ HTMLElement(&#34;h1&#34;) }} element so that the text slides in from off the right edge of the browser window.&lt;/p&gt;
+&lt;pre class=&#34;brush: css&#34;&gt;&amp;lt;style type=&#34;text/css&#34;&amp;gt;
+  h1 {
+    -moz-animation-duration: 3s;
+    -moz-animation-name: slidein;
+  }
+  
+  @-moz-keyframes slidein {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+    
+    to {
+      margin-left:0%;
+      width:100%;
+    }
+  }
+&amp;lt;/style&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;The style for the {{ HTMLElement(&#34;h1&#34;) }} element here specifies that the animation should take 3 seconds to execute from start to finish, using the {{ cssxref(&#34;animation-duration&#34;) }} property, and that the name of the {{ cssxref(&#34;@keyframes&#34;) }} at-rule defining the keyframes for the animation sequence is named &#34;slidein&#34;.&lt;/p&gt;
+&lt;p&gt;If we wanted any custom styling on the {{ HTMLElement(&#34;h1&#34;) }} element to appear in browsers that don&#39;t support CSS animations, we would include it here as well; however, in this case we don&#39;t want any custom styling other than the animation effect.&lt;/p&gt;
+&lt;p&gt;The keyframes are defined using the {{ cssxref(&#34;@keyframes&#34;) }} at-rule. In this case, we have just two keyframes. The first occurs at 0% (using the alias &lt;code&gt;from&lt;/code&gt;). Here, we configure the left margin of the element to be at 100% (that is, at the far right edge of the containing element), and the width of the element to be 300% (or three times the width of the containing element). This causes the first frame of the animation to have the header drawn off the right edge of the browser window.&lt;/p&gt;
+&lt;p&gt;The second (and final) keyframe occurs at 100% (using the alias &lt;code&gt;to&lt;/code&gt;). The left margin is set to 0% and the width of the element is set to 100%. This causes the header to finish its animation flush against the left edge of the content area.&lt;/p&gt;
+&lt;p&gt;{{ CSSLiveSample(&#34;animations/cssanim1.html&#34;) }}&lt;/p&gt;
+&lt;h4&gt;Adding another keyframe&lt;/h4&gt;
+&lt;p&gt;Let&#39;s add another keyframe to the previous example&#39;s animation. Let&#39;s say we want the header&#39;s font size to increase as it moves from right to left for a while, then to decrease back to its original size. That&#39;s as simple as adding this keyframe:&lt;/p&gt;
+&lt;pre class=&#34;brush: css&#34;&gt;75% {
+  font-size:300%;
+  margin-left:25%;
+  width:150%;
+}
+&lt;/pre&gt;
+&lt;p&gt;This tells the browser that 75% of the way through the animation sequence, the header should have its left margin at 25% and the width should be 150%.&lt;/p&gt;
+&lt;p&gt;{{ CSSLiveSample(&#34;animations/cssanim2.html&#34;) }}&lt;/p&gt;
+&lt;h4&gt;Making it repeat&lt;/h4&gt;
+&lt;p&gt;To make the animation repeat itself, simply use the {{ cssxref(&#34;animation-iteration-count&#34;) }} property to indicate how many times to repeat the animation. In this case, let&#39;s use &lt;code&gt;infinite&lt;/code&gt; to have the animation repeat indefinitely:&lt;/p&gt;
+&lt;pre class=&#34;brush: css&#34;&gt;h1 {
+  -moz-animation-duration: 3s;
+  -moz-animation-name: slidein;
+  -moz-animation-iteration-count: infinite;
+}
+&lt;/pre&gt;
+&lt;p&gt;{{ CSSLiveSample(&#34;animations/cssanim3.html&#34;) }}&lt;/p&gt;
+&lt;h4&gt;Making it move back and forth&lt;/h4&gt;
+&lt;p&gt;That made it repeat, but it&#39;s very odd having it jump back to the start each time it begins animating. What we really want is for it to move back and forth across the screen. That&#39;s easily accomplished by setting {{ cssxref(&#34;animation-direction&#34;) }} to &lt;code&gt;alternate&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;brush: css&#34;&gt;h1 {
+  -moz-animation-duration: 3s;
+  -moz-animation-name: slidein;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+}
+&lt;/pre&gt;
+&lt;p&gt;{{ CSSLiveSample(&#34;animations/cssanim4.html&#34;) }}&lt;/p&gt;
+&lt;h3&gt;Using animation events&lt;/h3&gt;
+&lt;p&gt;You can get additional control over animations -- as well as useful information about them -- by making use of animation events. These events, represented by the {{ domxref(&#34;event/AnimationEvent&#34;, &#34;AnimationEvent&#34;) }} object, can be used to detect when animations start, finish, and begin a new iteration. Each event includes the time at which it occurred as well as the name of the animation that triggered the event.&lt;/p&gt;
+&lt;p&gt;We&#39;ll modify the sliding text example to output some information about each animation event when it occurs, so we can get a look at how they work.&lt;/p&gt;
+&lt;h4&gt;Adding the animation event listeners&lt;/h4&gt;
+&lt;p&gt;We&#39;ll use JavaScript code to listen for all three possible animation events. The &lt;code&gt;setup()&lt;/code&gt; function configures our event listeners; we call it when the document is first loaded in order to set things up.&lt;/p&gt;
+&lt;pre class=&#34;brush: js&#34;&gt;function setup() {
+  var e = document.getElementById(&#34;watchme&#34;);
+  e.addEventListener(&#34;animationstart&#34;, listener, false);
+  e.addEventListener(&#34;animationend&#34;, listener, false);
+  e.addEventListener(&#34;animationiteration&#34;, listener, false);
+  
+  var e = document.getElementById(&#34;watchme&#34;);
+  e.className = &#34;slidein&#34;;
+}
+&lt;/pre&gt;
+&lt;p&gt;This is pretty standard code; you can get details on how it works in the documentation for {{ domxref(&#34;element.addEventListener()&#34;) }}. The last thing the setup() function here does is set the &lt;code&gt;class&lt;/code&gt; on the element we&#39;ll be animating to &#34;slidein&#34;; we do this to start the animation.&lt;/p&gt;
+&lt;p&gt;Why? Because the &lt;code&gt;animationstart&lt;/code&gt; event fires as soon as the animation starts, and in our case, that happens before our code runs. So we&#39;ll start the animation ourselves by setting the class of the element to the style that gets animated after the fact.&lt;/p&gt;
+&lt;h4&gt;Receiving the events&lt;/h4&gt;
+&lt;p&gt;The events get delivered to the &lt;code&gt;listener()&lt;/code&gt; function, which is shown below.&lt;/p&gt;
+&lt;pre class=&#34;brush: js&#34;&gt;function listener(e) {
+  var l = document.createElement(&#34;li&#34;);
+  switch(e.type) {
+    case &#34;animationstart&#34;:
+      l.innerHTML = &#34;Started: elapsed time is &#34; + e.elapsedTime;
+      break;
+    case &#34;animationend&#34;:
+      l.innerHTML = &#34;Ended: elapsed time is &#34; + e.elapsedTime;
+      break;
+    case &#34;animationiteration&#34;:
+      l.innerHTML = &#34;New loop started at time &#34; + e.elapsedTime;
+      break;
+  }
+  document.getElementById(&#34;output&#34;).appendChild(l);
+}
+&lt;/pre&gt;
+&lt;p&gt;This code, too, is very simple. It simply looks at the {{ domxref(&#34;event.type&#34;) }} to determine which kind of animation event occurred, then adds an appropriate note the {{ HTMLElement(&#34;ul&#34;) }} (unordered list) we&#39;re using to log these events.&lt;/p&gt;
+&lt;p&gt;The output, when all is said and done, looks something like this:&lt;/p&gt;
+&lt;ul id=&#34;output&#34;&gt; &lt;li&gt;Started: elapsed time is 0&lt;/li&gt; &lt;li&gt;New loop started at time 3.01200008392334&lt;/li&gt; &lt;li&gt;New loop started at time 6.00600004196167&lt;/li&gt; &lt;li&gt;Ended: elapsed time is 9.234000205993652&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that the times are very close to, but not exactly, those expected given the timing established when the animation was configured. Note also that after the final iteration of the animation, the &lt;code&gt;animationiteration&lt;/code&gt; event isn&#39;t sent; instead, the &lt;code&gt;animationend&lt;/code&gt; event is sent.&lt;/p&gt;
+&lt;h4&gt;The HTML&lt;/h4&gt;
+&lt;p&gt;Just for the sake of completeness, here&#39;s the HTML that displays the page content, including the list into which the script inserts information about the received events:&lt;/p&gt;
+&lt;pre class=&#34;brush: html&#34;&gt;&amp;lt;body onload=&#34;setup()&#34;&amp;gt;
+  &amp;lt;h1 id=&#34;watchme&#34;&amp;gt;Watch me move&amp;lt;/h1&amp;gt;
+  &amp;lt;p&amp;gt;This example shows how to use CSS animations to make &amp;lt;code&amp;gt;H1&amp;lt;/code&amp;gt; elements
+  move across the page.&amp;lt;/p&amp;gt;
+  &amp;lt;p&amp;gt;In addition, we output some text each time an animation event fires, so you can see them in action.&amp;lt;/p&amp;gt;
+  &amp;lt;ul id=&#34;output&#34;&amp;gt;
+  &amp;lt;/ul&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;{{ CSSLiveSample(&#34;animations/animevents.html&#34;) }}&lt;/p&gt;
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;ul&gt; &lt;li&gt;{{ domxref(&#34;Event/AnimationEvent&#34;, &#34;AnimationEvent&#34;) }}&lt;/li&gt; &lt;li&gt;{{ CSS_Reference:animation() }}&lt;/li&gt;
+&lt;/ul&gt;</textarea>
+      </div>
+    </details>
+    <details class="h2">
+      <summary>Revision Content</summary>
+      <div id="doc-content">
+        <div class="page-content boxed"><p>{{ draft() }}</p>
+<p>CSS animations make it possible to animate transitions from one CSS style configuration to another. Animations consist of two components: A style describing the animation and a set of keyframes that indicate the start and end states of the animation's CSS style, as well as possible intermediate waypoints along the way.</p>
+<h2>Configuring the animation</h2>
+<p>To create a CSS animation sequence, you style the element you want to animate with the {{ cssxref("animation") }} property or its sub-properties. This lets you configure the timing and duration of the animation, as well as other details of how the animation sequence should progress. This does <strong>not</strong> configure the actual appearance of the animation, which is done using the {{ cssxref("@keyframes") }} at-rule as described in {{ anch("Defining the animation sequence using keyframes") }} below.</p>
+<p>The sub-properties of the {{ cssxref("animation") }} property are:</p>
+<dl> <dt>{{ cssxref("animation-delay") }}</dt> <dd>Configures the delay between the time the element is loaded and the beginning of the animation sequence.</dd> <dt>{{ cssxref("animation-direction") }}</dt> <dd>Configures whether or not the animation should alternate direction on each run through the sequence or reset to the start point and repeat itself.</dd> <dt>{{ cssxref("animation-iteration-count") }}</dt> <dd>Configures the number of times the animation should repeat; you can specify <code>infinite</code> to repeat the animation indefinitely.</dd> <dt>{{ cssxref("animation-name") }}</dt> <dd>Specifies the name of the {{ cssxref("@keyframes") }} at-rule describing the animation's keyframes.</dd> <dt>{{ cssxref("animation-play-state") }}</dt> <dd>Lets you pause and resume the animation sequence.</dd> <dt>{{ cssxref("animation-timing-function") }}</dt> <dd>Configures the timing of the animation; that is, how the animation transitions through keyframes, by establishing acceleration curves.</dd>
+</dl>
+<h2>Defining the animation sequence using keyframes</h2>
+<p>Once you've configured the animation's timing, you need to define the appearance of the animation. This is done by establishing two or more keyframes using the {{ cssxref("@keyframes") }} at-rule. Each keyframe describes how the animated element should render at a given time during the animation sequence.</p>
+<p>Since the timing of the animation is defined in the CSS style that configures the animation, keyframes use a {{ cssxref("percentage") }} to indicate the time during the animation sequence at which they take place. 0% indicates the first moment of the animation sequence, while 100% indicates the final state of the animation. These two times must be specified so that the browser knows where the animation should start and finish; because they're so important, these two times have special aliases: <code>from</code> and <code>to</code>.</p>
+<p>You can optionally include additional keyframes that describe intermediate steps along the way from the starting point to the ending point of the animation.</p>
+<h2>Examples</h2>
+<div class="note"><strong>Note:</strong> The examples here use the <code>-moz-</code> prefix on the animation CSS properties for brevity; the live examples you can click to see in your browser also include the <code>-webkit-</code> prefixed versions.</div>
+<h3>Making text slide across the browser window</h3>
+<p>This simple example styles the {{ HTMLElement("h1") }} element so that the text slides in from off the right edge of the browser window.</p>
+<pre class="brush: css">&lt;style type="text/css"&gt;
+  h1 {
+    -moz-animation-duration: 3s;
+    -moz-animation-name: slidein;
+  }
+  
+  @-moz-keyframes slidein {
+    from {
+      margin-left:100%;
+      width:300%
+    }
+    
+    to {
+      margin-left:0%;
+      width:100%;
+    }
+  }
+&lt;/style&gt;
+</pre>
+<p>The style for the {{ HTMLElement("h1") }} element here specifies that the animation should take 3 seconds to execute from start to finish, using the {{ cssxref("animation-duration") }} property, and that the name of the {{ cssxref("@keyframes") }} at-rule defining the keyframes for the animation sequence is named "slidein".</p>
+<p>If we wanted any custom styling on the {{ HTMLElement("h1") }} element to appear in browsers that don't support CSS animations, we would include it here as well; however, in this case we don't want any custom styling other than the animation effect.</p>
+<p>The keyframes are defined using the {{ cssxref("@keyframes") }} at-rule. In this case, we have just two keyframes. The first occurs at 0% (using the alias <code>from</code>). Here, we configure the left margin of the element to be at 100% (that is, at the far right edge of the containing element), and the width of the element to be 300% (or three times the width of the containing element). This causes the first frame of the animation to have the header drawn off the right edge of the browser window.</p>
+<p>The second (and final) keyframe occurs at 100% (using the alias <code>to</code>). The left margin is set to 0% and the width of the element is set to 100%. This causes the header to finish its animation flush against the left edge of the content area.</p>
+<p>{{ CSSLiveSample("animations/cssanim1.html") }}</p>
+<h4>Adding another keyframe</h4>
+<p>Let's add another keyframe to the previous example's animation. Let's say we want the header's font size to increase as it moves from right to left for a while, then to decrease back to its original size. That's as simple as adding this keyframe:</p>
+<pre class="brush: css">75% {
+  font-size:300%;
+  margin-left:25%;
+  width:150%;
+}
+</pre>
+<p>This tells the browser that 75% of the way through the animation sequence, the header should have its left margin at 25% and the width should be 150%.</p>
+<p>{{ CSSLiveSample("animations/cssanim2.html") }}</p>
+<h4>Making it repeat</h4>
+<p>To make the animation repeat itself, simply use the {{ cssxref("animation-iteration-count") }} property to indicate how many times to repeat the animation. In this case, let's use <code>infinite</code> to have the animation repeat indefinitely:</p>
+<pre class="brush: css">h1 {
+  -moz-animation-duration: 3s;
+  -moz-animation-name: slidein;
+  -moz-animation-iteration-count: infinite;
+}
+</pre>
+<p>{{ CSSLiveSample("animations/cssanim3.html") }}</p>
+<h4>Making it move back and forth</h4>
+<p>That made it repeat, but it's very odd having it jump back to the start each time it begins animating. What we really want is for it to move back and forth across the screen. That's easily accomplished by setting {{ cssxref("animation-direction") }} to <code>alternate</code>:</p>
+<pre class="brush: css">h1 {
+  -moz-animation-duration: 3s;
+  -moz-animation-name: slidein;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+}
+</pre>
+<p>{{ CSSLiveSample("animations/cssanim4.html") }}</p>
+<h3>Using animation events</h3>
+<p>You can get additional control over animations -- as well as useful information about them -- by making use of animation events. These events, represented by the {{ domxref("event/AnimationEvent", "AnimationEvent") }} object, can be used to detect when animations start, finish, and begin a new iteration. Each event includes the time at which it occurred as well as the name of the animation that triggered the event.</p>
+<p>We'll modify the sliding text example to output some information about each animation event when it occurs, so we can get a look at how they work.</p>
+<h4>Adding the animation event listeners</h4>
+<p>We'll use JavaScript code to listen for all three possible animation events. The <code>setup()</code> function configures our event listeners; we call it when the document is first loaded in order to set things up.</p>
+<pre class="brush: js">function setup() {
+  var e = document.getElementById("watchme");
+  e.addEventListener("animationstart", listener, false);
+  e.addEventListener("animationend", listener, false);
+  e.addEventListener("animationiteration", listener, false);
+  
+  var e = document.getElementById("watchme");
+  e.className = "slidein";
+}
+</pre>
+<p>This is pretty standard code; you can get details on how it works in the documentation for {{ domxref("element.addEventListener()") }}. The last thing the setup() function here does is set the <code>class</code> on the element we'll be animating to "slidein"; we do this to start the animation.</p>
+<p>Why? Because the <code>animationstart</code> event fires as soon as the animation starts, and in our case, that happens before our code runs. So we'll start the animation ourselves by setting the class of the element to the style that gets animated after the fact.</p>
+<h4>Receiving the events</h4>
+<p>The events get delivered to the <code>listener()</code> function, which is shown below.</p>
+<pre class="brush: js">function listener(e) {
+  var l = document.createElement("li");
+  switch(e.type) {
+    case "animationstart":
+      l.innerHTML = "Started: elapsed time is " + e.elapsedTime;
+      break;
+    case "animationend":
+      l.innerHTML = "Ended: elapsed time is " + e.elapsedTime;
+      break;
+    case "animationiteration":
+      l.innerHTML = "New loop started at time " + e.elapsedTime;
+      break;
+  }
+  document.getElementById("output").appendChild(l);
+}
+</pre>
+<p>This code, too, is very simple. It simply looks at the {{ domxref("event.type") }} to determine which kind of animation event occurred, then adds an appropriate note the {{ HTMLElement("ul") }} (unordered list) we're using to log these events.</p>
+<p>The output, when all is said and done, looks something like this:</p>
+<ul id="output"> <li>Started: elapsed time is 0</li> <li>New loop started at time 3.01200008392334</li> <li>New loop started at time 6.00600004196167</li> <li>Ended: elapsed time is 9.234000205993652</li>
+</ul>
+<p>Note that the times are very close to, but not exactly, those expected given the timing established when the animation was configured. Note also that after the final iteration of the animation, the <code>animationiteration</code> event isn't sent; instead, the <code>animationend</code> event is sent.</p>
+<h4>The HTML</h4>
+<p>Just for the sake of completeness, here's the HTML that displays the page content, including the list into which the script inserts information about the received events:</p>
+<pre class="brush: html">&lt;body onload="setup()"&gt;
+  &lt;h1 id="watchme"&gt;Watch me move&lt;/h1&gt;
+  &lt;p&gt;This example shows how to use CSS animations to make &lt;code&gt;H1&lt;/code&gt; elements
+  move across the page.&lt;/p&gt;
+  &lt;p&gt;In addition, we output some text each time an animation event fires, so you can see them in action.&lt;/p&gt;
+  &lt;ul id="output"&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+</pre>
+<p>{{ CSSLiveSample("animations/animevents.html") }}</p>
+<h2>See also</h2>
+<ul> <li>{{ domxref("Event/AnimationEvent", "AnimationEvent") }}</li> <li>{{ CSS_Reference:animation() }}</li>
+</ul></div>
+      </div>
+    </details>
+  </article>
+    </div>
+   </div>
+</section>
+
+<section id="footbar">
+<div class="wrap">
+  <p>
+  Is MDN helpful to you? Please <a href="https://developer.mozilla.org/en-US/docs/Project:Feedback">share your feedback</a> with us. Or join our <a id="dev-mdc-link" href="https://lists.mozilla.org/listinfo/dev-mdc">mailing list about improving MDN content</a>.  </p>
+</div>
+</section>
+<footer id="site-info" class="footer" role="contentinfo">
+<div class="wrap">
+    <div id="legal">
+      <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-tiny.png" alt="" width="42" height="48">
+      <p id="copyright">&copy; 2005 - 2013 Mozilla Developer Network and individual contributors</p>
+      <p>
+      Content is available under <a href="https://developer.mozilla.org/en-US/docs/Project:Copyrights">these licenses</a>      &bull; <a href="https://developer.mozilla.org/en-US/docs/Project:About">About MDN</a>
+      &bull; <a href="https://github.com/mozilla/kuma">Contribute to the code</a>
+      &bull; <a href="https://www.mozilla.org/en-US/privacy">Privacy Policy</a>
+    </div>
+                    <form class="languages go" method="get" action="40539#">
+  <label for="language">Other languages:</label>
+  <select id="language" name="lang" dir="ltr">
+    <option value="ar" >
+        عربي
+      </option><option value="bn-BD" >
+        বাংলা (বাংলাদেশ)
+      </option><option value="ca" >
+        català
+      </option><option value="cs" >
+        Čeština
+      </option><option value="de" >
+        Deutsch
+      </option><option value="el" >
+        Ελληνικά
+      </option><option value="en-US" selected>
+        English
+      </option><option value="es" >
+        Español
+      </option><option value="fa" >
+        فارسی
+      </option><option value="fi" >
+        suomi
+      </option><option value="fr" >
+        Français
+      </option><option value="fy-NL" >
+        Frysk
+      </option><option value="ga-IE" >
+        Gaeilge (Éire)
+      </option><option value="he" >
+        עברית
+      </option><option value="hr" >
+        Hrvatski
+      </option><option value="hu" >
+        Magyar
+      </option><option value="id" >
+        Bahasa Indonesia
+      </option><option value="it" >
+        Italiano
+      </option><option value="ja" >
+        日本語
+      </option><option value="ka" >
+        ქართული
+      </option><option value="ko" >
+        한국어
+      </option><option value="ms" >
+        ﺐﻫﺎﺳ ﻡﻼﻳﻭ
+      </option><option value="nl" >
+        Nederlands
+      </option><option value="pl" >
+        Polski
+      </option><option value="pt-BR" >
+        Português (do Brasil)
+      </option><option value="pt-PT" >
+        Português (Europeu)
+      </option><option value="ro" >
+        română
+      </option><option value="ru" >
+        Русский
+      </option><option value="sq" >
+        Shqip
+      </option><option value="th" >
+        ไทย
+      </option><option value="tr" >
+        Türkçe
+      </option><option value="vi" >
+        Tiếng Việt
+      </option><option value="zh-CN" >
+        中文 (简体)
+      </option><option value="zh-TW" >
+        正體中文 (繁體)
+      </option>  </select>
+  <noscript><button type="submit">Go</button></noscript>
+</form>          </div>
+</footer>
+
+<script src="https://developer.mozilla.org/en-US/jsi18n/build:0151529"></script>
+  <script src="https://mozorg.cdn.mozilla.net/en-US/tabzilla/tabzilla.js" async></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  <script src="https://login.persona.org/include.js" type="text/javascript"></script>
+  <script src="https://developer.cdn.mozilla.net/media/js/mdn-min.js?build=0151529"></script>
+      <script src="https://developer.cdn.mozilla.net/media/js/wiki-min.js?build=0151529"></script>
+  
+  <script type="text/javascript">
+    // Event tracking for the new menu
+    $(function() {
+      $('#nav-main').on('click', 'a', function(e) {
+        window._gaq && _gaq.push(['_trackEvent', 'Menu', 'Click', e.target.innerHTML, e.target.href]);
+      });
+    });
+  </script>
+
+<script src="https://developer.mozilla.org/en-US/waffles.js" type="text/javascript" async></script>
+</body>
+</html>
+ 

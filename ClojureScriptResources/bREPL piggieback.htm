@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html class=" js no-flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-csspositionsticky filereader eventsource xhr2" style=""><script id="bug.surrogate">var urchinTracker=function(){},_gaq={push:function(){try {if(arguments[0][0]=='_link')window.location.href=arguments[0][1]}catch(er){}}},_gat={_createTracker:function(){}, _getTracker:function(){return{__noSuchMethod__:function(){},_link:function(o){if(o)location.href=o;},_linkByPost:function(){return true;},_getLinkerUrl:function(o){return o;},_trackEvent:function(){}}}}</script><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>piggieback/README.md at master · cemerick/piggieback · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">
+    <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="fe16.rs.github.com">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+    
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id">
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.com/favicon.ico">
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="Ewy9qaiPvT9dv+ll8UZBZQLTQAKVHdyCXn7QzJ/MC7c=" name="csrf-token">
+
+    <link href="bREPL%20piggieback_files/github-f913aa6cea9c2be873a594b06df4bdd56c61a47a.css" media="all" rel="stylesheet" type="text/css">
+    <link href="bREPL%20piggieback_files/github2-73cb9c180ee487edb3f37f7f9b1cbf7bd6ebe204.css" media="all" rel="stylesheet" type="text/css">
+    
+
+
+      <script src="bREPL%20piggieback_files/frameworks-e8054ad804a1cf9e9849130fee5a4a5487b663ed.js" type="text/javascript"></script>
+      <script src="bREPL%20piggieback_files/github-97664a532fc6064b297cd0484a0b7bfda19f46b4.js" type="text/javascript"></script>
+      
+      <meta http-equiv="x-pjax-version" content="6eeba794374d861b396b25d9719604b1">
+
+        <link data-pjax-transient="" rel="permalink" href="https://github.com/cemerick/piggieback/blob/4d6dc0b4493937d5319837f90f19cd116767b2c3/README.md">
+  <meta property="og:title" content="piggieback">
+  <meta property="og:type" content="githubog:gitrepository">
+  <meta property="og:url" content="https://github.com/cemerick/piggieback">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/gravatars/gravatar-user-420.png">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:description" content="piggieback - nREPL support for ClojureScript REPLs">
+
+  <meta name="description" content="piggieback - nREPL support for ClojureScript REPLs">
+
+  <meta content="47489" name="octolytics-dimension-user_id"><meta content="cemerick" name="octolytics-dimension-user_login"><meta content="5361077" name="octolytics-dimension-repository_id"><meta content="cemerick/piggieback" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="5361077" name="octolytics-dimension-repository_network_root_id"><meta content="cemerick/piggieback" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/cemerick/piggieback/commits/master.atom" rel="alternate" title="Recent Commits to piggieback:master" type="application/atom+xml">
+
+  <script src="bREPL%20piggieback_files/api.js" async="" type="text/javascript"></script></head>
+
+
+  <body class="logged_out page-blob linux vis-public env-production ">
+
+    <div class="wrapper">
+      
+      
+      
+
+
+      
+      <div class="header header-logged-out">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions">
+        <a class="button primary" href="https://github.com/signup">Sign up</a>
+      <a class="button" href="https://github.com/login?return_to=%2Fcemerick%2Fpiggieback%2Fblob%2Fmaster%2FREADME.md">Sign in</a>
+    </div>
+
+    <div class="command-bar js-command-bar  in-repository">
+
+
+      <ul class="top-nav">
+          <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+        <li class="features"><a href="https://github.com/features">Features</a></li>
+          <li class="enterprise"><a href="https://enterprise.github.com/">Enterprise</a></li>
+          <li class="blog"><a href="https://github.com/blog">Blog</a></li>
+      </ul>
+        <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input data-hotkey=" s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-repo="cemerick/piggieback" data-branch="master" data-sha="4b7e07446d10826a872e3f2aa78ab1536a0ab15f" type="text">
+
+    <input name="nwo" value="cemerick/piggieback" type="hidden">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input class="js-search-this-repository" name="search_target" value="repository" checked="checked" type="radio">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input name="search_target" value="global" type="radio">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span original-title="Show command bar help" class="octicon help tooltipped downwards">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input name="ref" value="cmdform" type="hidden">
+
+</form>
+    </div>
+
+  </div>
+</div>
+
+
+      
+
+
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+
+  <li>
+  <a original-title="You must be signed in to use this feature" href="https://github.com/login?return_to=%2Fcemerick%2Fpiggieback" class="minibutton with-count js-toggler-target star-button entice tooltipped upwards " rel="nofollow">
+  <span class="octicon octicon-star"></span>Star
+</a>
+<a class="social-count js-social-count" href="https://github.com/cemerick/piggieback/stargazers">
+  85
+</a>
+
+  </li>
+
+    <li>
+      <a original-title="You must be signed in to fork a repository" href="https://github.com/login?return_to=%2Fcemerick%2Fpiggieback" class="minibutton with-count js-toggler-target fork-button entice tooltipped upwards" rel="nofollow">
+        <span class="octicon octicon-git-branch"></span>Fork
+      </a>
+      <a href="https://github.com/cemerick/piggieback/network" class="social-count">
+        6
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="https://github.com/cemerick" class="url fn" itemprop="url" rel="author"><span itemprop="title">cemerick</span></a></span><span class="repohead-name-divider">/</span><strong><a href="https://github.com/cemerick/piggieback" class="js-current-repository js-repo-home-link">piggieback</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+
+      <div class="repository-with-sidebar repo-container">
+
+        <div class="repository-sidebar">
+            
+
+<div class="repo-nav repo-nav-full js-repository-container-pjax js-octicon-loaders">
+  <div class="repo-nav-contents">
+    <ul class="repo-menu">
+      <li original-title="Code" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/piggieback" aria-label="Code" class="js-selected-navigation-item selected" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /cemerick/piggieback">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+        <li original-title="Issues" class="tooltipped leftwards">
+          <a href="https://github.com/cemerick/piggieback/issues" aria-label="Issues" class="js-selected-navigation-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /cemerick/piggieback/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="counter">5</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+</a>        </li>
+
+      <li original-title="Pull Requests" class="tooltipped leftwards"><a href="https://github.com/cemerick/piggieback/pulls" aria-label="Pull Requests" class="js-selected-navigation-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /cemerick/piggieback/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="counter">0</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+
+    </ul>
+    <div class="repo-menu-separator"></div>
+    <ul class="repo-menu">
+
+      <li original-title="Pulse" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/piggieback/pulse" aria-label="Pulse" class="js-selected-navigation-item" data-pjax="true" data-selected-links="pulse /cemerick/piggieback/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+      <li original-title="Graphs" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/piggieback/graphs" aria-label="Graphs" class="js-selected-navigation-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /cemerick/piggieback/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+      <li original-title="Network" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/piggieback/network" aria-label="Network" class="js-selected-navigation-item js-disable-pjax" data-selected-links="repo_network /cemerick/piggieback/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="bREPL%20piggieback_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+    </ul>
+
+  </div>
+</div>
+
+            <div class="only-with-full-nav">
+              
+
+  
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+
+  <input class="clone js-url-field" value="https://github.com/cemerick/piggieback.git" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/cemerick/piggieback.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+
+  <input class="clone js-url-field" value="https://github.com/cemerick/piggieback" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/cemerick/piggieback" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+    <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+    <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>,
+  and <a href="https://help.github.com/articles/which-remote-url-should-i-use">other methods.</a>
+</p>
+
+
+
+                <a href="https://github.com/cemerick/piggieback/archive/master.zip" class="minibutton sidebar-button" title="Download this repository as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+            </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+
+
+<!-- blob contrib key: blob_contributors:v21:309a3fb8b4652c90355e72faa31350be -->
+<!-- blob contrib frag key: views10/v8/blob_contributors:v21:309a3fb8b4652c90355e72faa31350be -->
+
+<p title="This is a placeholder element" class="js-history-link-replace hidden"></p>
+
+<a href="https://github.com/cemerick/piggieback/find/master" data-pjax="" data-hotkey="t" style="display:none">Show File Finder</a>
+
+<div class="file-navigation">
+  
+
+
+<div class="select-menu js-menu-container js-select-menu">
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-master-branch="master" data-ref="master">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" type="text">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/piggieback/blob/master/README.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" data-skip-pjax="true" rel="nofollow" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/piggieback/blob/0.0.5/README.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="0.0.5" data-skip-pjax="true" rel="nofollow" title="0.0.5">0.0.5</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/piggieback/blob/0.0.4/README.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="0.0.4" data-skip-pjax="true" rel="nofollow" title="0.0.4">0.0.4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/piggieback/blob/0.0.3/README.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="0.0.3" data-skip-pjax="true" rel="nofollow" title="0.0.3">0.0.3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/piggieback/blob/0.0.2/README.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="0.0.2" data-skip-pjax="true" rel="nofollow" title="0.0.2">0.0.2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/piggieback/blob/0.0.1/README.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="0.0.1" data-skip-pjax="true" rel="nofollow" title="0.0.1">0.0.1</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+  <div class="breadcrumb">
+    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/cemerick/piggieback" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">piggieback</span></a></span></span><span class="separator"> / </span><strong class="final-path">README.md</strong> <span class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="README.md" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+  
+  <div class="commit file-history-tease">
+    <img class="main-avatar" src="bREPL%20piggieback_files/b8ee952abb6620c1c93b3acb46cd391c.jpe" width="24" height="24">
+    <span class="author"><a href="https://github.com/cemerick" rel="author">cemerick</a></span>
+    <time class="js-relative-date" datetime="2013-06-26T12:46:12-07:00" title="2013-06-26 12:46:12">a month ago</time>
+    <div class="commit-title">
+        <a href="https://github.com/cemerick/piggieback/commit/4d6dc0b4493937d5319837f90f19cd116767b2c3" class="message" data-pjax="true" title="0.0.5">0.0.5</a>
+    </div>
+
+    <div class="participation">
+      <p class="quickstat"><a href="#blob_contributors_box" rel="facebox"><strong>1</strong> contributor</a></p>
+      
+    </div>
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list">
+        <li class="facebox-user-list-item">
+          <img src="bREPL%20piggieback_files/b8ee952abb6620c1c93b3acb46cd391c.jpe" width="24" height="24">
+          <a href="https://github.com/cemerick">cemerick</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+<div id="files" class="bubble">
+  <div class="file">
+    <div class="meta">
+      <div class="info">
+        <span class="icon"><b class="octicon octicon-file-text"></b></span>
+        <span class="mode" title="File Mode">file</span>
+          <span>252 lines (203 sloc)</span>
+        <span>9.384 kb</span>
+      </div>
+      <div class="actions">
+        <div class="button-group">
+              <a original-title="You must be signed in to make or propose changes" class="minibutton js-entice entice" href="#" data-entice="You must be signed in to make or propose changes">Edit</a>
+          <a href="https://github.com/cemerick/piggieback/raw/master/README.md" class="button minibutton " id="raw-url">Raw</a>
+            <a href="https://github.com/cemerick/piggieback/blame/master/README.md" class="button minibutton ">Blame</a>
+          <a href="https://github.com/cemerick/piggieback/commits/master/README.md" class="button minibutton " rel="nofollow">History</a>
+        </div><!-- /.button-group -->
+            <a original-title="You must be signed in and on a branch to make or propose changes" class="minibutton danger empty-icon js-entice entice" href="#" data-entice="You must be signed in and on a branch to make or propose changes">
+            Delete
+          </a>
+      </div><!-- /.actions -->
+
+    </div>
+      
+  <div id="readme" class="blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="piggieback-" class="anchor" href="#piggieback-"><span class="octicon octicon-link"></span></a>Piggieback <a href="http://travis-ci.org/#%21/cemerick/piggieback/builds"><img src="bREPL%20piggieback_files/piggieback.png" alt="Travis CI status" style="max-width:100%;"></a>
+</h1>
+
+<p><a href="http://github.com/clojure/tools.nrepl">nREPL</a> middleware that enables the
+bootstrap of a ClojureScript REPL on top of an nREPL session.</p>
+
+<h2>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h2>
+
+<p>The default ClojureScript REPL (as described in the <a href="https://github.com/clojure/clojurescript/wiki/Quick-Start">"quick
+start"</a> tutorial)
+requires/assumes that it is running in a terminal environment; specifically:</p>
+
+<ul>
+<li>that code to be evaluated is provided via <code>*in*</code>, and that results are</li>
+<li>primarily printed to <code>*out*</code> that every REPL evaluation is performed in the</li>
+<li>
+<em>same</em> thread as that which started the REPL</li>
+</ul><p>nREPL does not provide for such things, and so starting the default
+ClojureScript REPL in an nREPL session yields a massive pile of <code>No Context
+associated with current Thread</code> errors, and resulting exceptions attempting to
+evaluate <code>core.cljs</code> and co.</p>
+
+<p>Piggieback provides an alternative ClojureScript REPL entry point
+(<code>cemerick.piggieback/cljs-repl</code>) that lifts a ClojureScript REPL on top of any
+nREPL session, while accepting all the same options as <code>cljs.repl/repl</code>.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Piggieback is available in Maven Central. Add this <code>:dependency</code> to your Leiningen
+<code>project.clj</code>:</p>
+
+<div class="highlight"><pre><span class="p">[</span><span class="nv">com.cemerick/piggieback</span> <span class="s">"0.0.5"</span><span class="p">]</span>
+</pre></div>
+
+<p>Or, add this to your Maven project's <code>pom.xml</code>:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.cemerick<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>piggieback<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>0.0.5<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</pre></div>
+
+<p>Piggieback is compatible with Clojure 1.4.0+, and <em>requires</em> ClojureScript
+<code>0.0-1835</code> or later.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Piggieback is nREPL middleware, so you need to add it to your nREPL server's
+middleware stack.</p>
+
+<p>If you're using Leniningen v2.0+ (**v2.0-preview9** is the minimum
+required to use this configuration), you can add
+this to your <code>project.clj</code> to automagically mix the Piggieback middleware into
+the stack that <code>lein repl</code> will use when starting nREPL:</p>
+
+<div class="highlight"><pre><span class="ss">:repl-options</span> <span class="p">{</span><span class="ss">:nrepl-middleware</span> <span class="p">[</span><span class="nv">cemerick.piggieback/wrap-cljs-repl</span><span class="p">]}</span>
+</pre></div>
+
+<p>If you're not starting nREPL through Leiningen (e.g. maybe you're starting up
+an nREPL server from within an application), you can achieve the same thing by
+specifying that the <code>wrap-cljs-repl</code> middleware be mixed into nREPL's default
+handler:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">require</span> <span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.nrepl.server</span> <span class="ss">:as</span> <span class="nv">server</span><span class="p">]</span>
+         <span class="o">'</span><span class="p">[</span><span class="nv">cemerick.piggieback</span> <span class="ss">:as</span> <span class="nv">pback</span><span class="p">])</span>
+
+<span class="p">(</span><span class="nf">server/start-server</span>
+  <span class="ss">:handler</span> <span class="p">(</span><span class="nf">server/default-handler</span> <span class="o">#</span><span class="ss">'pback/wrap-cljs-repl</span><span class="p">)</span>
+  <span class="c1">; ...additional `start-server` options as desired</span>
+  <span class="p">)</span>
+</pre></div>
+
+<p>(Alternatively, you can add <code>wrap-cljs-repl</code> to your application's hand-tweaked
+nREPL handler.  Keep two things in mind when doing so:</p>
+
+<ul>
+<li>Piggieback needs to be "above" something that can evaluate code, like
+<code>clojure.tools.nrepl.middleware.interruptible-eval/interruptible-eval</code>.</li>
+<li>Piggieback depends upon persistent REPL sessions, like those provided by
+<code>clojure.tools.nrepl.middleware.session/session</code>.)</li>
+</ul><p>With Piggieback added to your nREPL middleware stack, you can start a
+ClojureScript REPL from any nREPL-capable client (e.g.
+<a href="http://leiningen.org/">Leiningen</a>,
+<a href="https://github.com/trptcolin/reply/">REPL-y</a>,
+<a href="http://code.google.com/p/counterclockwise/">Counterclockwise</a>,
+<a href="https://github.com/kingtim/nrepl.el">nrepl.el</a>, and so on).</p>
+
+<h3>
+<a name="rhino-clojurescript-environment-default" class="anchor" href="#rhino-clojurescript-environment-default"><span class="octicon octicon-link"></span></a>Rhino ClojureScript Environment (default)</h3>
+
+<p>So, with Leiningen, and using the Rhino ClojureScript environment (the default
+that you get when you e.g. run the <code>script/repljs</code> script in the ClojureScript
+source tree, or follow the <a href="https://github.com/clojure/clojurescript/wiki/Quick-Start">'Quick Start' ClojureScript
+tutorial</a>):</p>
+
+<div class="highlight"><pre><span class="nv">la-mer</span><span class="ss">:piggieback</span> <span class="nv">chas$</span> <span class="nv">lein2</span> <span class="nv">repl</span>
+<span class="nv">nREPL</span> <span class="nv">server</span> <span class="nv">started</span> <span class="nv">on</span> <span class="nv">port</span> <span class="mi">56393</span>
+<span class="nv">REPL-y</span> <span class="mf">0.1</span><span class="nv">.0-beta10</span>
+<span class="nv">Clojure</span> <span class="mf">1.4</span><span class="nv">.0</span>
+    <span class="nv">Exit</span><span class="err">:</span> <span class="nv">Control+D</span> <span class="nb">or </span><span class="p">(</span><span class="nf">exit</span><span class="p">)</span> <span class="nb">or </span><span class="p">(</span><span class="nf">quit</span><span class="p">)</span>
+<span class="nv">Commands</span><span class="err">:</span> <span class="p">(</span><span class="nf">user/help</span><span class="p">)</span>
+    <span class="nv">Docs</span><span class="err">:</span> <span class="p">(</span><span class="nb">doc </span><span class="nv">function-name-here</span><span class="p">)</span>
+          <span class="p">(</span><span class="nb">find-doc </span><span class="s">"part-of-name-here"</span><span class="p">)</span>
+  <span class="nv">Source</span><span class="err">:</span> <span class="p">(</span><span class="nf">source</span> <span class="nv">function-name-here</span><span class="p">)</span>
+          <span class="p">(</span><span class="nf">user/sourcery</span> <span class="nv">function-name-here</span><span class="p">)</span>
+ <span class="nv">Javadoc</span><span class="err">:</span> <span class="p">(</span><span class="nf">javadoc</span> <span class="nv">java-object-or-class-here</span><span class="p">)</span>
+<span class="nv">Examples</span> <span class="nv">from</span> <span class="nv">clojuredocs.org</span><span class="err">:</span> <span class="p">[</span><span class="nv">clojuredocs</span> <span class="nb">or </span><span class="nv">cdoc</span><span class="p">]</span>
+          <span class="p">(</span><span class="nf">user/clojuredocs</span> <span class="nv">name-here</span><span class="p">)</span>
+          <span class="p">(</span><span class="nf">user/clojuredocs</span> <span class="s">"ns-here"</span> <span class="s">"name-here"</span><span class="p">)</span>
+<span class="nv">user=&gt;</span> <span class="p">(</span><span class="nf">cemerick.piggieback/cljs-repl</span><span class="p">)</span>
+<span class="nv">Type</span> <span class="o">`</span><span class="ss">:cljs/quit</span><span class="o">`</span> <span class="nv">to</span> <span class="nv">stop</span> <span class="nv">the</span> <span class="nv">ClojureScript</span> <span class="nv">REPL</span>
+<span class="nv">nil</span>
+<span class="nv">cljs.user=&gt;</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">1</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="nv">cljs.user=&gt;</span> <span class="p">(</span><span class="kd">defn </span><span class="nv">&lt;3</span> <span class="p">[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">a</span> <span class="s">" &lt;3 "</span> <span class="nv">b</span> <span class="s">"!"</span><span class="p">))</span>
+<span class="o">#</span><span class="nv">&lt;</span>
+<span class="nv">function</span> <span class="nv">_LT_3</span><span class="p">(</span><span class="nf">a</span>, <span class="nv">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">return</span> <span class="p">[</span><span class="nv">cljs.core.str</span><span class="p">(</span><span class="nf">a</span><span class="p">)</span>, <span class="nv">cljs.core.str</span><span class="p">(</span><span class="s">" &lt;3 "</span><span class="p">)</span>, <span class="nv">cljs.core.str</span><span class="p">(</span><span class="nf">b</span><span class="p">)</span>, <span class="nv">cljs.core.str</span><span class="p">(</span><span class="s">"!"</span><span class="p">)]</span><span class="nv">.join</span><span class="p">(</span><span class="s">""</span><span class="p">)</span><span class="c1">;</span>
+<span class="p">}</span>
+<span class="nv">&gt;</span>
+<span class="nv">nil</span>
+<span class="nv">cljs.user=&gt;</span> <span class="p">(</span><span class="nf">&lt;3</span> <span class="s">"nREPL"</span> <span class="s">"ClojureScript"</span><span class="p">)</span>
+<span class="s">"nREPL &lt;3 ClojureScript!"</span>
+<span class="nv">cljs.user=&gt;</span> 
+</pre></div>
+
+<p>Note that the REPL prompt changed after invoking
+<code>cemerick.piggieback/cljs-repl</code>; after that point, all expressions sent to the
+REPL are evaluated within the ClojureScript environment.  Of course, you can
+concurrently take advantage of all of nREPL's other facilities, including
+connecting to the server with other clients (so as to easily modify Clojure and
+ClojureScript code in the same JVM), and interrupting hung ClojureScript
+invocations:</p>
+
+<div class="highlight"><pre><span class="nv">cljs.user=&gt;</span> <span class="p">(</span><span class="nb">iterate inc </span><span class="mi">0</span><span class="p">)</span>
+<span class="o">^</span><span class="nv">C</span>
+<span class="nv">cljs.user=&gt;</span> <span class="s">"Error evaluating:"</span> <span class="p">(</span><span class="nb">iterate inc </span><span class="mi">0</span><span class="p">)</span> <span class="ss">:as</span> <span class="s">"cljs.core.iterate.call(null,cljs.core.inc,0);\n"</span>
+<span class="nv">java.lang.ThreadDeath</span>
+        <span class="nv">java.lang.Thread.stop</span><span class="p">(</span><span class="nf">Thread.java</span><span class="ss">:776</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.middleware.interruptible_eval$interruptible_eval$fn__374.invoke</span><span class="p">(</span><span class="nf">interruptible_eval.clj</span><span class="ss">:185</span><span class="p">)</span>
+        <span class="nv">cemerick.piggieback$wrap_cljs_repl$fn__2535.invoke</span><span class="p">(</span><span class="nf">piggieback.clj</span><span class="ss">:171</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.middleware.pr_values$pr_values$fn__390.invoke</span><span class="p">(</span><span class="nf">pr_values.clj</span><span class="ss">:17</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.middleware.session$add_stdin$fn__451.invoke</span><span class="p">(</span><span class="nf">session.clj</span><span class="ss">:185</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.middleware.session$session$fn__444.invoke</span><span class="p">(</span><span class="nf">session.clj</span><span class="ss">:164</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.server$handle_STAR_.invoke</span><span class="p">(</span><span class="nf">server.clj</span><span class="ss">:16</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.server$handle.invoke</span><span class="p">(</span><span class="nf">server.clj</span><span class="ss">:25</span><span class="p">)</span>
+        <span class="nv">clojure.tools.nrepl.server$accept_connection$fn__458.invoke</span><span class="p">(</span><span class="nf">server.clj</span><span class="ss">:35</span><span class="p">)</span>
+        <span class="nv">clojure.core$binding_conveyor_fn$fn__3989.invoke</span><span class="p">(</span><span class="nf">core.clj</span><span class="ss">:1819</span><span class="p">)</span>
+        <span class="nv">clojure.lang.AFn.call</span><span class="p">(</span><span class="nf">AFn.java</span><span class="ss">:18</span><span class="p">)</span>
+        <span class="nv">java.util.concurrent.FutureTask$Sync.innerRun</span><span class="p">(</span><span class="nf">FutureTask.java</span><span class="ss">:303</span><span class="p">)</span>
+        <span class="nv">java.util.concurrent.FutureTask.run</span><span class="p">(</span><span class="nf">FutureTask.java</span><span class="ss">:138</span><span class="p">)</span>
+        <span class="nv">java.util.concurrent.ThreadPoolExecutor$Worker.runTask</span><span class="p">(</span><span class="nf">ThreadPoolExecutor.java</span><span class="ss">:886</span><span class="p">)</span>
+        <span class="nv">java.util.concurrent.ThreadPoolExecutor$Worker.run</span><span class="p">(</span><span class="nf">ThreadPoolExecutor.java</span><span class="ss">:908</span><span class="p">)</span>
+        <span class="nv">java.lang.Thread.run</span><span class="p">(</span><span class="nf">Thread.java</span><span class="ss">:680</span><span class="p">)</span>
+<span class="nv">InterruptedException</span>   <span class="nv">java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireInterruptibly</span> <span class="p">(</span><span class="nf">AbstractQueuedSynchronizer.java</span><span class="ss">:1199</span><span class="p">)</span>
+<span class="nv">cljs.user=&gt;</span> <span class="p">(</span><span class="nf">&lt;3</span> <span class="s">"nREPL still"</span> <span class="s">"ClojureScript"</span><span class="p">)</span>
+<span class="s">"nREPL still &lt;3 ClojureScript!"</span>
+</pre></div>
+
+<p>(The ugly <code>ThreadDeath</code> exception will be eliminated eventually.)</p>
+
+<h3>
+<a name="browser-repl" class="anchor" href="#browser-repl"><span class="octicon octicon-link"></span></a>Browser REPL</h3>
+
+<p>Piggieback can be used with other ClojureScript REPL environments as well, such
+as browser-repl.  For example, start with this <code>index.html</code> file in your
+project (by the way, nearly all of this is cribbed from the <a href="https://github.com/clojure/clojurescript/wiki/The-REPL-and-Evaluation-Environments">browser REPL
+tutorial</a>:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Browser-connected REPL through nREPL with Piggieback<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"out/goog/base.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"piggieback_browser.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"afield"</span> <span class="na">id=</span><span class="s">"afield"</span><span class="nt">/&gt;</span>      
+      <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="nx">goog</span><span class="p">.</span><span class="nx">require</span><span class="p">(</span><span class="s1">'piggieback_browser'</span><span class="p">);</span>
+      <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+<p>Now create <code>piggieback_browser.cljs</code>:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">ns </span><span class="nv">piggieback-browser</span>
+  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clojure.browser.repl</span> <span class="ss">:as</span> <span class="nv">repl</span><span class="p">]))</span>
+<span class="p">(</span><span class="nf">repl/connect</span> <span class="s">"http://localhost:9000/repl"</span><span class="p">)</span>
+</pre></div>
+
+<p>…and compile it:</p>
+
+<pre><code>$CLOJURESCRIPT/bin/cljsc piggieback_browser.cljs &gt; piggieback_browser.js
+</code></pre>
+
+<p>Now start your ClojureScript REPL through Piggieback; but, this time, use the
+browser-repl environment instead of the Rhino default:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">require</span> <span class="ss">'cljs.repl.browser</span><span class="p">)</span>
+
+<span class="p">(</span><span class="nf">cemerick.piggieback/cljs-repl</span>
+  <span class="ss">:repl-env</span> <span class="p">(</span><span class="nb">doto </span><span class="p">(</span><span class="nf">cljs.repl.browser/repl-env</span> <span class="ss">:port</span> <span class="mi">9000</span><span class="p">)</span>
+              <span class="nv">cljs.repl/-setup</span><span class="p">))</span>
+</pre></div>
+
+<p>Now go to <a href="http://localhost:9000/">http://localhost:9000</a>; note that you <em>must</em> access the
+<code>index.html</code> page you created earlier through the same server that it will
+connect to the browser-repl through due to the JavaScript "same-origin" policy.
+Doing anything else (such as opening the <code>index.html</code> file from disk directly)
+will <em>not</em> work, and will probably result in your ClojureScript/nREPL
+session being hung permanently with no feedback.</p>
+
+<p>Once the browser-repl is connected, we evaluate ClojureScript expressions in the
+browser:</p>
+
+<div class="highlight"><pre><span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">set!</span> <span class="p">(</span><span class="nf">.-value</span> <span class="p">(</span><span class="nf">goog.dom/getElement</span> <span class="s">"afield"</span><span class="p">))</span> <span class="s">"it works!"</span><span class="p">)</span>
+<span class="s">"it works!"</span>
+<span class="nv">=&gt;</span> <span class="p">(</span><span class="nf">.-value</span> <span class="p">(</span><span class="nf">goog.dom/getElement</span> <span class="s">"afield"</span><span class="p">))</span>
+<span class="s">"it works!"</span>
+</pre></div>
+
+<p>…and so on.</p>
+
+<p>(Huge thanks to <a href="http://twitter.com/xeqixeqi">Nelson Morris</a> for doing the
+initial experimentation with Piggieback + browser-repl, and for helping me
+puzzle out all sorts of ClojureScript difficulty I had along the way.)</p>
+
+<h2>
+<a name="need-help" class="anchor" href="#need-help"><span class="octicon octicon-link"></span></a>Need Help?</h2>
+
+<p>Send a message to the <a href="http://groups.google.com/group/clojure-tools">clojure-tools</a>
+mailing list, or ping <code>cemerick</code> on freenode irc or 
+<a href="http://twitter.com/cemerick">twitter</a> if you have questions
+or would like to contribute patches.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright © 2012-2013 Chas Emerick and other contributors.</p>
+
+<p>Distributed under the Eclipse Public License, the same as Clojure.</p></article>
+  </div>
+
+  </div>
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" class="js-jump-to-line" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" class="js-jump-to-line-form">
+    <input class="linejump-input js-jump-to-line-field" placeholder="Jump to line…" autofocus="" type="text">
+    <button type="submit" class="button">Go</button>
+  </form>
+</div>
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2013 <span title="0.14326s from fe16.rs.github.com">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/cemerick/piggieback/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a original-title="Exit Zen Mode" href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a original-title="Switch themes" href="#" class="theme-switcher js-theme-switcher tooltipped leftwards">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+    
+  
+
+
+<div original-title="" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;" data-clipboard-ready="true" class="global-zeroclipboard-container" id="global-zeroclipboard-html-bridge">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="https://github.global.ssl.fastly.net/flash/ZeroClipboard.swf?nocache=1374979515375">         <param name="allowScriptAccess" value="always">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedDomain=github.com">         <embed src="bREPL%20piggieback_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedDomain=github.com" scale="exactfit" width="100%" height="100%">                </object></div>    <div class="facebox" id="facebox" style="display:none;">       <div class="facebox-popup">         <div class="facebox-content">         </div>         <button type="button" class="facebox-close">           <span class="octicon octicon-remove-close"></span>         </button>       </div>     </div></body></html>

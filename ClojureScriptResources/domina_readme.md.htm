@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html class=" js no-flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-csspositionsticky filereader eventsource xhr2" style=""><script id="bug.surrogate">var urchinTracker=function(){},_gaq={push:function(){try {if(arguments[0][0]=='_link')window.location.href=arguments[0][1]}catch(er){}}},_gat={_createTracker:function(){}, _getTracker:function(){return{__noSuchMethod__:function(){},_link:function(o){if(o)location.href=o;},_linkByPost:function(){return true;},_getLinkerUrl:function(o){return o;},_trackEvent:function(){}}}}</script><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>domina/readme.md at master · levand/domina</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">
+    <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="fe16.rs.github.com">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+    
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="1487241" name="octolytics-actor-id"><meta content="runexec" name="octolytics-actor-login"><meta content="b69d4b81f5f84bb852529f316cdf0b34579c2d5ce0aee32a9f26ab1f795fa284" name="octolytics-actor-hash">
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.com/favicon.ico">
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="C+11gF62PJrD4jr0WyAfKVRCgc8Qjiv+l3xHQuvqR2s=" name="csrf-token">
+
+    <link href="domina_readme.md_files/github-ad8bba1e22f69fcea2f2822cf877987d50a76547.css" media="all" rel="stylesheet" type="text/css">
+    <link href="domina_readme.md_files/github2-02d8290450626963b8341bcf949ab6f840ed92b3.css" media="all" rel="stylesheet" type="text/css">
+    
+
+
+      <script src="domina_readme.md_files/frameworks-e8054ad804a1cf9e9849130fee5a4a5487b663ed.js" type="text/javascript"></script>
+      <script src="domina_readme.md_files/github-a9c9533b5e2305f95bfe7370e447c1c68a68897b.js" type="text/javascript"></script>
+      
+      <meta http-equiv="x-pjax-version" content="2713bbdda7640aef08d34d02c218315e">
+
+        <meta property="og:title" content="domina">
+  <meta property="og:type" content="githubog:gitrepository">
+  <meta property="og:url" content="https://github.com/levand/domina">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/gravatars/gravatar-user-420.png">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:description" content="domina - A DOM manipulation library for ClojureScript">
+
+  <meta name="description" content="domina - A DOM manipulation library for ClojureScript">
+
+  <meta content="70788" name="octolytics-dimension-user_id"><meta content="levand" name="octolytics-dimension-user_login"><meta content="2718714" name="octolytics-dimension-repository_id"><meta content="levand/domina" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="2718714" name="octolytics-dimension-repository_network_root_id"><meta content="levand/domina" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/levand/domina/commits/master.atom" rel="alternate" title="Recent Commits to domina:master" type="application/atom+xml">
+
+  <script src="domina_readme.md_files/api.js"></script><style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style><meta data-pjax-transient="true" name="selected-link" value="repo_source"><link data-pjax-transient="true" rel="permalink" href="https://github.com/levand/domina/blob/1459ab48632be0dd214675418b4fce329bb6b0ff/readme.md"></head>
+
+
+  <body class="logged_in  linux vis-public env-production">
+
+    <div class="wrapper">
+      
+      
+      
+
+
+      <div class="header header-logged-in true">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/">
+  <span class="mega-octicon octicon-mark-github"></span>
+</a>
+
+    <div class="divider-vertical"></div>
+
+    
+  <a original-title="You have unread notifications" href="https://github.com/notifications" class="notification-indicator tooltipped downwards">
+    <span class="mail-status unread"></span>
+  </a>
+  <div class="divider-vertical"></div>
+
+
+      <div class="command-bar js-command-bar  in-repository">
+          <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input data-hotkey=" s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-username="runexec" data-repo="levand/domina" data-branch="master" data-sha="0451799301109c41d7138d3f5d9234d2d3b4d7a0" type="text">
+
+    <input name="nwo" value="levand/domina" type="hidden">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input class="js-search-this-repository" name="search_target" value="repository" checked="checked" type="radio">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input name="search_target" value="global" type="radio">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span original-title="Show command bar help" class="octicon help tooltipped downwards">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input name="ref" value="cmdform" type="hidden">
+
+</form>
+        <ul class="top-nav">
+            <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+            <li><a href="https://gist.github.com/">Gist</a></li>
+            <li><a href="https://github.com/blog">Blog</a></li>
+          <li><a href="https://help.github.com/">Help</a></li>
+        </ul>
+      </div>
+
+    
+
+  
+
+    <ul id="user-links">
+      <li>
+        <a href="https://github.com/runexec" class="name">
+          <img src="domina_readme.md_files/81609937c20aeab3598aea56f1f4f022.png" width="20" height="20"> runexec
+        </a>
+      </li>
+
+        <li>
+          <a original-title="Create a new repo" href="https://github.com/new" id="new_repo" class="tooltipped downwards" aria-label="Create a new repo">
+            <span class="octicon octicon-repo-create"></span>
+          </a>
+        </li>
+
+        <li>
+          <a original-title="Account settings " href="https://github.com/settings/profile" id="account_settings" class="tooltipped downwards" aria-label="Account settings ">
+            <span class="octicon octicon-tools"></span>
+          </a>
+        </li>
+        <li>
+          <a original-title="Sign out" class="tooltipped downwards" href="https://github.com/logout" data-method="post" id="logout" aria-label="Sign out">
+            <span class="octicon octicon-log-out"></span>
+          </a>
+        </li>
+
+    </ul>
+
+
+<div class="js-new-dropdown-contents hidden">
+  
+
+<ul class="dropdown-menu">
+  <li>
+    <a href="https://github.com/new"><span class="octicon octicon-repo-create"></span> New repository</a>
+  </li>
+  <li>
+    <a href="https://github.com/organizations/new"><span class="octicon octicon-organization"></span> New organization</a>
+  </li>
+
+
+
+    <li class="section-title">
+      <span title="levand/domina">This repository</span>
+    </li>
+    <li>
+      <a href="https://github.com/levand/domina/issues/new"><span class="octicon octicon-issue-opened"></span> New issue</a>
+    </li>
+</ul>
+
+</div>
+
+
+    
+  </div>
+</div>
+
+      
+
+      
+
+
+
+
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+    <li class="subscription">
+      <form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" value="C+11gF62PJrD4jr0WyAfKVRCgc8Qjiv+l3xHQuvqR2s=" type="hidden"></div>  <input id="repository_id" name="repository_id" value="2718714" type="hidden">
+
+    <div class="select-menu js-menu-container js-select-menu">
+        <a class="social-count js-social-count" href="https://github.com/levand/domina/watchers">
+          26
+        </a>
+      <span class="minibutton select-menu-button with-count js-menu-target">
+        <span class="js-select-button">
+          <span class="octicon octicon-eye-watch"></span>
+          Watch
+        </span>
+      </span>
+
+      <div class="select-menu-modal-holder">
+        <div class="select-menu-modal subscription-menu-modal js-menu-content">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notification status</span>
+            <span class="octicon octicon-remove-close js-menu-close"></span>
+          </div> <!-- /.select-menu-header -->
+
+          <div class="select-menu-list js-navigation-container">
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input checked="checked" id="do_included" name="do" value="included" type="radio">
+                <h4>Not watching</h4>
+                <span class="description">You only receive notifications for discussions in which you participate or are @mentioned.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-watch"></span>
+                  Watch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_subscribed" name="do" value="subscribed" type="radio">
+                <h4>Watching</h4>
+                <span class="description">You receive notifications for all discussions in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-eye-unwatch"></span>
+                  Unwatch
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <div class="select-menu-item-text">
+                <input id="do_ignore" name="do" value="ignore" type="radio">
+                <h4>Ignoring</h4>
+                <span class="description">You do not receive any notifications for discussions in this repository.</span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <span class="octicon octicon-mute"></span>
+                  Stop ignoring
+                </span>
+              </div>
+            </div> <!-- /.select-menu-item -->
+
+          </div> <!-- /.select-menu-list -->
+
+        </div> <!-- /.select-menu-modal -->
+      </div> <!-- /.select-menu-modal-holder -->
+    </div> <!-- /.select-menu -->
+
+</form>
+    </li>
+
+  <li>
+  
+<div class="js-toggler-container js-social-container starring-container on">
+  <a href="https://github.com/levand/domina/unstar" class="minibutton with-count js-toggler-target star-button starred upwards" title="Unstar this repo" data-remote="true" data-method="post" rel="nofollow">
+    <span class="octicon octicon-star-delete"></span><span class="text">Unstar</span>
+  </a>
+  <a href="https://github.com/levand/domina/star" class="minibutton with-count js-toggler-target star-button unstarred upwards " title="Star this repo" data-remote="true" data-method="post" rel="nofollow">
+    <span class="octicon octicon-star"></span><span class="text">Star</span>
+  </a>
+  <a class="social-count js-social-count" href="https://github.com/levand/domina/stargazers">239</a>
+</div>
+
+  </li>
+
+
+        <li>
+          <a href="https://github.com/levand/domina/fork" class="minibutton with-count js-toggler-target fork-button lighter upwards" title="Fork this repo" rel="nofollow" data-method="post">
+            <span class="octicon octicon-git-branch-create"></span><span class="text">Fork</span>
+          </a>
+          <a href="https://github.com/levand/domina/network" class="social-count">35</a>
+        </li>
+
+
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="https://github.com/levand" class="url fn" itemprop="url" rel="author"><span itemprop="title">levand</span></a></span><span class="repohead-name-divider">/</span><strong><a href="https://github.com/levand/domina" class="js-current-repository js-repo-home-link">domina</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+
+      <div class="repository-with-sidebar repo-container">
+
+        <div class="repository-sidebar">
+            
+
+<div class="repo-nav repo-nav-full js-repository-container-pjax js-octicon-loaders">
+  <div class="repo-nav-contents">
+    <ul class="repo-menu">
+      <li original-title="Code" class="tooltipped leftwards">
+        <a href="https://github.com/levand/domina" aria-label="Code" class="js-selected-navigation-item selected" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /levand/domina">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+        <li original-title="Issues" class="tooltipped leftwards">
+          <a href="https://github.com/levand/domina/issues" aria-label="Issues" class="js-selected-navigation-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /levand/domina/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="counter">17</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+</a>        </li>
+
+      <li original-title="Pull Requests" class="tooltipped leftwards"><a href="https://github.com/levand/domina/pulls" aria-label="Pull Requests" class="js-selected-navigation-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /levand/domina/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="counter">3</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+
+    </ul>
+    <div class="repo-menu-separator"></div>
+    <ul class="repo-menu">
+
+      <li original-title="Pulse" class="tooltipped leftwards">
+        <a href="https://github.com/levand/domina/pulse" aria-label="Pulse" class="js-selected-navigation-item" data-pjax="true" data-selected-links="pulse /levand/domina/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+      <li original-title="Graphs" class="tooltipped leftwards">
+        <a href="https://github.com/levand/domina/graphs" aria-label="Graphs" class="js-selected-navigation-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /levand/domina/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+      <li original-title="Network" class="tooltipped leftwards">
+        <a href="https://github.com/levand/domina/network" aria-label="Network" class="js-selected-navigation-item js-disable-pjax" data-selected-links="repo_network /levand/domina/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="domina_readme.md_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+    </ul>
+
+  </div>
+</div>
+
+            <div class="only-with-full-nav">
+              
+
+  
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+
+  <input class="clone js-url-field" value="https://github.com/levand/domina.git" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/levand/domina.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="ssh" data-url="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone">
+  <h3><strong>SSH</strong> clone URL</h3>
+
+  <input class="clone js-url-field" value="git@github.com:levand/domina.git" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="git@github.com:levand/domina.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+
+  <input class="clone js-url-field" value="https://github.com/levand/domina" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/levand/domina" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+    <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+    <a href="#" class="js-clone-selector" data-protocol="ssh">SSH</a>,
+    <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>,
+  and <a href="https://help.github.com/articles/which-remote-url-should-i-use">other methods.</a>
+</p>
+
+
+
+                <a href="https://github.com/levand/domina/archive/master.zip" class="minibutton sidebar-button" title="Download this repository as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+            </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+  
+
+
+<!-- blob contrib key: blob_contributors:v21:64942d5c385f6e8ad06389b7db277b98 -->
+<!-- blob contrib frag key: views10/v8/blob_contributors:v21:64942d5c385f6e8ad06389b7db277b98 -->
+
+<p title="This is a placeholder element" class="js-history-link-replace hidden"></p>
+
+<a href="https://github.com/levand/domina/find/master" data-pjax="" data-hotkey="t" style="display:none">Show File Finder</a>
+
+<div class="file-navigation">
+  
+
+
+<div class="select-menu js-menu-container js-select-menu">
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-master-branch="master" data-ref="master">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" type="text">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.0/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.0" data-skip-pjax="true" rel="nofollow" title="1.0.0">1.0.0</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.0-alpha1/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.0-alpha1" data-skip-pjax="true" rel="nofollow" title="1.0.0-alpha1">1.0.0-alpha1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.0-beta1/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.0-beta1" data-skip-pjax="true" rel="nofollow" title="1.0.0-beta1">1.0.0-beta1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.0-beta2/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.0-beta2" data-skip-pjax="true" rel="nofollow" title="1.0.0-beta2">1.0.0-beta2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.0-beta3/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.0-beta3" data-skip-pjax="true" rel="nofollow" title="1.0.0-beta3">1.0.0-beta3</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.0-beta4/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.0-beta4" data-skip-pjax="true" rel="nofollow" title="1.0.0-beta4">1.0.0-beta4</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/1.0.1/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="1.0.1" data-skip-pjax="true" rel="nofollow" title="1.0.1">1.0.1</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/alpha2/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="alpha2" data-skip-pjax="true" rel="nofollow" title="alpha2">alpha2</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/gh-pages/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="gh-pages" data-skip-pjax="true" rel="nofollow" title="gh-pages">gh-pages</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/manual-build/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="manual-build" data-skip-pjax="true" rel="nofollow" title="manual-build">manual-build</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/master/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" data-skip-pjax="true" rel="nofollow" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+            <div class="select-menu-item js-navigation-item ">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/levand/domina/blob/new-events/readme.md" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="new-events" data-skip-pjax="true" rel="nofollow" title="new-events">new-events</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+  <div class="breadcrumb">
+    <span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/levand/domina" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">domina</span></a></span></span><span class="separator"> / </span><strong class="final-path">readme.md</strong> <span class="js-zeroclipboard minibutton zeroclipboard-button" data-clipboard-text="readme.md" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+  </div>
+</div>
+
+
+  
+  <div class="commit file-history-tease">
+    <img class="main-avatar" src="domina_readme.md_files/00ac463e1534de6c3a7bbe42365286cd.png" width="24" height="24">
+    <span class="author"><a href="https://github.com/levand" rel="author">levand</a></span>
+    <time class="js-relative-date" datetime="2013-03-11T08:52:52-07:00" title="2013-03-11 08:52:52">5 months ago</time>
+    <div class="commit-title">
+        <a href="https://github.com/levand/domina/commit/e7fbedda8fda8b71413fbaa2f2c8390ba8d54f56" class="message" data-pjax="true" title="Merge pull request #46 from aeosynth/master
+
+[readme] fix typo, Event table -&gt; ul">Merge pull request</a> <a href="https://github.com/levand/domina/issues/46" class="issue-link" title="[readme] fix typo, Event table -&gt; ul">#46</a> <a href="https://github.com/levand/domina/commit/e7fbedda8fda8b71413fbaa2f2c8390ba8d54f56" class="message" data-pjax="true" title="Merge pull request #46 from aeosynth/master
+
+[readme] fix typo, Event table -&gt; ul">from aeosynth/master</a>
+    </div>
+
+    <div class="participation">
+      <p class="quickstat"><a href="#blob_contributors_box" rel="facebox"><strong>7</strong> contributors</a></p>
+          <a original-title="levand" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=levand"><img src="domina_readme.md_files/00ac463e1534de6c3a7bbe42365286cd.png" width="20" height="20"></a>
+    <a original-title="bobby" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=bobby"><img src="domina_readme.md_files/c4adca5489db5657ba31ca253525147f.jpe" width="20" height="20"></a>
+    <a original-title="aeosynth" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=aeosynth"><img src="domina_readme.md_files/65bdf2442092d6c9c5ade711913317d5.jpe" width="20" height="20"></a>
+    <a original-title="jsyrjala" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=jsyrjala"><img src="domina_readme.md_files/18212b874868b1733d98b5f1f5a86338.png" width="20" height="20"></a>
+    <a original-title="jasonrudolph" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=jasonrudolph"><img src="domina_readme.md_files/592e1e6f041f9a4ec51846fd82013aea.jpe" width="20" height="20"></a>
+    <a original-title="exupero" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=exupero"><img src="domina_readme.md_files/7c3ce9c457769fab746b5f104380d0c8.jpe" width="20" height="20"></a>
+    <a original-title="sherbondy" class="avatar tooltipped downwards" href="https://github.com/levand/domina/commits/master/readme.md?author=sherbondy"><img src="domina_readme.md_files/7406872c2d0f126ab9197e129c5ffb85.png" width="20" height="20"></a>
+
+
+    </div>
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list">
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/00ac463e1534de6c3a7bbe42365286cd.png" width="24" height="24">
+          <a href="https://github.com/levand">levand</a>
+        </li>
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/c4adca5489db5657ba31ca253525147f.jpe" width="24" height="24">
+          <a href="https://github.com/bobby">bobby</a>
+        </li>
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/65bdf2442092d6c9c5ade711913317d5.jpe" width="24" height="24">
+          <a href="https://github.com/aeosynth">aeosynth</a>
+        </li>
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/18212b874868b1733d98b5f1f5a86338.png" width="24" height="24">
+          <a href="https://github.com/jsyrjala">jsyrjala</a>
+        </li>
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/592e1e6f041f9a4ec51846fd82013aea.jpe" width="24" height="24">
+          <a href="https://github.com/jasonrudolph">jasonrudolph</a>
+        </li>
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/7c3ce9c457769fab746b5f104380d0c8.jpe" width="24" height="24">
+          <a href="https://github.com/exupero">exupero</a>
+        </li>
+        <li class="facebox-user-list-item">
+          <img src="domina_readme.md_files/7406872c2d0f126ab9197e129c5ffb85.png" width="24" height="24">
+          <a href="https://github.com/sherbondy">sherbondy</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+<div id="files" class="bubble">
+  <div class="file">
+    <div class="meta">
+      <div class="info">
+        <span class="icon"><b class="octicon octicon-file-text"></b></span>
+        <span class="mode" title="File Mode">file</span>
+          <span>269 lines (178 sloc)</span>
+        <span>12.721 kb</span>
+      </div>
+      <div class="actions">
+        <div class="button-group">
+                <a original-title="Clicking this button will automatically fork this project so you can edit the file" class="minibutton tooltipped leftwards" href="https://github.com/levand/domina/edit/master/readme.md" data-method="post" rel="nofollow">Edit</a>
+          <a href="https://github.com/levand/domina/raw/master/readme.md" class="button minibutton " id="raw-url">Raw</a>
+            <a href="https://github.com/levand/domina/blame/master/readme.md" class="button minibutton ">Blame</a>
+          <a href="https://github.com/levand/domina/commits/master/readme.md" class="button minibutton " rel="nofollow">History</a>
+        </div><!-- /.button-group -->
+            <a original-title="Fork this project and delete file" class="minibutton danger empty-icon tooltipped downwards" href="https://github.com/levand/domina/delete/master/readme.md" data-method="post" rel="nofollow">
+            Delete
+          </a>
+      </div><!-- /.actions -->
+
+    </div>
+      
+  <div id="readme" class="blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="what-is-domina" class="anchor" href="#what-is-domina"><span class="octicon octicon-link"></span></a>What is Domina?</h1>
+
+<p>Domina is a jQuery inspired DOM manipulation library for 
+ClojureScript. It provides a functional, idiomatic Clojure interface to 
+the DOM manipulation facilities provided by the Google Closure library.</p>
+
+<p><strong>Warning</strong>: Domina is still beta-level software. Everything <em>should</em>  work, but there may still be bugs, browser incompatibility or performance issues. Please report them!</p>
+
+<p>Pull requests are extremely welcome.</p>
+
+<p>You can obtain Domina by pulling from Clojars: <code>[domina "1.0.0"]</code>. Be sure to include <code>[org.clojure/google-closure-library-third-party "0.0-2029"]</code> in your project.clj, as <code>domina.css</code> relies on it, and you'll get a <code>NullPointerException</code> without it.</p>
+
+<h2>
+<a name="rationale" class="anchor" href="#rationale"><span class="octicon octicon-link"></span></a>Rationale</h2>
+
+<p>Previously, there was no straightforward way to do DOM manipulation 
+in ClojureScript. The Google Closure library is available, but it does 
+not represent a fluid, functional approach to DOM manipulation that 
+users of libraries such as jQuery are accustomed to. jQuery itself, as 
+well as other DOM manipulation libraries, are not easy to use with 
+ClojureScript due to incompatibilities with the advanced mode compiler.</p>
+
+<p>However, a jQuery-esqe, functional approach to DOM manipulation is 
+extremely well suited to ClojureScript. Domina, while it does not 
+provide any innovations, attempts to provide a basic functional 
+interface to DOM manipulation that feels natural in ClojureScript. For a
+ good library that takes a novel, alternative approach to DOM 
+manipulation inspired by Clojure's Enlive, consider <a href="https://github.com/ckirkendall/enfocus">Enfocus</a>.</p>
+
+<h2>
+<a name="key-concepts" class="anchor" href="#key-concepts"><span class="octicon octicon-link"></span></a>Key Concepts</h2>
+
+<h3>
+<a name="content" class="anchor" href="#content"><span class="octicon octicon-link"></span></a>Content</h3>
+
+<p>Most of Domina's functions accept or return <em>content</em>, an abstraction that represents one or more DOM nodes, rather than DOM nodes themselves. Content is implemented as a protocol (<code>DomContent</code>) which responds to two methods, <code>nodes</code> and <code>single-node</code>. <code>nodes</code> returns a sequence of DOM nodes, <code>single-node</code> returns a single DOM node (usually the first one), if the content contains multiple nodes.</p>
+
+<p>Entities which implement <code>DomContent</code> include:</p>
+
+<ul>
+<li>Individual nodes</li>
+<li>Sequences of nodes</li>
+<li>Built-in HTML node collections such as <code>NodeList</code>
+</li>
+<li>Strings (which are parsed into one or more nodes)</li>
+<li>Selectors (such as <code>xpath</code>) create reified <code>DomContent</code> objects directly</li>
+</ul><h3>
+<a name="selectors" class="anchor" href="#selectors"><span class="octicon octicon-link"></span></a>Selectors</h3>
+
+<p>Selector functions take a string and return a <code>DomContent</code> representing matching nodes. For example, the <code>xpath</code> function in the <code>domina.xpath</code> namespace:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">xpath</span> <span class="s">"//div[@class='foo']/p[2]"</span><span class="p">)</span>
+</pre></div>
+
+<p>This expression returns a content containing all the paragraph 
+elements in a document  which are the second children of divs with an 
+class of 'foo'.</p>
+
+<p>The <code>xpath</code> function also takes an optional first argument (which can be any <code>DomContent</code>) representing the context node(s) from which XPath evaluation will start. This allows selectors to be chained:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">xpath</span> <span class="s">"//body"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">xpath</span> <span class="s">"div"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">xpath</span> <span class="s">"p"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">xpath</span> <span class="s">"span"</span><span class="p">))</span>
+</pre></div>
+
+<p>The <code>sel</code> function in the <code>domina.css</code> namespace works the same way for CSS selectors:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">sel</span> <span class="s">".my-class"</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">sel</span> <span class="s">"#my-id"</span><span class="p">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">sel</span> <span class="s">"body"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">sel</span> <span class="s">"div"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">sel</span> <span class="s">"p"</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">sel</span> <span class="s">"span"</span><span class="p">))</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">sel</span> <span class="s">"body &gt; div &gt; p &gt; span"</span><span class="p">)</span>
+</pre></div>
+
+<p>Other selector functions include the core functions <code>by-id</code> and <code>by-class</code> which return a <code>DomContent</code> based on node id and node class, respectively.</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Append a <code>&lt;div&gt;</code> to the body element:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">append!</span> <span class="p">(</span><span class="nf">xpath</span> <span class="s">"//body"</span><span class="p">)</span> <span class="s">"&lt;div&gt;Hello world!&lt;/div&gt;"</span><span class="p">)</span>
+</pre></div>
+
+<p>Move a <code>&lt;div&gt;</code> from the end of the document to the beginning:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">prepend!</span> <span class="p">(</span><span class="nf">xpath</span> <span class="s">"//body"</span><span class="p">)</span> 
+         <span class="p">(</span><span class="nf">detach!</span> <span class="p">(</span><span class="nf">xpath</span> <span class="s">"//body/div[last()]"</span><span class="p">)))</span>
+</pre></div>
+
+<p>Add a CSS class on a node with a particular id:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">add-class!</span> <span class="p">(</span><span class="nf">by-id</span> <span class="s">"foobar"</span><span class="p">)</span> <span class="s">"baz"</span><span class="p">)</span>
+</pre></div>
+
+<p>Delete all nodes of a given class:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">destroy!</span> <span class="p">(</span><span class="nf">by-class</span> <span class="s">"foo"</span><span class="p">))</span>
+</pre></div>
+
+<p>Set some colors on all child nodes of <code>&lt;div&gt;</code> elements with a class of 'foo':</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">set-styles!</span> <span class="p">(</span><span class="nf">xpath</span> <span class="s">"//div[@class='foo']/*"</span><span class="p">)</span>
+            <span class="p">{</span><span class="ss">:background-color</span> <span class="s">"black"</span>
+             <span class="ss">:color</span> <span class="s">"white"</span><span class="p">})</span>
+</pre></div>
+
+<p>Set the text content of a node:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">set-text!</span> <span class="p">(</span><span class="nf">by-id</span> <span class="s">"foobar"</span><span class="p">)</span> <span class="s">"Lorem ipsum..."</span><span class="p">)</span>
+</pre></div>
+
+<p>Get the values of all <code>&lt;input&gt;</code> elements on the page:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nb">map </span><span class="nv">value</span> <span class="p">(</span><span class="nf">nodes</span> <span class="p">(</span><span class="nf">xpath</span> <span class="s">"//input"</span><span class="p">)))</span>
+</pre></div>
+
+<p>For examples of every currently implemented function, see the <code>test.cljs</code> file in the code repository, which exercises each function in unit tests against a DOM page.</p>
+
+<h2>
+<a name="event-handling" class="anchor" href="#event-handling"><span class="octicon octicon-link"></span></a>Event Handling</h2>
+
+<p>Domina contains a robust event handling API that wraps the Google 
+Closure event handling code, while exposing it in a idiomatic functional
+ way.</p>
+
+<h3>
+<a name="event-propagation" class="anchor" href="#event-propagation"><span class="octicon octicon-link"></span></a>Event Propagation</h3>
+
+<p>In Domina, every event has a <em>target</em>. This is the DOM node 
+that is logically "causing" the event. All events triggered by the 
+browser (such as clicks or key presses) are associated with a node. User
+ defined events must also specify a target node.</p>
+
+<p>Event listeners are also attached to nodes, and may trigger on either the <em>capture</em> or <em>bubble</em>
+ phases of event propegation. The capture phase starts at the root node 
+of the document, and successively fires any listeners on ancestors of 
+the target node from the top down, down to the event target itself. In 
+the bubble phase, the process is reversed, first firing listeners on the
+ target node, then on each of its ancestors in succession back to the 
+document root.</p>
+
+<h3>
+<a name="registering-event-listeners" class="anchor" href="#registering-event-listeners"><span class="octicon octicon-link"></span></a>Registering Event Listeners</h3>
+
+<p>Use the <code>listen!</code> function to register an event handler in the bubble phase, and <code>capture!</code>
+ to register a handle for the capture phase. Both take similar argument:
+ a Domina DomContent, the event type, and a listener function. They 
+return a sequence of event handler keys (see section below on 
+de-registering event handlers)</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">listen!</span> <span class="p">(</span><span class="nf">sel</span> <span class="s">"button"</span><span class="p">)</span> <span class="ss">:click</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">evt</span><span class="p">]</span> <span class="p">(</span><span class="nf">log</span> <span class="s">"button clicked!"</span><span class="p">)))</span>
+</pre></div>
+
+<p>This above snippet adds an event handler  to every <code>&lt;button&gt;</code> element on the page, which logs a message when the button is clicked.</p>
+
+<p>Note that the content argument is optional: in this case, the 
+listener is added to the root node of the document, and will catch all 
+click events on the entire page.</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">listen!</span> <span class="ss">:click</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">evt</span><span class="p">]</span> <span class="p">(</span><span class="nf">log</span> <span class="s">"button clicked!"</span><span class="p">)))</span>
+</pre></div>
+
+<h3>
+<a name="event-objects" class="anchor" href="#event-objects"><span class="octicon octicon-link"></span></a>Event Objects</h3>
+
+<p>When an event is triggered, it invokes the provided listener 
+function, passing it an event object. The event object will implement 
+ClojureScript's <code>ILookup</code> protocol, as well as the <code>domina.events.Event</code> protocol.</p>
+
+<p>Implementing the <code>ILookup</code> protocol makes it easy to pull values from browser events using ClojureScript's built in lookup functions such as <code>get</code> and <code>contains?</code>,
+ as well as using keywords in function position. Note that although 
+native events only have string keys, Domina will attempt to translate 
+keywords to strings for lookup purposes.</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="kd">defn </span><span class="nv">sample-click-handler</span> <span class="p">[</span><span class="nv">evt</span><span class="p">]</span>
+   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">x</span> <span class="p">(</span><span class="ss">:clientX</span> <span class="nv">evt</span><span class="p">)</span>
+          <span class="nv">y</span> <span class="p">(</span><span class="ss">:clientY</span> <span class="nv">evt</span><span class="p">)]</span>
+       <span class="p">(</span><span class="nf">log</span> <span class="p">(</span><span class="nb">str </span><span class="s">"Click occurred at window coordinates "</span> <span class="nv">x</span> <span class="s">","</span> <span class="nv">y</span><span class="p">))))</span>
+</pre></div>
+
+<p>The <code>domina.events.Event</code> protocol supports the following methods:</p>
+
+<ul>
+<li>
+<code>prevent-default</code>  Prevents the default action for an event from firing. For example, if you invoke <code>prevent-default</code> on a click event on a link, it will prevent the browser from navigating the browser as it normally would with a clicked link.</li>
+<li>
+<code>stop-propagation</code> Prevents all future event listeners (in both the bubble and capture phases) from recieving the event.</li>
+<li>
+<code>target</code>           Returns the target node of the event.</li>
+<li>
+<code>current-target</code>   Returns the current target of the event (the node to which the current listener was attached).</li>
+<li>
+<code>event-type</code>       Returns the type of the event.</li>
+<li>
+<code>raw-event</code>        Returns the underlying <code>goog.events.Event</code> object, rather than it's Domina wrapper.</li>
+</ul><h3>
+<a name="de-registering-event-handlers" class="anchor" href="#de-registering-event-handlers"><span class="octicon octicon-link"></span></a>De-registering Event Handlers</h3>
+
+<p>There are several ways to de-register an event handler.</p>
+
+<p>If you have they key returned by the registration function, you can de-register the handler by calling the <code>unlisten-by-key!</code> function, passing it the key as a single argument.</p>
+
+<p>If you do not have the key in hand, you can remove all listeners from a node (or set of nodes) using the <code>unlisten!</code>
+ function. It takes a DomContent, and an optional event type. If the 
+event type is specified, it will only de-register handlers for that 
+type, otherwise it will de-register everything from the specified node.</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">unlisten!</span> <span class="p">(</span><span class="nf">sel</span> <span class="s">"button"</span><span class="p">)</span> <span class="ss">:click</span><span class="p">)</span>  <span class="c1">; removes all click event handlers from all button elements</span>
+<span class="p">(</span><span class="nf">unlisten!</span> <span class="p">(</span><span class="nf">sel</span> <span class="s">"button"</span><span class="p">))</span>  <span class="c1">; removes all event handlers of any type  from all button elements</span>
+</pre></div>
+
+<p>There are also <code>listen-once!</code> and <code>capture-once!</code> variants of <code>listen!</code> and <code>capture!</code> which de-register themselves after the first time they are triggered.</p>
+
+<h3>
+<a name="custom-events" class="anchor" href="#custom-events"><span class="octicon octicon-link"></span></a>Custom Events</h3>
+
+<p>In addition to native events dispatched by the browser, Domina allows you to create and dispatch arbitary events using the <code>dispatch!</code> function.</p>
+
+<p>The <code>dispatch!</code> function takes an event target as a 
+DomContent (assumed to be a single node), an event type, and an event 
+map. Keys and values in the event map are merged in to the event object,
+ and can be used to pass arbitrary data to event handlers.</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">dispatch!</span> <span class="p">(</span><span class="nf">by-id</span> <span class="s">"evt-target"</span><span class="p">)</span> <span class="ss">:my-event</span> <span class="p">{</span><span class="ss">:some-key</span> <span class="s">"some value"</span><span class="p">})</span>
+</pre></div>
+
+<p>The event will be propegated through the capture and bubble phases 
+just like a browser event, and can be caught in the normal way:</p>
+
+<div class="highlight"><pre><span class="p">(</span><span class="nf">listen!</span> <span class="p">(</span><span class="nf">by-id</span> <span class="s">"evt-target"</span><span class="p">)</span> <span class="ss">:my-event</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">evt</span><span class="p">]</span> <span class="p">(</span><span class="nf">log</span> <span class="p">(</span><span class="ss">:some-key</span> <span class="nv">evt</span><span class="p">))))</span>
+</pre></div>
+
+<p>Note that if you omit the event target when calling <code>dispatch!</code>
+ (or when registering a listener), it will default to the root node of 
+the document. This is often desirable when using custom application-wide
+ events that have no logical mapping to any particular location in the 
+DOM tree.</p>
+
+<h2>
+<a name="important-note-on-browser-xpath-compatibility-ie-and-android" class="anchor" href="#important-note-on-browser-xpath-compatibility-ie-and-android"><span class="octicon octicon-link"></span></a>Important note on browser XPath compatibility (IE and Android).</h2>
+
+<p>Internet Explorer does not support DOM Level 3 XPath selectors. In order to utilize the <code>domina.xpath</code> namespace, you will need to include a pure-javascript XPath DOM Level 3 implementation.</p>
+
+<p>A fast implementation known to work is provided by Cybozu Labs at <a href="http://coderepos.org/share/wiki/JavaScript-XPath">http://coderepos.org/share/wiki/JavaScript-XPath</a>. It is ignored on all browssers which already have native XPath support.</p>
+
+<p>To include it on your page, enter the following line in your <code>head</code> element, <em>before</em> you reference any ClojureScript scripts.</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"cybozu-xpath.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h4>
+<a name="android" class="anchor" href="#android"><span class="octicon octicon-link"></span></a>Android</h4>
+
+<p>The situation with the Android browser (version 2.x, it is fixed in 
+version 3) is even worse. The browser does not support XPath, but 
+erroneously reports that it does. To make Domina's XPath support work on
+ an Android device, you must include the following code snippet on your 
+HTML page before including the <code>cybozu-xpath.js</code> file:</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="cm">/* Android 2.x claims XPath support, but has none.  Force non-native</span>
+<span class="cm">         XPath implementation in this case */</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">implementation</span>
+           <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">implementation</span><span class="p">.</span><span class="nx">hasFeature</span>
+           <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">implementation</span><span class="p">.</span><span class="nx">hasFeature</span><span class="p">(</span><span class="s2">"XPath"</span><span class="p">,</span><span class="kc">null</span><span class="p">)</span>
+           <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">jsxpath</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="nx">targetFrame</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">,</span>
+          <span class="nx">exportInstaller</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="nx">useNative</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="cm">/* force non-native implementation */</span>
+          <span class="nx">useInnerText</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">};</span>
+      <span class="p">}</span>
+    <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"xpath.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>This script checks that if the browser claims XPath support, if it actually <em>has</em> it (via the presence of the <code>document.evaluate</code>function) and if not, sets a flag that tells Cybozu's XPath implementation to override native support.</p>
+
+<p>If you're using a different XPath implementation, you'll need to use 
+whatever means it provides to override native XPath handling.</p>
+
+<p>We decided <em>not</em> to compile this functionality directly into Domina for two reasons:</p>
+
+<ul>
+<li>Potential licensing issues</li>
+<li>Reduced code size. With some server side conditions, it is possible 
+to avoid downloading the script altogether for browsers which support 
+XPath natively, which is obviously not possible to determine at 
+compile-time.</li>
+</ul><h2>
+<a name="running-the-tests" class="anchor" href="#running-the-tests"><span class="octicon octicon-link"></span></a>Running the Tests</h2>
+
+<p>To execute the test suite ...</p>
+
+<ol>
+<li>Run <code>lein cljsbuild test</code>. This will generate a suite of test HTML
+files in the <code>public</code> directory (e.g., <code>test_no_opt.html</code>,
+<code>test_advanced.html</code>, etc.). Each file runs <code>test.cljs</code> in the context
+of the DOM, and each file represents a different compiler optimization
+setting.</li>
+<li>Open each of the <code>public/test_*.html</code> files in a browser and <a href="https://skitch.com/jasonrudolph/85fga/domina-test-results">verify
+that all the tests pass</a>.</li>
+</ol><h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>Todo</h2>
+
+<p>See the projects <a href="https://trello.com/board/domina/4f1f09c9ffa52a1e570372eb">Trello page</a></p>
+
+<p>If you'd like to participate, please just let me know and I'll add you.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright © 2012 Luke VanderHart</p>
+
+<p>Distributed under the Eclipse Public License, the same as Clojure.</p></article>
+  </div>
+
+  </div>
+</div>
+
+<a href="#jump-to-line" rel="facebox[.linejump]" data-hotkey="l" class="js-jump-to-line" style="display:none">Jump to Line</a>
+<div id="jump-to-line" style="display:none">
+  <form accept-charset="UTF-8" class="js-jump-to-line-form">
+    <input class="linejump-input js-jump-to-line-field" placeholder="Jump to line…" autofocus="" type="text">
+    <button type="submit" class="button">Go</button>
+  </form>
+</div>
+
+</div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2013 <span title="0.07949s from fe16.rs.github.com">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/levand/domina/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a original-title="Exit Zen Mode" href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a original-title="Switch themes" href="#" class="theme-switcher js-theme-switcher tooltipped leftwards">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+    
+  
+
+
+<div original-title="" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;" data-clipboard-ready="true" class="global-zeroclipboard-container" id="global-zeroclipboard-html-bridge">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="https://github.global.ssl.fastly.net/flash/ZeroClipboard.swf?nocache=1374637715882">         <param name="allowScriptAccess" value="always">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedDomain=github.com">         <embed src="domina_readme.md_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedDomain=github.com" scale="exactfit" width="100%" height="100%">                </object></div>    <div class="facebox" id="facebox" style="display:none;">       <div class="facebox-popup">         <div class="facebox-content">         </div>         <button type="button" class="facebox-close">           <span class="octicon octicon-remove-close"></span>         </button>       </div>     </div></body></html>
