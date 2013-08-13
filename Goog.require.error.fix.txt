@@ -1,0 +1,8 @@
+I think the current fix is to add this JS declaration before you
+import your cljs generated js file. IIRC, this is only needed when
+building without advanced optimizations.
+
+<script type="text/javascript">
+var CLOSURE_NO_DEPS = true;
+</script>
+<script type="text/javascript" src="js/myapp.js"></script>

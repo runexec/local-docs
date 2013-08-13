@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-EN"><head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" robots"="">
+</head><body class="single single-post postid-101 single-format-standard guides"><charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Google Closure AJAX</title>
+<link rel="stylesheet" type="text/css" href="Google%20Closure%20AJAX_files/style.css">
+<link rel="pingback" href="http://www.googleclosure.com/xmlrpc.php">
+<link rel="shortcut icon" href="http://www.googleclosure.com/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="GoogleClosure.com » Feed" href="http://www.googleclosure.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="GoogleClosure.com » Comments Feed" href="http://www.googleclosure.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="GoogleClosure.com » Google Closure AJAX Comments Feed" href="http://www.googleclosure.com/google-closure-ajax/feed/">
+<link rel="stylesheet" id="bwp-syntax-css" href="Google%20Closure%20AJAX_files/bwp-syntax.css" type="text/css" media="all">
+<link rel="stylesheet" id="aye_dynamic-css" href="Google%20Closure%20AJAX_files/aye-dynamic.css" type="text/css" media="all">
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/jquery.js"></script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/sga.js"></script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/bwp-syntax.js"></script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/comment-reply.js"></script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/aye-ga-tracker.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.googleclosure.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.googleclosure.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Google Closure vs jQuery – using the DOM" href="http://www.googleclosure.com/google-closure-for-jquery-developers-the-dom/">
+<link rel="next" title="Using cookies" href="http://www.googleclosure.com/cookies/">
+<meta name="generator" content="WordPress 3.3.1">
+<link rel="canonical" href="http://www.googleclosure.com/google-closure-ajax/">
+<link rel="shortlink" href="http://www.googleclosure.com/?p=101">
+<meta property="fb:app_id" content="223832827640558">
+<meta name="description" content="Using AJAX requests with Google Closure. Sending json objects to the server.">
+
+<!-- Simple Google Analytics Begin -->
+<script type="text/javascript">
+var _gaq = [['_setAccount','UA-28931778-1'],['_trackPageview']];(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- Simple Google Analytics End -->
+<link href="Google%20Closure%20AJAX_files/css.css" rel="stylesheet" type="text/css">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+
+
+  
+
+<div id="wrapperpub">
+	<div id="header">
+		<div class="dp100">	
+			<h1 id="blog-title" class="blogtitle"><a href="http://www.googleclosure.com/" title="GoogleClosure.com">GoogleClosure.com</a></h1>
+			<div class="description">Guides, examples tips and trix </div>
+		</div><!-- dp100 -->		
+	</div><!--  #header -->		
+</div><!--  #wrapperpub -->	
+<div class="clear"></div>
+
+<div id="wrapper">	
+		<div id="access">
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="http://www.googleclosure.com/" title="home" class="top_parent">HOME</a>
+					</li>
+				</ul>
+				<ul><li style="padding-top:12px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6508513900956727";
+/* Google Closure menu */
+google_ad_slot = "7018778362";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/show_ads.js">
+</script>
+				</li></ul>
+			</div>
+					<div class="menu-header"><ul id="menu-menu" class="menu"><li id="menu-item-142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142"><a href="http://www.googleclosure.com/example/">Examples</a></li>
+</ul></div>			
+		</div><!--  #access -->	
+<div class="clear"></div>			
+	
+
+
+	<div id="container">
+		<div id="content">
+						<div id="nav-above" class="navigation">
+				<div class="nav-previous"><a href="http://www.googleclosure.com/google-closure-for-jquery-developers-the-dom/" rel="prev"><span class="meta-nav">«</span> Google Closure vs jQuery – using the DOM</a></div>
+				<div class="nav-next"><a href="http://www.googleclosure.com/cookies/" rel="next">Using cookies <span class="meta-nav">»</span></a></div>
+			</div>
+
+			 <div id="post-101" class="post-101 post type-post status-publish format-standard hentry category-guides author-admin"> 
+				
+				<h2 class="single-entry-title">Google Closure AJAX</h2>
+					
+				<div class="linebreak"></div>
+				<div class="entry-content">
+					
+<!-- Quick Adsense WordPress Plugin: http://techmilieu.com/quick-adsense -->
+<div style="float:none;margin:10px 0 10px 0;text-align:center;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6508513900956727";
+/* google */
+google_ad_slot = "1418784597";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/show_ads.js">
+</script>
+</div>
+<p>In the Closure net package (<a title="http://closure-library.googlecode.com/svn/docs/namespace_goog_net.html" href="http://closure-library.googlecode.com/svn/docs/namespace_goog_net.html" target="_blank">http://closure-library.googlecode.com/svn/docs/namespace_goog_net.html</a>) you can find alot of useful classes for your AJAX calls. For making a standard call to the server we can use the XhrIo class.</p>
+<p>Starting out we´re creating a new xhrIo object:</p>
+
+<div class="bwp-syntax-block clearfix">
+<div class="bwp-syntax-toolbar"><div class="bwp-syntax-control"><a href="javascript:;" class="bwp-syntax-source-switch" title="View Source Code"></a></div></div>
+<div class="bwp-syntax-wrapper clearfix bwp-syntax-simple"><table class="javascript"><tbody><tr class="li1"><td class="ln"><pre class="de1">1
+</pre></td><td class="de1"><pre class="de1"><span class="kw2">var</span> request <span class="sy0">=</span> <span class="kw2">new</span> goog.<span class="me1">net</span>.<span class="me1">XhrIo</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre></td></tr></tbody></table></div>
+<div class="bwp-syntax-source"><pre class="no-parse">var request = new goog.net.XhrIo();</pre></div></div>
+
+<p>And then set up a event listener for this object, which will call a 
+function when request is complete. We also check if the request was 
+successfully recieved and if so we store the data (json in this case) in
+ a variable.</p>
+
+<div class="bwp-syntax-block clearfix">
+<div class="bwp-syntax-toolbar"><div class="bwp-syntax-control"><a href="javascript:;" class="bwp-syntax-source-switch" title="View Source Code"></a></div></div>
+<div class="bwp-syntax-wrapper clearfix bwp-syntax-simple"><table class="javascript"><tbody><tr class="li1"><td class="ln"><pre class="de1">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="de1"><pre class="de1">goog.<span class="me1">events</span>.<span class="me1">listen</span><span class="br0">(</span>request<span class="sy0">,</span> <span class="st0">'complete'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+&nbsp; <span class="co1">//request complete</span>
+&nbsp; <span class="kw1">if</span><span class="br0">(</span>request.<span class="me1">isSuccess</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+&nbsp; &nbsp; <span class="kw2">var</span> data <span class="sy0">=</span> request.<span class="me1">getResponseJson</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp; <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+&nbsp; &nbsp; <span class="co1">//error</span>
+&nbsp; <span class="br0">}</span>
+<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></pre></td></tr></tbody></table></div>
+<div class="bwp-syntax-source"><pre class="no-parse">goog.events.listen(request, 'complete', function(){
+  //request complete
+  if(request.isSuccess()){
+    var data = request.getResponseJson();
+  } else {
+    //error
+  }
+});</pre></div></div>
+
+<p>Now we use the send method of our XhrIo object to send some data to 
+the server. This method requires a string, so we will use a serialized 
+json object. Remember to set the data object vars with quotes to keep 
+them in advanced compilation mode. We will also send the correct header 
+for our data, which makes some servers recognize the data as a json 
+object and not as a string.</p>
+
+<div class="bwp-syntax-block clearfix">
+<div class="bwp-syntax-toolbar"><div class="bwp-syntax-control"><a href="javascript:;" class="bwp-syntax-source-switch" title="View Source Code"></a></div></div>
+<div class="bwp-syntax-wrapper clearfix bwp-syntax-simple"><table class="javascript"><tbody><tr class="li1"><td class="ln"><pre class="de1">1
+2
+</pre></td><td class="de1"><pre class="de1"><span class="kw2">var</span> data <span class="sy0">=</span> <span class="br0">{</span><span class="st0">'name'</span><span class="sy0">:</span><span class="st0">'Tommy'</span><span class="sy0">,</span> <span class="st0">'age'</span><span class="sy0">:</span><span class="nu0">23</span><span class="br0">}</span><span class="sy0">;</span>
+request.<span class="me1">send</span><span class="br0">(</span><span class="st0">'/anypage'</span><span class="sy0">,</span> <span class="st0">'POST'</span><span class="sy0">,</span> goog.<span class="me1">json</span>.<span class="me1">serialize</span><span class="br0">(</span>data<span class="br0">)</span><span class="sy0">,</span> <span class="br0">{</span><span class="st0">'content-type'</span><span class="sy0">:</span><span class="st0">'application/json'</span><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></pre></td></tr></tbody></table></div>
+<div class="bwp-syntax-source"><pre class="no-parse">var data = {'name':'Tommy', 'age':23};
+request.send('/anypage', 'POST', goog.json.serialize(data), {'content-type':'application/json'});</pre></div></div>
+
+<p>Here is a full example of the code:</p>
+
+<div class="bwp-syntax-block clearfix">
+<div class="bwp-syntax-toolbar"><div class="bwp-syntax-control"><a href="javascript:;" class="bwp-syntax-source-switch" title="View Source Code"></a></div></div>
+<div class="bwp-syntax-wrapper clearfix bwp-syntax-simple"><table class="javascript"><tbody><tr class="li1"><td class="ln"><pre class="de1">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="de1"><pre class="de1">goog.<span class="me1">require</span><span class="br0">(</span><span class="st0">'goog.net.XhrIo'</span><span class="br0">)</span><span class="sy0">;</span>
+goog.<span class="me1">require</span><span class="br0">(</span><span class="st0">'goog.events'</span><span class="br0">)</span><span class="sy0">;</span>
+goog.<span class="me1">require</span><span class="br0">(</span><span class="st0">'goog.json'</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw2">var</span> request <span class="sy0">=</span> <span class="kw2">new</span> goog.<span class="me1">net</span>.<span class="me1">XhrIo</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+goog.<span class="me1">events</span>.<span class="me1">listen</span><span class="br0">(</span>request<span class="sy0">,</span> <span class="st0">'complete'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+&nbsp; <span class="co1">//request complete</span>
+&nbsp; <span class="kw1">if</span><span class="br0">(</span>request.<span class="me1">isSuccess</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+&nbsp; &nbsp; <span class="kw2">var</span> data <span class="sy0">=</span> request.<span class="me1">getResponseJson</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp; <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+&nbsp; &nbsp; <span class="co1">//error</span>
+&nbsp; <span class="br0">}</span>
+<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw2">var</span> data <span class="sy0">=</span> <span class="br0">{</span><span class="st0">'name'</span><span class="sy0">:</span><span class="st0">'Tommy'</span><span class="sy0">,</span> <span class="st0">'age'</span><span class="sy0">:</span><span class="nu0">23</span><span class="br0">}</span><span class="sy0">;</span>
+request.<span class="me1">send</span><span class="br0">(</span><span class="st0">'/anypage'</span><span class="sy0">,</span> <span class="st0">'POST'</span><span class="sy0">,</span> goog.<span class="me1">json</span>.<span class="me1">serialize</span><span class="br0">(</span>data<span class="br0">)</span><span class="sy0">,</span> <span class="br0">{</span><span class="st0">'content-type'</span><span class="sy0">:</span><span class="st0">'application/json'</span><span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span></pre></td></tr></tbody></table></div>
+<div class="bwp-syntax-source"><pre class="no-parse">goog.require('goog.net.XhrIo');
+goog.require('goog.events');
+goog.require('goog.json');
+
+var request = new goog.net.XhrIo();
+
+goog.events.listen(request, 'complete', function(){
+  //request complete
+  if(request.isSuccess()){
+    var data = request.getResponseJson();
+  } else {
+    //error
+  }
+});
+
+var data = {'name':'Tommy', 'age':23};
+request.send('/anypage', 'POST', goog.json.serialize(data), {'content-type':'application/json'});</pre></div></div>
+
+<p>You can also specify the max request timeout limit for your ajax 
+calls, which is good for example if you work with heavy searches. If the
+ server times out you wont get a response to your complete function, so 
+the search will never finish. Setting the timeout variable will abort 
+the call after x millisecs and you can display an error message.</p>
+
+<div class="bwp-syntax-block clearfix">
+<div class="bwp-syntax-toolbar"><div class="bwp-syntax-control"><a href="javascript:;" class="bwp-syntax-source-switch" title="View Source Code"></a></div></div>
+<div class="bwp-syntax-wrapper clearfix bwp-syntax-simple"><table class="javascript"><tbody><tr class="li1"><td class="ln"><pre class="de1">1
+</pre></td><td class="de1"><pre class="de1">request.<span class="me1">send</span><span class="br0">(</span><span class="st0">'/anypage'</span><span class="sy0">,</span> <span class="st0">'POST'</span><span class="sy0">,</span> goog.<span class="me1">json</span>.<span class="me1">serialize</span><span class="br0">(</span>data<span class="br0">)</span><span class="sy0">,</span> <span class="br0">{</span><span class="st0">'content-type'</span><span class="sy0">:</span><span class="st0">'application/json'</span><span class="br0">}</span><span class="sy0">,</span> <span class="nu0">1000</span><span class="sy0">*</span><span class="nu0">30</span><span class="br0">)</span><span class="sy0">;</span></pre></td></tr></tbody></table></div>
+<div class="bwp-syntax-source"><pre class="no-parse">request.send('/anypage', 'POST', goog.json.serialize(data), {'content-type':'application/json'}, 1000*30);</pre></div></div>
+
+
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both"></div><!-- Facebook Comments for WordPress: http://pleer.co.uk/wordpress/plugins/facebook-comments/ --><div class="fbcomments"><h3>Comments</h3><div class="fb-comments" data-href="http://www.googleclosure.com/google-closure-ajax/" data-num-posts="10" data-width="800" data-colorscheme="light"></div></div>					
+					
+					<div class="clear"></div>
+					 					 				</div>
+
+				<div class="entry-meta">
+					<span class="meta-prep meta-prep-author">Posted on</span> <a href="http://www.googleclosure.com/google-closure-ajax/" title="9:23 pm" rel="bookmark"><span class="entry-date">February 2, 2012</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="http://www.googleclosure.com/author/admin/" title="View all posts by admin" rel="author">admin</a></span>.					This entry was posted in <a href="http://www.googleclosure.com/category/guides/" title="View all posts in Guides" rel="category tag">Guides</a>. Bookmark the <a href="http://www.googleclosure.com/google-closure-ajax/" title="Permalink to Google Closure AJAX" rel="bookmark">permalink</a>.	
+									</div>
+				<div class="clear"></div> 
+			</div><!-- .post -->
+
+
+			<div id="nav-below" class="navigation">
+				<div class="nav-previous"><a href="http://www.googleclosure.com/google-closure-for-jquery-developers-the-dom/" rel="prev"><span class="meta-nav">«</span> Google Closure vs jQuery – using the DOM</a></div>
+				<div class="nav-next"><a href="http://www.googleclosure.com/cookies/" rel="next">Using cookies <span class="meta-nav">»</span></a></div>
+			</div>
+			
+						<div id="comments">
+				<div id="comments-list" class="comments">
+					<h3><span>One</span> comment</h3>
+					<div id="comments-nav-above" class="comments-navigation">
+					</div>
+					
+	<li class="post pingback">
+		<p>Pingback: <a href="http://www.googleclosure.com/164/" rel="external nofollow" class="url">Google Closure</a></p>
+	</li>
+ 
+					
+					<div id="comments-nav-below" class="comments-navigation">
+					</div>
+				</div><!-- #comments-list .comments -->
+		
+			
+
+								
+
+
+			</div><!-- #comments -->
+
+		</div><!-- #content -->
+	</div><!-- #container -->
+
+<div id="primary" class="sidebar">
+	<ul class="xoxo">	
+<!-- about -->
+	<li id="description" class="widget widget_text">
+	<div class="widgetblock">		
+	<div class="widgettitleb"><h3 class="widgettitle">About</h3></div>
+	<p style="font-weight:bold;">This site is in no way affiliated with google.</p> 
+	<p style="color:#666666; font-size:13px;"><i>"Google engineers 
+developed the Closure Library in the process of creating large-scale web
+ applications, and it is now the foundation of Gmail, Google Docs, and 
+many other Google products. If you are developing a large or growing 
+application, you may benefit from the Closure Library's breadth. A 
+well-tested library can insulate you from cross-browser compatibility 
+issues and the minutiae of client-side programming, letting you focus on
+ the fun stuff."</i></p>
+<a style="background:none repeat scroll 0 0 #F3F3F3; color:#0299FF; font-size:11px;" href="http://closure-library.googlecode.com/svn/docs/index.html">http://closure-library.googlecode.com/svn/docs/index.html</a>
+</div>	
+	</li>
+	
+<!-- search -->
+	<li id="search" class="widget widget_search">
+	<div class="widgetblock">		
+	<div class="widgettitleb"><h3 class="widgettitle">Search</h3></div> 
+	<form id="searchform" method="get" action="http://www.googleclosure.com/">
+			<div class="searchform">
+				<p>
+				<input name="s" id="s" style="width:180px;border:1px solid #DDD;background:#fff;font-size:1em" onfocus="this.value='';" type="text">
+				<input style="" value="search" type="submit">
+				</p>
+			</div>
+	</form>
+	</div>
+	</li>
+	
+<!-- Archive -->
+	<li id="archives" class="widget widget_archive"> 
+	<div class="widgetblock">		
+	<div class="widgettitleb"><h3 class="widgettitle">Archive</h3></div> 
+	<ul> 
+		<li><a href="http://www.googleclosure.com/2013/03/" title="March 2013">March 2013</a></li>
+	<li><a href="http://www.googleclosure.com/2012/10/" title="October 2012">October 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/08/" title="August 2012">August 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/06/" title="June 2012">June 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/05/" title="May 2012">May 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/04/" title="April 2012">April 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/03/" title="March 2012">March 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/02/" title="February 2012">February 2012</a></li>
+	<li><a href="http://www.googleclosure.com/2012/01/" title="January 2012">January 2012</a></li>
+ 
+	</ul> 
+ 	</div>
+ 	</li> 	
+
+	</ul>
+</div><!-- #primary .sidebar -->
+
+<div id="secondary" class="sidebar">
+	<ul class="xoxo">
+	
+<!-- Quick Adsense Wordpress Plugin: http://techmilieu.com/quick-adsense -->
+
+			<li id="adswidget1-quick-adsense" class="widget adswidget"><div class="widgetblock">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6508513900956727";
+/* goog SideBar */
+google_ad_slot = "7633638441";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="Google%20Closure%20AJAX_files/show_ads.js">
+</script>
+
+			</div></li>
+	</ul>
+</div><!-- #secondary .sidebar -->
+<div id="footer">
+</div>
+<div id="footerlink"><div class="center"><p>A nice revamping of Sandbox theme for <a href="http://www.wordpress.org/">Wordpress</a> by <a href="http://www.code-2-reduction.fr/codium/" title="code reduction" target="blank">code reduction</a></p></div><div class="clear"></div></div></div><!-- Facebook Comments for WordPress: http://pleer.co.uk/wordpress/plugins/facebook-comments/ -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=223832827640558";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</charset=utf-8"></body></html>

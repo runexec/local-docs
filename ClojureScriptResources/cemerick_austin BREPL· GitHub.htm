@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html class=" js no-flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths no-csspositionsticky filereader eventsource xhr2" style=""><script id="abine.stub.Google Analytics">var abPrm={};var abNoOp=function(i,a){return (a&&a.length?a[0]:null)||true;},abSC=function(n,v){document.cookie=n+'='+v+';path=/;expires='+(new Date((new Date()).getTime()+(30000*60*60*24))).toGMTString();},abGC=function(n){return document.cookie.indexOf(n+'=')!=-1;},abAddNoOpMethods=function(o,m){m=m.split(',');for(var i=0;i<m.length;i++){if(m[i].match(/^#/)){o['get'+m[i].substr(1)]=o['set'+m[i].substr(1)]=abNoOp;}else{o[m[i]]=abNoOp;}}};var abClickEvent=function(n){if(n.click){n.click();}else{var e=n.ownerDocument.createEvent('MouseEvents');e.initMouseEvent('click',true, true, n.ownerDocument.defaultView, 1,0,0,0,0,false,false,false,false,0,null);n.dispatchEvent(e);}};var abTrkr={},abGT=function(){return abTrkr},_gat={_getTracker:abGT,_createTracker:abGT,_getTrackerByName:abGT,_anonymizeIp:abNoOp},__utmSetTrans=__utmLinkerUrl=__utmLinkPost=__utmSetVar=__utmVisitorCode=abNoOp,_gaq={_createAsyncTracker:abTrkr,_getAsyncTracker:abTrkr,push:function(a){for (var b = arguments, c = 0, d = 0; d < b.length; d++) {try {if (typeof b[d] === 'function') b[d]();else {var e = '', f = b[d][0], k = f.lastIndexOf('.');k > 0 && (e = f[z](0, k), f = f[z](k + 1));var p = e == '_gat' ? _gat : e == '_gaq' ? _gaq : _gat._getTracker(e);p[f].apply(p, b[d].slice(1))}} catch (r) {c++}}return c;}};abAddNoOpMethods(abTrkr,'_deleteCustomVar,_getName,_getAccount,_getVersion,_getVisitorCustomVar,_initData,_setAccount,_setCookiePersistence,_setCustomVar,_setSampleRate,_setSessionTimeout,_setSessionCookieTimeout,_setVar,_setVisitorCookieTimeout,_trackPageview,_setAllowAnchor,_setCampContentKey,_setCampMediumKey,_setCampNameKey,_setCampNOKey,_setCampSourceKey,_setCampTermKey,_setCampaignTrack,_setCampaignCookieTimeout,_setCookieTimeout,_setReferrerOverride,_cookiePathCopy,_getLinkerUrl,_linkByPost,_setAllowHash,_setAllowLinker,_setCookiePath,_setDomainName,_addItem,_addTrans,_trackTrans,_trackEvent,_addIgnoredOrganic,_addIgnoredRef,_addOrganic,_clearIgnoredOrganic,_clearIgnoredRef,_clearOrganic,_trackSocial,_getClientInfo,_getDetectFlash,_getDetectTitle,_setClientInfo,_setDetectFlash,_setDetectTitle,_getLocalGifPath,_getServiceMode,_setLocalGifPath,_setLocalRemoteServerMode,_setLocalServerMode,_setRemoteServerMode,_trackPageLoadTime,_addDevId');abTrkr._link=__utmLinker=function(l){if(l)location.href=l;};if(typeof(urchinTracker)=='undefined')urchinTracker=abNoOp;</script><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# githubog: http://ogp.me/ns/fb/githubog#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>cemerick/austin · GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144.png">
+    <link rel="logo" type="image/svg" href="https://github-media-downloads.s3.amazonaws.com/github-logo.svg">
+    <meta property="og:image" content="https://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png">
+    <meta name="hostname" content="fe18.rs.github.com">
+    <link rel="assets" href="https://github.global.ssl.fastly.net/">
+    <link rel="xhr-socket" href="https://github.com/_sockets">
+    
+    
+
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_source" data-pjax-transient="">
+    <meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id">
+
+    
+    
+    <link rel="icon" type="image/x-icon" href="https://github.com/favicon.ico">
+
+    <meta content="authenticity_token" name="csrf-param">
+<meta content="CrVBD5s0Z7bRflgykxl8pr/CWaWiY8Hl/BvT9KHshjo=" name="csrf-token">
+
+    <link href="cemerick_austin%20BREPL%C2%B7%20GitHub_files/github-c6ca95663cba6496fe7a5bdd98671b82cd956df3.css" media="all" rel="stylesheet" type="text/css">
+    <link href="cemerick_austin%20BREPL%C2%B7%20GitHub_files/github2-71386ba60dc4794e755db985b31f4dfc74dcd99d.css" media="all" rel="stylesheet" type="text/css">
+    
+
+
+      <script src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/frameworks-eae23340ab2a6ba722166712e699c87aaf60ad8f.js" type="text/javascript"></script>
+      <script src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/github-a9163d83d307392f83a9e5e521d11f0fea5fd274.js" type="text/javascript"></script>
+      
+      <meta http-equiv="x-pjax-version" content="62ceebebd58178eb42bf64d77d6e4d30">
+
+        <meta property="og:title" content="austin">
+  <meta property="og:type" content="githubog:gitrepository">
+  <meta property="og:url" content="https://github.com/cemerick/austin">
+  <meta property="og:image" content="https://github.global.ssl.fastly.net/images/gravatars/gravatar-user-420.png">
+  <meta property="og:site_name" content="GitHub">
+  <meta property="og:description" content="austin - The ClojureScript browser-REPL rebuilt stronger, faster, easier.">
+
+  <meta name="description" content="austin - The ClojureScript browser-REPL rebuilt stronger, faster, easier.">
+
+  <meta content="47489" name="octolytics-dimension-user_id"><meta content="cemerick" name="octolytics-dimension-user_login"><meta content="11844727" name="octolytics-dimension-repository_id"><meta content="cemerick/austin" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="11844727" name="octolytics-dimension-repository_network_root_id"><meta content="cemerick/austin" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/cemerick/austin/commits/master.atom" rel="alternate" title="Recent Commits to austin:master" type="application/atom+xml">
+
+  <script src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/api.js" async="" type="text/javascript"></script><style>#ghostery-alert-3299{border:solid 2px #ffffff !important;box-sizing:content-box !important;display:block !important;margin:0 !important;opacity:0.9 !important;padding:0 !important;position:fixed !important;scrolling:no !important;seamless:seamless !important;visibility:visible !important;z-index:2147483647 !important;-moz-border-radius:5px !important;border-radius:5px !important;box-shadow:0px 0px 20px #000000 !important;-moz-box-shadow:0px 0px 20px #000000 !important;text-transform: none !important;box-sizing:content-box !important;-moz-box-sizing:content-box !important;}@media print, screen and (view-mode:minimized){#ghostery-alert-3299{display:none !important;}}</style></head>
+
+
+  <body class="logged_out  linux vis-public env-production ">
+
+    <div class="wrapper">
+      
+      
+      
+
+
+      
+      <div class="header header-logged-out">
+  <div class="container clearfix">
+
+    <a class="header-logo-wordmark" href="https://github.com/">
+      <span class="mega-octicon octicon-logo-github"></span>
+    </a>
+
+    <div class="header-actions">
+        <a class="button primary" href="https://github.com/signup">Sign up</a>
+      <a class="button" href="https://github.com/login?return_to=%2Fcemerick%2Faustin">Sign in</a>
+    </div>
+
+    <div class="command-bar js-command-bar  in-repository">
+
+
+      <ul class="top-nav">
+          <li class="explore"><a href="https://github.com/explore">Explore</a></li>
+        <li class="features"><a href="https://github.com/features">Features</a></li>
+          <li class="enterprise"><a href="https://enterprise.github.com/">Enterprise</a></li>
+          <li class="blog"><a href="https://github.com/blog">Blog</a></li>
+      </ul>
+        <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
+
+<input data-hotkey=" s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-repo="cemerick/austin" data-branch="master" data-sha="9f0650abe64321944e25a9402dbc22ce38df085b" type="text">
+
+    <input name="nwo" value="cemerick/austin" type="hidden">
+
+    <div class="select-menu js-menu-container js-select-menu search-context-select-menu">
+      <span class="minibutton select-menu-button js-menu-target">
+        <span class="js-select-button">This repository</span>
+      </span>
+
+      <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+        <div class="select-menu-modal">
+
+          <div class="select-menu-item js-navigation-item js-this-repository-navigation-item selected">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input class="js-search-this-repository" name="search_target" value="repository" checked="checked" type="radio">
+            <div class="select-menu-item-text js-select-button-text">This repository</div>
+          </div> <!-- /.select-menu-item -->
+
+          <div class="select-menu-item js-navigation-item js-all-repositories-navigation-item">
+            <span class="select-menu-item-icon octicon octicon-check"></span>
+            <input name="search_target" value="global" type="radio">
+            <div class="select-menu-item-text js-select-button-text">All repositories</div>
+          </div> <!-- /.select-menu-item -->
+
+        </div>
+      </div>
+    </div>
+
+  <span original-title="Show command bar help" class="octicon help tooltipped downwards">
+    <span class="octicon octicon-question"></span>
+  </span>
+
+
+  <input name="ref" value="cmdform" type="hidden">
+
+</form>
+    </div>
+
+  </div>
+</div>
+
+
+      
+
+
+          <div class="site" itemscope="" itemtype="http://schema.org/WebPage">
+    
+    <div class="pagehead repohead instapaper_ignore readability-menu">
+      <div class="container">
+        
+
+<ul class="pagehead-actions">
+
+
+  <li>
+  <a original-title="You must be signed in to use this feature" href="https://github.com/login?return_to=%2Fcemerick%2Faustin" class="minibutton with-count js-toggler-target star-button entice tooltipped upwards " rel="nofollow">
+  <span class="octicon octicon-star"></span>Star
+</a>
+<a class="social-count js-social-count" href="https://github.com/cemerick/austin/stargazers">
+  56
+</a>
+
+  </li>
+
+    <li>
+      <a original-title="You must be signed in to fork a repository" href="https://github.com/login?return_to=%2Fcemerick%2Faustin" class="minibutton with-count js-toggler-target fork-button entice tooltipped upwards" rel="nofollow">
+        <span class="octicon octicon-git-branch"></span>Fork
+      </a>
+      <a href="https://github.com/cemerick/austin/network" class="social-count">
+        1
+      </a>
+    </li>
+</ul>
+
+        <h1 itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" class="entry-title public">
+          <span class="repo-label"><span>public</span></span>
+          <span class="mega-octicon octicon-repo"></span>
+          <span class="author">
+            <a href="https://github.com/cemerick" class="url fn" itemprop="url" rel="author"><span itemprop="title">cemerick</span></a></span><span class="repohead-name-divider">/</span><strong><a href="https://github.com/cemerick/austin" class="js-current-repository js-repo-home-link">austin</a></strong>
+
+          <span class="page-context-loader">
+            <img alt="Octocat-spinner-32" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+          </span>
+
+        </h1>
+      </div><!-- /.container -->
+    </div><!-- /.repohead -->
+
+    <div class="container">
+
+      <div class="repository-with-sidebar repo-container with-full-navigation">
+
+        <div class="repository-sidebar">
+            
+
+<div class="repo-nav repo-nav-full js-repository-container-pjax js-octicon-loaders">
+  <div class="repo-nav-contents">
+    <ul class="repo-menu">
+      <li original-title="Code" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/austin" aria-label="Code" class="js-selected-navigation-item selected" data-gotokey="c" data-pjax="true" data-selected-links="repo_source repo_downloads repo_commits repo_tags repo_branches /cemerick/austin">
+          <span class="octicon octicon-code"></span> <span class="full-word">Code</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+        <li original-title="Issues" class="tooltipped leftwards">
+          <a href="https://github.com/cemerick/austin/issues" aria-label="Issues" class="js-selected-navigation-item js-disable-pjax" data-gotokey="i" data-selected-links="repo_issues /cemerick/austin/issues">
+            <span class="octicon octicon-issue-opened"></span> <span class="full-word">Issues</span>
+            <span class="counter">2</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+</a>        </li>
+
+      <li original-title="Pull Requests" class="tooltipped leftwards"><a href="https://github.com/cemerick/austin/pulls" aria-label="Pull Requests" class="js-selected-navigation-item js-disable-pjax" data-gotokey="p" data-selected-links="repo_pulls /cemerick/austin/pulls">
+            <span class="octicon octicon-git-pull-request"></span> <span class="full-word">Pull Requests</span>
+            <span class="counter">1</span>
+            <img alt="Octocat-spinner-32" class="mini-loader" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+
+    </ul>
+    <div class="repo-menu-separator"></div>
+    <ul class="repo-menu">
+
+      <li original-title="Pulse" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/austin/pulse" aria-label="Pulse" class="js-selected-navigation-item" data-pjax="true" data-selected-links="pulse /cemerick/austin/pulse">
+          <span class="octicon octicon-pulse"></span> <span class="full-word">Pulse</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+      <li original-title="Graphs" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/austin/graphs" aria-label="Graphs" class="js-selected-navigation-item" data-pjax="true" data-selected-links="repo_graphs repo_contributors /cemerick/austin/graphs">
+          <span class="octicon octicon-graph"></span> <span class="full-word">Graphs</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+      <li original-title="Network" class="tooltipped leftwards">
+        <a href="https://github.com/cemerick/austin/network" aria-label="Network" class="js-selected-navigation-item js-disable-pjax" data-selected-links="repo_network /cemerick/austin/network">
+          <span class="octicon octicon-git-branch"></span> <span class="full-word">Network</span>
+          <img alt="Octocat-spinner-32" class="mini-loader" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+</a>      </li>
+
+    </ul>
+
+  </div>
+</div>
+
+            <div class="only-with-full-nav">
+              
+
+  
+
+<div class="clone-url open" data-protocol-type="http" data-url="/users/set_protocol?protocol_selector=http&amp;protocol_type=clone">
+  <h3><strong>HTTPS</strong> clone URL</h3>
+
+  <input class="clone js-url-field" value="https://github.com/cemerick/austin.git" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/cemerick/austin.git" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+  
+
+<div class="clone-url " data-protocol-type="subversion" data-url="/users/set_protocol?protocol_selector=subversion&amp;protocol_type=clone">
+  <h3><strong>Subversion</strong> checkout URL</h3>
+
+  <input class="clone js-url-field" value="https://github.com/cemerick/austin" readonly="readonly" type="text">
+
+  <span class="js-zeroclipboard url-box-clippy minibutton zeroclipboard-button" data-clipboard-text="https://github.com/cemerick/austin" data-copied-hint="copied!" title="copy to clipboard"><span class="octicon octicon-clippy"></span></span>
+</div>
+
+
+
+<p class="clone-options">You can clone with
+    <a href="#" class="js-clone-selector" data-protocol="http">HTTPS</a>,
+    <a href="#" class="js-clone-selector" data-protocol="subversion">Subversion</a>,
+  and <a href="https://help.github.com/articles/which-remote-url-should-i-use">other methods.</a>
+</p>
+
+
+
+                <a href="https://github.com/cemerick/austin/archive/master.zip" class="minibutton sidebar-button" title="Download this repository as a zip file" rel="nofollow">
+                  <span class="octicon octicon-cloud-download"></span>
+                  Download ZIP
+                </a>
+            </div>
+        </div><!-- /.repository-sidebar -->
+
+        <div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container="">
+          
+<div class="js-info-carrier" data-show-full-navigation="yes"></div>
+
+<div class="repository-meta js-details-container ">
+    <div class="repository-description js-details-show">
+      <p>The ClojureScript browser-REPL rebuilt stronger, faster, easier.</p>
+    </div>
+
+
+
+</div>
+
+<div class="capped-box overall-summary ">
+
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax="" href="https://github.com/cemerick/austin/commits/master">
+          <span class="num">
+            <span class="octicon octicon-history"></span>
+            24
+          </span>
+          commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax="" href="https://github.com/cemerick/austin/branches">
+          <span class="num">
+            <span class="octicon octicon-git-branch"></span>
+            1
+          </span>
+          branch
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax="" href="https://github.com/cemerick/austin/releases">
+          <span class="num">
+            <span class="octicon octicon-tag"></span>
+            0
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+        <a href="https://github.com/cemerick/austin/contributors">
+          <span class="num">
+            <span class="octicon octicon-organization"></span>
+            2
+          </span>
+          contributors
+        </a>
+      </li>
+    </ul>
+
+      <div class="repository-lang-stats">
+        <ol class="repository-lang-stats-numbers">
+          <li>
+              <a href="https://github.com/cemerick/austin/search?l=clojure">
+                <span class="color-block language-color" style="background-color:#db5855;"></span>
+                <span class="lang">Clojure</span>
+                <span class="percent">100%</span>
+              </a>
+          </li>
+        </ol>
+      </div>
+  </div>
+
+</div>
+
+  <a original-title="Show language statistics" href="#" class="repository-lang-stats-graph js-toggle-lang-stats tooltipped downwards" style="background-color:#db5855">
+  <span class="language-color" style="width:100%; background-color:#db5855;" itemprop="keywords">Clojure</span>
+  </a>
+
+
+
+
+<div class="file-navigation in-mid-page">
+    <a original-title="Compare &amp; review" href="https://github.com/cemerick/austin/compare" class="minibutton compact primary tooltipped downwards" data-pjax="">
+      <span class="octicon octicon-git-compare"></span>
+    </a>
+
+  
+
+
+<div class="select-menu js-menu-container js-select-menu">
+  <span class="minibutton select-menu-button js-menu-target" data-hotkey="w" data-master-branch="master" data-ref="master">
+    <span class="octicon octicon-git-branch"></span>
+    <i>branch:</i>
+    <span class="js-select-button">master</span>
+  </span>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax="">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <span class="select-menu-title">Switch branches/tags</span>
+        <span class="octicon octicon-remove-close js-menu-close"></span>
+      </div> <!-- /.select-menu-header -->
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input id="context-commitish-filter-field" class="js-filterable-field js-navigation-enable" placeholder="Filter branches/tags" type="text">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" class="js-select-menu-tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" class="js-select-menu-tab">Tags</a>
+            </li>
+          </ul>
+        </div><!-- /.select-menu-tabs -->
+      </div><!-- /.select-menu-filters -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <div class="select-menu-item js-navigation-item selected">
+              <span class="select-menu-item-icon octicon octicon-check"></span>
+              <a href="https://github.com/cemerick/austin/tree/master" class="js-navigation-open select-menu-item-text js-select-button-text css-truncate-target" data-name="master" data-skip-pjax="true" rel="nofollow" title="master">master</a>
+            </div> <!-- /.select-menu-item -->
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div> <!-- /.select-menu-list -->
+
+    </div> <!-- /.select-menu-modal -->
+  </div> <!-- /.select-menu-modal-holder -->
+</div> <!-- /.select-menu -->
+
+
+  <div class="breadcrumb"><span class="repo-root js-repo-root"><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/cemerick/austin" data-branch="master" data-direction="back" data-pjax="true" itemscope="url"><span itemprop="title">austin</span></a></span></span><span class="separator"> / </span><form original-title="Sign in to make or propose changes" action="/login?return_to=%2Fcemerick%2Faustin" class="js-new-blob-form tooltipped rightwards new-file-link" method="post"><span class="js-new-blob-submit octicon octicon-file-add"></span></form></div>
+</div>
+
+
+
+<a href="https://github.com/cemerick/austin/find/master" data-hotkey="t" style="display:none" data-pjax="">Show File Finder</a>
+<a href="https://github.com/cemerick/austin/ctags-search/master" data-hotkey="T" style="display:none" data-pjax="">Show Definition Finder</a>
+<div class="bubble files-bubble">
+  <div class="commit commit-tease js-details-container">
+    <p class="commit-title ">
+        <a href="https://github.com/cemerick/austin/commit/b60cef06475cf8276244ef40df4ba81cec38bbe9" class="message" data-pjax="true" title="Merge pull request #2 from hugoduncan/fix/static-dir-usage
+
+Fix :static-dir usage">Merge pull request</a> <a href="https://github.com/cemerick/austin/issues/2" class="issue-link" title="Fix :static-dir usage">#2</a> <a href="https://github.com/cemerick/austin/commit/b60cef06475cf8276244ef40df4ba81cec38bbe9" class="message" data-pjax="true" title="Merge pull request #2 from hugoduncan/fix/static-dir-usage
+
+Fix :static-dir usage">from hugoduncan/fix/static-dir-usage</a>
+        <span class="hidden-text-expander inline"><a href="#" class="js-details-target">…</a></span>
+    </p>
+      <div class="commit-desc"><pre>Fix :static-dir usage</pre></div>
+    <div class="commit-meta">
+      <span class="js-zeroclipboard zeroclipboard-link" data-clipboard-text="b60cef06475cf8276244ef40df4ba81cec38bbe9" data-copied-hint="copied!" title="Copy SHA"><span class="octicon octicon-clippy"></span></span>
+      <a href="https://github.com/cemerick/austin/commit/b60cef06475cf8276244ef40df4ba81cec38bbe9" class="sha-block" data-pjax="">latest commit <span class="sha">b60cef0647</span></a>
+
+      <div class="authorship">
+        <img class="gravatar" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/b8ee952abb6620c1c93b3acb46cd391c.jpe" width="20" height="20">
+        <span class="author-name"><a href="https://github.com/cemerick" data-skip-pjax="true" rel="author">cemerick</a></span>
+        authored <time class="js-relative-date updated" datetime="2013-08-06T05:32:57-07:00" title="2013-08-06 05:32:57">9 hours ago</time>
+
+      </div>
+    </div>
+  </div><table class="files" data-pjax="">
+    <thead>
+
+        
+  
+
+    </thead>
+
+    
+<tbody class="" data-url="/cemerick/austin/file-list/master">
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/tree/master/browser-connected-repl-sample" class="js-directory-link" id="3fe2e88534e342d015b346ad0ff8ebd3-5e2a4e957ae8ee954119768ab4781255c71f8fd9" title="browser-connected-repl-sample">browser-connected-repl-sample</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/042ff54df5caba930138a71b36c246147156e0ad" class="message" data-pjax="true" title="straighten out sample project source paths">straighten out sample project source paths</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-05T07:07:27-07:00" title="2013-08-05 07:07:27">a day ago</time></span></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-directory"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/tree/master/src" class="js-directory-link" id="25d902c24283ab8cfbac54dfa101ad31-7b8caee370561c11b2a58ae5dad7d18a34fbb4d0" title="src">src</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/6f75ccafa43f554dc90980442f1d76882efa006f" class="message" data-pjax="true" title="Fix :static-dir usage
+
+The :static-dir key is under the :opts key in the session.">Fix :static-dir usage</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-06T05:03:24-07:00" title="2013-08-06 05:03:24">9 hours ago</time></span></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/blob/master/.gitignore" class="js-directory-link" id="a084b794bc0759e7a6b77810e01874f2-5591746c65a1e4fde13deae1fd251624409152bd" title=".gitignore">.gitignore</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/8c90dfbdb0e79415ab795457305173240c7b3962" class="message" data-pjax="true" title="documentation starters">documentation starters</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-02T12:37:57-07:00" title="2013-08-02 12:37:57">4 days ago</time></span></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/blob/master/CHANGES.md" class="js-directory-link" id="8b1c3fd0d4a6765c16dfd18509182f9d-6019cae347e32cefd9168bef35ce5b5856749592" title="CHANGES.md">CHANGES.md</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/f4486ed21da7eba09cca58dbffca35b4c7cb949b" class="message" data-pjax="true" title="put differences vis a vis core browser-REPL up front,
+
+link to browser-connected REPL sample project">put differences vis a vis core browser-REPL up front,</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-05T04:16:26-07:00" title="2013-08-05 04:16:26">a day ago</time></span></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/blob/master/README.md" class="js-directory-link" id="04c6e90faac2675aa89e2176d2eec7d8-8ca38e51da68d9922eb4250aafa0aae8ac330c21" title="README.md">README.md</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/c635ee474db334795491b1a15199e34c5bea2e1f" class="message" data-pjax="true" title="add link to demo screencast">add link to demo screencast</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-05T09:00:10-07:00" title="2013-08-05 09:00:10">a day ago</time></span></td>
+    </tr>
+    <tr class="">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/blob/master/epl-v10.html" class="js-directory-link" id="d137c4299916b11c5ca21b6dc56096df-486a866c4e88344f527ae421974f8bf10c87abef" title="epl-v10.html">epl-v10.html</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/7a935b89e4dde18c5739c69b7f13734fb1fc53fc" class="message" data-pjax="true" title="initial project setup">initial project setup</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-02T08:18:02-07:00" title="2013-08-02 08:18:02">4 days ago</time></span></td>
+    </tr>
+    <tr class="alt">
+      <td class="icon">
+        <span class="octicon octicon-file-text"></span>
+        <img alt="Octocat-spinner-32" class="spinner" src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/octocat-spinner-32.gif" width="16" height="16">
+      </td>
+      <td class="content">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/blob/master/project.clj" class="js-directory-link" id="0fff143854a4f5c0469a3819b978a483-6473f49668b0e05983d073632c491a22de0d91ea" title="project.clj">project.clj</a></span>
+      </td>
+      <td class="message">
+        <span class="css-truncate css-truncate-target"><a href="https://github.com/cemerick/austin/commit/37d0db984ca9fbc223feadb0068e6eced3ae323c" class="message" data-pjax="true" title="0.1.0">0.1.0</a></span>
+      </td>
+      <td class="age"><span class="css-truncate css-truncate-target"><time class="js-relative-date" datetime="2013-08-05T04:57:34-07:00" title="2013-08-05 04:57:34">a day ago</time></span></td>
+    </tr>
+</tbody>
+
+  </table>
+</div>
+
+  <div id="readme" class="clearfix announce instapaper_body md">
+    <span class="name"><span class="octicon octicon-book"></span> README.md</span><article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a name="austin" class="anchor" href="#austin"><span class="octicon octicon-link"></span></a>Austin</h1>
+
+
+
+<p>A significant refactoring of the ClojureScript-standard browser-repl environment
+that's as easy to "configure" and use as a Clojure REPL.</p>
+
+<p><a href="http://youtu.be/HoLs0V8T5AA?t=41s"><img src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/austin-6-large.png" alt="" style="max-width:100%;"></a></p>
+
+<h2>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h2>
+
+<p>Austin has one objective: to get you into a fast ClojureScript REPL suited for
+your project running in a browser environment as quickly and painlessly as
+possible, with full support for the nREPL toolchain.  </p>
+
+<p><a href="http://www.youtube.com/watch?v=a1Bs0pXIVXc&amp;feature=youtu.be">Check out the screencast demonstrating how Austin is
+used</a>, or forge
+ahead for detailed documentation.</p>
+
+<h2>
+<a name="status" class="anchor" href="#status"><span class="octicon octicon-link"></span></a>Status</h2>
+
+<p>I've been using this browser-repl alternative for ~six months with good results,
+and others have banged it around some as well.  That said, I've only recently
+begun to think about the API around its configuration and project integration
+(in particular, the <code>cemerick.austin.repls</code> namespace).  It all works nice, but
+changes in that department are almost surely going to happen.</p>
+
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<p>Available <a href="http://github.com/cemerick/austin/blob/master/CHANGES.md">here</a>.</p>
+
+<p>Austin is largely a refactoring of the original ClojureScript REPL.  These
+changes include:</p>
+
+<ul>
+<li>Multiple concurrent browser-REPLs can be safely used from the same project</li>
+<li>Austin's HTTP server is now always-on, and auto-selects an open port; this
+means you can have multiple concurrent browser-REPLs running from <em>different</em>
+projects without faffing around with <code>:port</code> arguments, etc.</li>
+<li>Each browser-REPL session supports a new top-level "entry" URL that can be
+used to easily start the REPL in a browser or other JS runtime (i.e. you don't
+need to have a separate webapp running to initiate the browser-REPL
+connection)</li>
+<li>The entry (and REPL) URLs are available in slots on the browser-REPL's
+environment, making it trivial to automate browser-REPL sessions with e.g.
+phantomjs.  See <a href="#project-repls">'Project REPLs'</a> for easy-mode "project"
+REPLs.</li>
+<li>Replaced the custom HTTP server with <code>com.sun.net.httpserver.*</code> bits (<a href="http://docs.oracle.com/javase/7/docs/technotes/guides/net/enhancements-6.0.html">a
+standard part of J2SE
+6+</a>)</li>
+<li>The <code>:port</code> argument to <code>repl-env</code> is no longer supported; the lifecycle of
+the server is not tied to the creation of a browser-REPL environment.  If you
+need to get the port of the running browser-REPL server, use
+<code>(get-browser-repl-port)</code>; if you need a URL you can use with
+<code>clojure.browser.repl/connect</code> as shown in existing browser-REPL tutorials,
+it's available under <code>:repl-url</code> from the browser-REPL environment you want to
+connect to. See <a href="#browser-connected-repls">'Browser-connected REPLs'</a> for
+easy-mode browser-connected REPLs</li>
+</ul><h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>"Installation"</h2>
+
+<p>Austin is available in Maven Central. Add it to your <code>project.clj</code>'s list of
+<code>:plugins</code>, probably in your <code>:dev</code> profile:</p>
+
+<div class="highlight"><pre><span class="ss">:profiles</span> <span class="p">{</span><span class="ss">:dev</span> <span class="p">{</span><span class="ss">:plugins</span> <span class="p">[[</span><span class="nv">com.cemerick/austin</span> <span class="s">"0.1.0"</span><span class="p">]]}}</span>
+</pre></div>
+
+<p>Austin contains some Leiningen middleware that does the following:</p>
+
+<ul>
+<li>Adds a <em>dependency</em> on Austin to your project, which transitively brings in
+ClojureScript and Piggieback.</li>
+<li>Modifies your project's <code>:repl-options</code> to include Piggieback's
+<code>wrap-cljs-repl</code> middleware.</li>
+<li>Adds <code>(require '[cemerick.austin.repls :refer (exec) :rename {exec
+austin-exec}])</code> to your project's <code>:injections</code>, thus making
+<code>cemerick.austin.repls/exec</code> available as <code>austin-exec</code> in the <code>user</code>
+namespace for your fast'n'easy ClojureScript browser REPL pleasure.</li>
+</ul><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p><em>If you're impatient, <a href="#project-repls">skip on down</a> to start a ClojureScript
+REPL using phantomjs/slimerjs/Chrome/etc in about 10 seconds.</em> </p>
+
+<p>Austin provides two types of ClojureScript REPL environments.  One, returned by
+calls to <code>cemerick.austin/repl-env</code>, is analogous to the standard ClojureScript
+browser-REPL environment implemented in <code>cljs.repl.browser</code>, with various
+usability improvements.  The other, returned by calls to
+<code>cemerick.austin/exec-env</code>, provides all the same functionality as <code>repl-env</code>,
+but also fully manages the lifecycle of an external JavaScript runtime that is
+used to service all REPL interactions (i.e. you don't need to have an app
+running in a GUI browser to get a browser-REPL going).  Either of these REPL
+environments can be used with either of:</p>
+
+<ul>
+<li>
+<code>cljs.repl/repl</code>,&nbsp;described in the various "core" ClojureScript tutorials as
+the primary entry point for all things REPL.  This is suitable in terminal
+settings, can be used w/ e.g. <code>inferior-lisp</code> in emacs, and so on, but cannot
+be used with nREPL.</li>
+<li>
+<code>cemerick.piggieback/cljs-repl</code>, the nREPL-compatible analogue to
+<code>cljs.repl/repl</code>, provided by Piggieback</li>
+</ul><p>Austin's two types of REPL environments roughly correspond to the two primary
+scenarios for ClojureScript REPLs:</p>
+
+<ul>
+<li>
+<em>Project</em> REPLs, where you want a ClojureScript REPL that has all of your
+project's dependencies, sources, and other resources available, but is
+generally not using or requiring your application's front-end to be running in
+a GUI browser, i.e. a headless JavaScript runtime is sufficient, which may or
+may not have a DOM.  This is generally when <code>exec-env</code> is used.</li>
+<li>
+<em>Browser-connected REPLs</em>, the original use case of ClojureScript
+browser-REPLs, where you want a ClojureScript REPL connected to a browser
+runtime within which you've loaded your front-end application.</li>
+</ul><p>This nomenclature is a bit hand-wavy, since the JavaScript runtimes used by
+project REPLs are almost always <em>also</em> browsers; hopefully I'll come up with a
+better term for the first category eventually.</p>
+
+<h3>
+<a name="project-repls" class="anchor" href="#project-repls"><span class="octicon octicon-link"></span></a>Project REPLs</h3>
+
+<p>To start a project REPL, just pass the result of calling <code>exec-env</code> to the
+ClojureScript REPL function that corresponds with your environment:</p>
+
+<ul>
+<li>If you're using nREPL, <code>(cemerick.piggieback/cljs-repl :repl-env
+(cemerick.austin/exec-env))</code>
+</li>
+<li>If you're not using nREPL, <code>(cljs.repl/repl (cemerick.austin/exec-env))</code>
+</li>
+</ul><p>Alternatively, you can use <code>cemerick.austin.repls/cljs-repl</code>, a convenience
+function that will detect whether you're using nREPL or not, and pass a new exec
+environment to the correct ClojureScript REPL function.  So,
+<code>(cemerick.austin.repls/cljs-repl (cemerick.austin/exec-env))</code> is equivalent to
+the two examples above; this particular combination is so commonly used that
+it's wrapped up into a single function, <code>(cemerick.austin.repls/exec)</code>, probably
+the easiest way to start a ClojureScript REPL that uses a browser JavaScript
+runtime.  <em>Note that <code>cemerick.austin.repls/exec</code> passes all of its arguments
+along to <code>exec-env</code>.</em></p>
+
+<h4>
+<a name="exec-envs-browser-runtimes" class="anchor" href="#exec-envs-browser-runtimes"><span class="octicon octicon-link"></span></a><code>exec-env</code>'s browser runtimes</h4>
+
+<p>Any of the above options will give you a headless ClojureScript REPL that has all
+of your project's dependencies, sources, and other resources available.
+<code>exec-env</code> uses uses <code>phantomjs</code> by default, so you'll need to have that installed
+and on your <code>PATH</code>.  If you are using a different <em>phantomjs-compatible</em>
+headless browser implementation (e.g. slimerjs, or perhaps your package manager
+installs phantomjs with a different name?), you can pass the name of that binary
+as :phantom-cmd, e.g. <code>(exec-env :phantom-cmd "slimerjs")</code>.</p>
+
+<p>Whichever process is started will be automatically terminated when you stop the
+ClojureScript REPL (via <code>:cljs/quit</code>), or the parent Clojure REPL.</p>
+
+<h5>
+<a name="using-other-browser-runtimes" class="anchor" href="#using-other-browser-runtimes"><span class="octicon octicon-link"></span></a>Using other browser runtimes</h5>
+
+<p>I've been saying "headless" here because it's often most convenient to avoid
+using "headed" browsers, which necessarily open a new window for each
+ClojureScript REPL you start. But, if you really want to, you <em>can</em> use a full
+GUI browser with <code>exec-env</code>, which can be handy if you need to see the results
+of DOM manipulations, etc., without having to set up and connect to a browser
+running your application.  To do this, just pass the terminal commands necessary
+to start your preferred browser (such that Austin can append the browser-repl
+URL to the command) to <code>exec-env</code> or <code>exec</code> as a <code>:exec-cmds</code> vector keyword
+argument:</p>
+
+<div class="highlight"><pre><span class="nv">user=&gt;</span> <span class="p">(</span><span class="nf">cemerick.austin.repls/exec</span>
+         <span class="ss">:exec-cmds</span> <span class="p">[</span><span class="s">"open"</span> <span class="s">"-ga"</span> <span class="s">"/Applications/Google Chrome.app"</span><span class="p">])</span>
+<span class="nv">Browser-REPL</span> <span class="nv">ready</span> <span class="o">@</span> <span class="nv">http</span><span class="ss">://localhost:59423/4877/repl/start</span>
+<span class="nv">Type</span> <span class="o">`</span><span class="ss">:cljs/quit</span><span class="o">`</span> <span class="nv">to</span> <span class="nv">stop</span> <span class="nv">the</span> <span class="nv">ClojureScript</span> <span class="nv">REPL</span>
+<span class="nv">nil</span>
+<span class="nv">cljs.user=&gt;</span> <span class="p">(</span><span class="nb">apply + </span><span class="p">(</span><span class="nf">js/Array</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+<span class="mi">6</span>
+</pre></div>
+
+<p>The command strings passed to <code>exec</code> in this example will open the browser-REPL
+endpoint URL in a new Chrome window in the background on Mac OS X.  Substitute
+whatever invocation you like for your preferred browser / operating system.</p>
+
+<h3>
+<a name="browser-connected-repls" class="anchor" href="#browser-connected-repls"><span class="octicon octicon-link"></span></a>Browser-connected REPLs</h3>
+
+<p>This was always the primary use case for the original browser-repl: load your
+application up in a browser, have it connect back to your Clojure /
+ClojureScript compiler environment, and you can develop/debug/inspect/etc your
+running ClojureScript application as it runs in its target environment.</p>
+
+<p>This repo provides a completely self-contained sample project demonstrating and
+documenting how to use Austin for your browser-connected REPL'ing needs.  <a href="https://github.com/cemerick/austin/blob/master/browser-connected-repl-sample">Check
+it
+out</a>.</p>
+
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>ISO a reasonable automated test strategy</li>
+</ul><h2>
+<a name="need-help" class="anchor" href="#need-help"><span class="octicon octicon-link"></span></a>Need Help?</h2>
+
+<p>Ping <code>cemerick</code> on freenode irc or
+<a href="http://twitter.com/cemerick">twitter</a> if you have questions or would
+like to contribute.</p>
+
+<h2>
+<a name="license-and-credits" class="anchor" href="#license-and-credits"><span class="octicon octicon-link"></span></a>License and credits</h2>
+
+<p>Big shout out to Brenton Ashworth, Alex Redington, and Bobby Calderwood (the
+authors of the original browser-repl), Brandon Bloom for pushing hard on making
+ClojureScript easier to use, and everyone else in #clojure and on the mailing
+list(s) that took the time to take Austin for a spin when it was still just a
+<a href="https://gist.github.com/cemerick/5091059">gist</a> and then a <code>.patch</code> file.</p>
+
+<p>Copyright ©2013 <a href="http://cemerick.com/">Chas Emerick</a> and other contributors.</p>
+
+<pre><code>Copyright (c) Rich Hickey. All rights reserved. The use and
+distribution terms for this software are covered by the Eclipse
+Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php)
+which can be found in the file epl-v10.html at the root of this
+distribution. By using this software in any fashion, you are
+agreeing to be bound by the terms of this license. You must
+not remove this notice, or any other, from this software.
+</code></pre></article>
+  </div>
+
+
+        </div>
+
+      </div><!-- /.repo-container -->
+      <div class="modal-backdrop"></div>
+    </div><!-- /.container -->
+  </div><!-- /.site -->
+
+
+    </div><!-- /.wrapper -->
+
+      <div class="container">
+  <div class="site-footer">
+    <ul class="site-footer-links right">
+      <li><a href="https://status.github.com/">Status</a></li>
+      <li><a href="http://developer.github.com/">API</a></li>
+      <li><a href="http://training.github.com/">Training</a></li>
+      <li><a href="http://shop.github.com/">Shop</a></li>
+      <li><a href="https://github.com/blog">Blog</a></li>
+      <li><a href="https://github.com/about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/">
+      <span class="mega-octicon octicon-mark-github"></span>
+    </a>
+
+    <ul class="site-footer-links">
+      <li>© 2013 <span title="0.09703s from fe18.rs.github.com">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy">Privacy</a></li>
+        <li><a href="https://github.com/security">Security</a></li>
+        <li><a href="https://github.com/contact">Contact</a></li>
+    </ul>
+  </div><!-- /.site-footer -->
+</div><!-- /.container -->
+
+
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-fullscreen-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="js-fullscreen-contents" placeholder="" data-suggester="fullscreen_suggester"></textarea>
+          <div class="suggester-container">
+              <div class="suggester fullscreen-suggester js-navigation-container" id="fullscreen_suggester" data-url="/cemerick/austin/suggestions/commit">
+              </div>
+          </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a original-title="Exit Zen Mode" href="#" class="exit-fullscreen js-exit-fullscreen tooltipped leftwards">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a original-title="Switch themes" href="#" class="theme-switcher js-theme-switcher tooltipped leftwards">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+
+
+
+    <div id="ajax-error-message" class="flash flash-error">
+      <span class="octicon octicon-alert"></span>
+      <a href="#" class="octicon octicon-remove-close close ajax-error-dismiss"></a>
+      Something went wrong with that request. Please try again.
+    </div>
+
+    
+  
+
+
+<div original-title="" style="position: absolute; left: -9999px; top: -9999px; width: 15px; height: 15px; z-index: 9999;" data-clipboard-ready="true" class="global-zeroclipboard-container" id="global-zeroclipboard-html-bridge">      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="global-zeroclipboard-flash-bridge" width="100%" height="100%">         <param name="movie" value="https://github.global.ssl.fastly.net/flash/ZeroClipboard.swf?nocache=1375824047715">         <param name="allowScriptAccess" value="always">         <param name="scale" value="exactfit">         <param name="loop" value="false">         <param name="menu" value="false">         <param name="quality" value="best">         <param name="bgcolor" value="#ffffff">         <param name="wmode" value="transparent">         <param name="flashvars" value="trustedDomain=github.com">         <embed src="cemerick_austin%20BREPL%C2%B7%20GitHub_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="global-zeroclipboard-flash-bridge" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="trustedDomain=github.com" scale="exactfit" width="100%" height="100%">                </object></div></body></html>
