@@ -1,0 +1,1258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="search" href="http://clojure.org/space/opensearch" type="application/opensearchdescription+xml" title="Wikispaces Search (Clojure Wiki)" />
+<link rel="alternate" type="application/x-wiki" title="Edit This Page" href="/page/edit/cheatsheet" />
+<link rel="alternate" title="Clojure - All Changes" href="http://clojure.org/wiki/xmla?v=rss_2_0" type="application/rss+xml" />
+<link rel="alternate" title="clojure : cheatsheet - Discussion" href="http://clojure.org/message/xml/cheatsheet?v=rss_2_0" type="application/rss+xml" />
+<link rel="alternate" title="clojure : cheatsheet - Edits" href="http://clojure.org/page/xml/cheatsheet?v=rss_2_0" type="application/rss+xml" />
+<link rel="microsummary" href="/page/microsummary/cheatsheet/edits"/>
+<link rel="microsummary" href="/page/microsummary/cheatsheet/messages"/>
+<script type="text/javascript">
+var wikispaces_isUserLoggedIn = false;
+var wikispaces_isUserOrganizer = false;
+var wikispaces_isMain = true;
+var wikispaces_username = '';
+var wikispaces_spaceName = 'clojure';
+var wikispaces_projectName = '';
+var wikispaces_wikiName = 'clojure';
+var wikispaces_wikiText = 'Clojure';
+var wikispaces_isDefaultSpace = '1';
+var wikispaces_method = 'view';
+var wikispaces_object = 'page';
+var wikispaces_page = 'cheatsheet';
+var wikispaces_id = '';
+var wikispaces_domain = 'wikispaces.com';
+var wikispaces_main_domain = 'wikispaces.com';
+var wikispaces_asset_url_prefix = 'http://c1.wikicdn.com';
+var wikispaces_beta_features = false;
+var wikispaces_isMobileSite = false;
+var wikispaces_isUploadCapable = true;
+var wikispaces_can_discuss = false;
+var wikispaces_has_gdocs = false;
+</script>
+	<title>Clojure - cheatsheet</title>
+	<link rel="icon" href="/space/showimage/favicon.png">
+	<link rel="shortcut icon" href="/space/showimage/favicon.png">
+	<!--<link rel="stylesheet" href="http://c1.wikicdn.com/s/gz/1v8qv98z-theme_common.css" type="text/css" />-->
+	<link rel="stylesheet" href="/file/view/Clojure.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="/file/view/print.css" type="text/css" media="print" />
+	<script type="text/javascript" src="/file/view/code_highlighter.js"></script>
+	<script type="text/javascript" src="/file/view/clojure.js"></script>
+	<style>.menuWrapper{height: 36px;}
+		#wsMainEditor_external {position: fixed !important; top: 0 !important;}
+	</style>
+<link rel="stylesheet" href="http://clojure.org/stylesheet/view/221886338-217420326D.gz.css" type="text/css" />
+<link rel="stylesheet" href="http://c1.wikicdn.com/s/gz/549qx6xk-internal.css" type="text/css" />
+
+<!--[if lte IE 8]>
+<style type="text/css">
+.WikiInternalHeaderNav {
+   margin: -3px;
+   zoom: 1;
+   filter:
+         progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=3, Direction=180),
+         progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=3, Direction=270);
+}
+</style>
+<![endif]-->
+<script src="http://c1.wikicdn.com/s/gz/q68kvj4k-common.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+
+  var wsGoogleAccount = 'UA-80504-1';
+  _gaq.push(['_setAccount', wsGoogleAccount]);
+  _gaq.push(['_gat._anonymizeIp']);
+  _gaq.push(['_setDomainName', 'wikispaces.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  _gaq.push(['_setCustomVar', 2, 'Authenticated', 'Guest', 2]);
+</script></head>
+<body id="cheatsheet"><div id="WikispacesWrapper"><div id="WikispacesNoticeHolder"><div id="WikispacesNoticeJs" style="display: none"></div></div><div class="WikiInternalHeaderNav WikiElement"><div class="WikiInternalHeaderNavMenu"><span class="WikiInternalHeaderNavMenuArea guestUserName">guest</span><span class="slideMarker divider">|</span><span class="WikiInternalHeaderNavMenuArea"><a href="http://www.wikispaces.com/user/join?goto=http%3A%2F%2Fclojure.org%2Fcheatsheet" rel="nofollow" class="WikispacesXDomainDialogLink">Join</a></span><span class="divider">|</span><span class="WikiInternalHeaderNavMenuArea"><a class="WikispacesHelpTrigger" rel="nofollow" href="http://help.wikispaces.com/">Help</a></span><span class="divider">|</span><span class="WikiInternalHeaderNavMenuArea"><a href="http://www.wikispaces.com/site/signin?goto=http%3A%2F%2Fclojure.org%2Fcheatsheet" rel="nofollow" class="WikispacesXDomainDialogLink">Sign In</a></span></div></div>		<div id="AllContentContainer">
+		<div id="Header">
+			<a href="/" id="Logo"><img src="/space/showimage/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+			<h1><a href="/" title="Clojure">Clojure</a></h1>
+			<div id="Resources">
+				<form action="/search/view" method="post" class="WikiSearch WikiElement">
+					<input class="WikiSearchInput" name="q" id="q" size="10" value="" type="text">
+					<input name="search" id="search" value="Search" alt="Search" type="submit">
+				</form>
+				<ul id="ResourcesB">
+					<li><a class="wiki_link_ext" href="http://dev.clojure.org/display/design/Home" rel="nofollow">Dev</a></li>
+					<li><a class="wiki_link_ext" href="irc://irc.freenode.net/#clojure" rel="nofollow">IRC</a>
+						<li><a class="wiki_link_ext" href="http://clojure.com/blog/" rel="nofollow">Blog</a></li>
+						<li><a class="wiki_link_ext" href="http://en.wikibooks.org/wiki/Clojure_Programming" rel="nofollow">Wiki</a></li>
+					</ul>
+					<ul id="ResourcesA">
+						<li><a class="wiki_link_ext" href="/downloads" rel="nofollow">Download</a></li>
+						<li><a class="wiki_link_ext" href="http://groups.google.com/group/clojure" rel="nofollow">Google Group</a></li>
+						<li><a class="wiki_link_ext" href="http://clojure.blip.tv/" rel="nofollow">Screencasts</a></li>
+						<li><a class="wiki_link_ext" href="http://dev.clojure.org/display/doc/Clojure+Contrib" rel="nofollow">Contrib Libraries</a></li>
+					</li>
+				</div>
+			</div>
+			<div id="leftcolumn">
+				<div class="menu">
+					<!-- google_ad_section_start --><div class="WikiCustomNav WikiElement wiki"><a class="wiki_link" href="/rationale">Rationale</a><br />
+<a class="wiki_link" href="/state">On State and Identity</a><br />
+<a class="wiki_link" href="/features">Features</a><br />
+<ul><li><a class="wiki_link" href="/dynamic">Dynamic Development</a></li><li><a class="wiki_link" href="/functional_programming">Functional Programming</a></li><li><a class="wiki_link" href="/lisp">Lisp</a></li><li><a class="wiki_link" href="/runtime_polymorphism">Runtime Polymorphism</a></li><li><a class="wiki_link" href="/concurrent_programming">Concurrent Programming</a></li><li><a class="wiki_link" href="/jvm_hosted">Hosted on the JVM</a></li></ul><a class="wiki_link" href="/books">Books</a><br />
+<a class="wiki_link_ext" href="http://github.com/search?q=clojure&amp;repo=&amp;langOverride=&amp;start_value=1&amp;type=Repositories&amp;language=" rel="nofollow">Libraries</a><br />
+<a class="wiki_link_ext" href="http://dev.clojure.org/display/community/Clojure+User+Groups" rel="nofollow">Community</a><br />
+<a class="wiki_link" href="/swag">Swag</a><br />
+<a class="wiki_link" href="/Reference">Reference</a><br />
+<ul><li><a class="wiki_link" href="/getting_started">Getting Started</a></li><li><a class="wiki_link" href="/reader">The Reader</a></li><li><a class="wiki_link" href="/repl_and_main">The REPL and main</a></li><li><a class="wiki_link" href="/evaluation">Evaluation</a></li><li><a class="wiki_link" href="/special_forms">Special Forms</a></li><li><a class="wiki_link" href="/macros">Macros</a></li><li><a class="wiki_link" href="/other_functions">Other Functions</a></li><li><a class="wiki_link" href="/data_structures">Data Structures</a></li><li><a class="wiki_link" href="/datatypes">Datatypes</a></li><li><a class="wiki_link" href="/sequences">Sequences</a></li><li><a class="wiki_link" href="/Transients">Transients</a></li><li><a class="wiki_link" href="/multimethods">Multimethods and Hierarchies </a></li><li><a class="wiki_link" href="/Protocols">Protocols</a></li><li><a class="wiki_link" href="/metadata">Metadata</a></li><li><a class="wiki_link" href="/namespaces">Namespaces</a></li><li><a class="wiki_link" href="/libs">Libs</a></li><li><a class="wiki_link" href="/vars">Vars and Environment</a></li><li><a class="wiki_link" href="/refs">Refs and Transactions</a></li><li><a class="wiki_link" href="/agents">Agents</a></li><li><a class="wiki_link" href="/atoms">Atoms</a></li><li><a class="wiki_link" href="/java_interop">Java Interop</a></li><li><a class="wiki_link" href="/compilation">Compilation and Class Generation</a></li><li><a class="wiki_link" href="/other_libraries">Other Libraries</a></li><li><a class="wiki_link" href="/lisps">Differences with Lisps</a></li><li><a class="wiki_link_ext" href="http://clojure.github.com/clojure/" rel="nofollow">API</a></li><li><a class="wiki_link" href="/cheatsheet">Cheat Sheet</a></li><li><a class="wiki_link_ext" href="http://clojure.org/space/changes" rel="nofollow">Recent Changes</a></li></ul><a class="wiki_link" href="/license">License</a><br />
+<a class="wiki_link" href="/contributing">Contributing</a></div><!-- google_ad_section_end -->				</div>
+			</div>
+			<!-- /leftcolumn -->
+			<div id="rightcolumn">
+								<div id="Content">
+					<div class="contentBox"><div class="innerContentBox">
+<div class="MenuBar">
+  
+    <span class="PageTitle"><a href="/cheatsheet">cheatsheet</a></span>
+      <div>
+    <div class="ButtonPosition">
+      <div class="Buttons">
+        <a class="Button ButtonLeft disabled tipme" title="you do not have permission to edit this page" onclick="return false;" href="#"><img src="http://c1.wikicdn.com/i/c.gif" width="16px" height="16px" alt=""  class="Icon WikispacesSpriteApp edit"/> Edit</a><a class="Button ButtonMiddle tipme" title="no discussion posts" onclick="" href="/page/messages/cheatsheet"><img src="http://c1.wikicdn.com/i/c.gif" width="16px" height="16px" alt=""  class="Icon WikispacesSpriteApp discussion"/> 0</a><a class="Button ButtonMiddle CommentButton disabled tipme" title="no comments" onclick="return false;" href="/cheatsheet"><img src="http://c1.wikicdn.com/i/c.gif" width="16px" height="16px" alt=""  class="Icon WikispacesSpriteApp comment"/> <span class="commentCount">0</span></a><a class="Button ButtonMiddle tipme" title="view 39 revisions" onclick="" href="/page/history/cheatsheet"><img src="http://c1.wikicdn.com/i/c.gif" width="16px" height="16px" alt=""  class="Icon WikispacesSpriteApp history"/> 39</a><a class="Button ButtonRight ButtonMore tipme" title="more options" onclick="" href="/page/menu/cheatsheet">&hellip;</a>      </div>
+    </div>
+    <div class="MoreMenu">
+  <table>
+    <tbody>
+            <tr>
+        <th>Tags</th>
+                <td style="white-space: normal;">
+          
+<form action="#" name="WikiTagForm" class="WikiTagForm WikiTokenAutocomplete"><input type="hidden" name="wikispacesFormToken" value="aa8d388ac5bb77cb59b84386ef603cd59f47cf89"/><input type="hidden" name="wikispacesFormToken" value="aa8d388ac5bb77cb59b84386ef603cd59f47cf89"/>
+  <div class="WikiTagList medgrey">
+        <ul>
+          <li>none</li>
+        </ul>
+      </div>
+  </form>        </td>
+              </tr>
+            <tr>
+        <th>View As</th>
+                <td>
+          <a href="/cheatsheet?f=print">Print</a>&nbsp;&middot;&nbsp;<a href="/page/pdf/cheatsheet">PDF</a>        </td>
+              </tr>
+            <tr>
+        <th>Other</th>
+                <td>
+          <a class="WikispacesDialogLink" href="http://clojure.org/wiki/addmonitor?monitorLink=page%3Acheatsheet">Notify</a>&nbsp;&middot;&nbsp;<a class="WikispacesDialogLink" href="/page/rss/cheatsheet">RSS</a>&nbsp;&middot;&nbsp;<a href="/page/links/cheatsheet">Backlinks</a>&nbsp;&middot;&nbsp;<a href="/page/code/cheatsheet">Source</a>        </td>
+              </tr>
+          </tbody>
+  </table>
+</div>  </div>
+  </div>
+
+
+
+  <textarea id="autosaveContent" style="display:none;" rows="1" cols="1"></textarea>
+  <div id="autosavePrompt" style="display:none;"></div>
+
+  <div class="commentContainer">
+  <div class="wiki wikiPage" id="content_view">
+  <!-- google_ad_section_start -->
+  <!-- ws:start:WikiTextHeadingRule:1:&lt;h1&gt; --><h1 id="toc0"><a name="Clojure 1.3.0 Cheat Sheet (v1.4)"></a><!-- ws:end:WikiTextHeadingRule:1 -->Clojure 1.3.0 Cheat Sheet (v1.4)</h1>
+ <!-- ws:start:WikiTextMediaRule:0:&lt;img src=&quot;http://www.wikispaces.com/site/embedthumbnail/custom/13481784?h=0&amp;w=0&quot; class=&quot;WikiMedia WikiMediaCustom&quot; id=&quot;wikitext@@media@@type=&amp;quot;custom&amp;quot; key=&amp;quot;13481784&amp;quot;&quot; title=&quot;Custom Media&quot;/&gt; --><script language="JavaScript" type="text/javascript">
+//<![CDATA[
+document.write('<style type="text/css">  @media screen {      .page { width: 600px; display: inline;      }  .gap {clear: both;}    } code {      font-family: monospace;    }    .page {      clear: both;      page-break-after: always;      page-break-inside: avoid; }    .column {      float: left;      width: 50%;    }    .header { text-align: center;    }    .header h2 {      font-style: italic; }    h1 {      font-size: 1.8em;    }    h2 {      font-size: 1.4em; }    h3 {      font-size: 1.2em;    }    .section {      margin: 0.5em;      padding: 0.5em;      padding-top: 0; background-color: #ebebeb;    }    table {      width: 100%; border-collapse: collapse;    }    td, .single_row {      padding: 0 0.5em;      vertical-align: top;    }    tr.odd, .single_row { background-color: #f5f5f5;    }    tr.even {      background-color: #fafafa;    }    .footer {      float: right;      text-align: right; border-top: 1px solid gray;    } #foot {clear: both;}  <\/style>')
+//]]>
+</script>
+<div class="page">
+<div class="column">
+<div class="section">
+<h2>Documentation</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>clojure.repl/</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.repl/doc" rel="nofollow">doc</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/find-doc" rel="nofollow">find-doc</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/apropos" rel="nofollow">apropos</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/source" rel="nofollow">source</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/pst" rel="nofollow">pst</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.javadoc/javadoc" rel="nofollow">javadoc</a> (foo.bar/ is namespace for later syms)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Primitives</h2>
+<h3>Numbers</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Literals</td>
+<td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html" rel="nofollow">Long</a>: 7 BigInt: 7N Ratio: -22/7 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Double.html" rel="nofollow">Double</a>: 2.78 <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html" rel="nofollow">BigDecimal</a>: 4.2M</code></td>
+</tr>
+<tr class="even">
+<td>Arithmetic</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/+" rel="nofollow">+</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/-" rel="nofollow">-</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*" rel="nofollow">*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/_" rel="nofollow">/</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/quot" rel="nofollow">quot</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rem" rel="nofollow">rem</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/mod" rel="nofollow">mod</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/inc" rel="nofollow">inc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dec" rel="nofollow">dec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/max" rel="nofollow">max</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/min" rel="nofollow">min</a></code></td>
+</tr>
+<tr class="odd">
+<td>Compare</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/=" rel="nofollow">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/==" rel="nofollow">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not=" rel="nofollow">not=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/%3C" rel="nofollow">&lt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/%3E" rel="nofollow">&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/%3C=" rel="nofollow">&lt;=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/%3E=" rel="nofollow">&gt;=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare" rel="nofollow">compare</a></code></td>
+</tr>
+<tr class="even">
+<td>Bitwise</td>
+<td><code>bit-{<a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and" rel="nofollow">and</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-or" rel="nofollow">or</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-xor" rel="nofollow">xor</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-not" rel="nofollow">not</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-flip" rel="nofollow">flip</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-set" rel="nofollow">set</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-right" rel="nofollow">shift-right</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-left" rel="nofollow">shift-left</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and-not" rel="nofollow">and-not</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-clear" rel="nofollow">clear</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-test" rel="nofollow">test</a>}</code></td>
+</tr>
+<tr class="odd">
+<td>Cast</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/byte" rel="nofollow">byte</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/short" rel="nofollow">short</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/int" rel="nofollow">int</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/long" rel="nofollow">long</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/float" rel="nofollow">float</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/double" rel="nofollow">double</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bigdec" rel="nofollow">bigdec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bigint" rel="nofollow">bigint</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/num" rel="nofollow">num</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rationalize" rel="nofollow">rationalize</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/biginteger" rel="nofollow">biginteger</a></code></td>
+</tr>
+<tr class="even">
+<td>Test</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/nil_q" rel="nofollow">nil?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q" rel="nofollow">identical?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/zero_q" rel="nofollow">zero?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pos_q" rel="nofollow">pos?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/neg_q" rel="nofollow">neg?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/even_q" rel="nofollow">even?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/odd_q" rel="nofollow">odd?</a></code></td>
+</tr>
+<tr class="odd">
+<td>Random</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rand" rel="nofollow">rand</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rand-int" rel="nofollow">rand-int</a></code></td>
+</tr>
+<tr class="even">
+<td>BigInt</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision" rel="nofollow">with-precision</a></code></td>
+</tr>
+<tr class="odd">
+<td>Unchecked</td>
+<td><code>unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int" rel="nofollow">add</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec-int" rel="nofollow">dec</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-divide-int" rel="nofollow">divide</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc-int" rel="nofollow">inc</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply-int" rel="nofollow">multiply</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate-int" rel="nofollow">negate</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-remainder-int" rel="nofollow">remainder</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract-int" rel="nofollow">subtract</a>}-int</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Strings</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/str" rel="nofollow">str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/format" rel="nofollow">format</a> See also IO/to string</code></td>
+</tr>
+<tr class="even">
+<td>Use</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/count" rel="nofollow">count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get" rel="nofollow">get</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subs" rel="nofollow">subs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare" rel="nofollow">compare</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/join" rel="nofollow">join</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/escape" rel="nofollow">escape</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/split" rel="nofollow">split</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/split-lines" rel="nofollow">split-lines</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace" rel="nofollow">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first" rel="nofollow">replace-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/reverse" rel="nofollow">reverse</a> (<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html" rel="nofollow">java.lang.String</a>) <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#indexOf%28java.lang.String%29" rel="nofollow">.indexOf</a> <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#lastIndexOf%28java.lang.String%29" rel="nofollow">.lastIndexOf</a></code></td>
+</tr>
+<tr class="odd">
+<td><a href="http://www.regular-expressions.info" rel="nofollow">Regex</a></td>
+<td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html" rel="nofollow">#"<var>pattern</var>"</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-find" rel="nofollow">re-find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-seq" rel="nofollow">re-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matches" rel="nofollow">re-matches</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-pattern" rel="nofollow">re-pattern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matcher" rel="nofollow">re-matcher</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-groups" rel="nofollow">re-groups</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/replace" rel="nofollow">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first" rel="nofollow">replace-first</a></code></td>
+</tr>
+<tr class="even">
+<td>Letters</td>
+<td><code>(clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/capitalize" rel="nofollow">capitalize</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/lower-case" rel="nofollow">lower-case</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/upper-case" rel="nofollow">upper-case</a></code></td>
+</tr>
+<tr class="odd">
+<td>Trim</td>
+<td><code>(clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/trim" rel="nofollow">trim</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/trim-newline" rel="nofollow">trim-newline</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/triml" rel="nofollow">triml</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/trimr" rel="nofollow">trimr</a></code></td>
+</tr>
+<tr class="even">
+<td>Test</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/char" rel="nofollow">char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char_q" rel="nofollow">char?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/string_q" rel="nofollow">string?</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/blank_q" rel="nofollow">blank?</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Other</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Characters</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/char" rel="nofollow">char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-name-string" rel="nofollow">char-name-string</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-escape-string" rel="nofollow">char-escape-string</a></code></td>
+</tr>
+<tr class="even">
+<td>Keywords</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/keyword" rel="nofollow">keyword</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keyword_q" rel="nofollow">keyword?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find-keyword" rel="nofollow">find-keyword</a></code></td>
+</tr>
+<tr class="odd">
+<td>Symbols</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/symbol" rel="nofollow">symbol</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/symbol_q" rel="nofollow">symbol?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gensym" rel="nofollow">gensym</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Collections</h2>
+<h3>Collections</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Generic ops</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/count" rel="nofollow">count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/empty" rel="nofollow">empty</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not-empty" rel="nofollow">not-empty</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into" rel="nofollow">into</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj" rel="nofollow">conj</a></code></td>
+</tr>
+<tr class="even">
+<td>Content tests</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/distinct_q" rel="nofollow">distinct?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/empty_q" rel="nofollow">empty?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/every_q" rel="nofollow">every?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not-every_q" rel="nofollow">not-every?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/some" rel="nofollow">some</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not-any_q" rel="nofollow">not-any?</a></code></td>
+</tr>
+<tr class="odd">
+<td>Capabilities</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/sequential_q" rel="nofollow">sequential?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/associative_q" rel="nofollow">associative?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted_q" rel="nofollow">sorted?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/counted_q" rel="nofollow">counted?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reversible_q" rel="nofollow">reversible?</a></code></td>
+</tr>
+<tr class="even">
+<td>Type tests</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/coll_q" rel="nofollow">coll?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/list_q" rel="nofollow">list?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vector_q" rel="nofollow">vector?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set_q" rel="nofollow">set?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/map_q" rel="nofollow">map?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/seq_q" rel="nofollow">seq?</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Lists</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code>'() <a href="http://clojuredocs.org/clojure_core/clojure.core/list" rel="nofollow">list</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/list*" rel="nofollow">list*</a></code></td>
+</tr>
+<tr class="even">
+<td>Examine</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/first" rel="nofollow">first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nth" rel="nofollow">nth</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/peek" rel="nofollow">peek</a> <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Vector.html#indexOf%28java.lang.Object%29" rel="nofollow">.indexOf</a> <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Vector.html#lastIndexOf%28java.lang.Object%29" rel="nofollow">.lastIndexOf</a></code></td>
+</tr>
+<tr class="odd">
+<td>'Change'</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/cons" rel="nofollow">cons</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj" rel="nofollow">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rest" rel="nofollow">rest</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop" rel="nofollow">pop</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Vectors</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code>[] <a href="http://clojuredocs.org/clojure_core/clojure.core/vector" rel="nofollow">vector</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec" rel="nofollow">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vector-of" rel="nofollow">vector-of</a></code></td>
+</tr>
+<tr class="even">
+<td>Examine</td>
+<td><code><code>(my-vec idx)</code> → <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/nth" rel="nofollow">nth</a> my-vec idx)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get" rel="nofollow">get</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/peek" rel="nofollow">peek</a> <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Vector.html#indexOf%28java.lang.Object%29" rel="nofollow">.indexOf</a> <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Vector.html#lastIndexOf%28java.lang.Object%29" rel="nofollow">.lastIndexOf</a></code></td>
+</tr>
+<tr class="odd">
+<td>'Change'</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assoc" rel="nofollow">assoc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop" rel="nofollow">pop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subvec" rel="nofollow">subvec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/replace" rel="nofollow">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj" rel="nofollow">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rseq" rel="nofollow">rseq</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Sets</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code>#{} <a href="http://clojuredocs.org/clojure_core/clojure.core/set" rel="nofollow">set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/hash-set" rel="nofollow">hash-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-set" rel="nofollow">sorted-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-set-by" rel="nofollow">sorted-set-by</a></code></td>
+</tr>
+<tr class="even">
+<td>Examine</td>
+<td><code><code>(my-set item)</code> → <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get" rel="nofollow">get</a> my-set item)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q" rel="nofollow">contains?</a></code></td>
+</tr>
+<tr class="odd">
+<td>'Change'</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/conj" rel="nofollow">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/disj" rel="nofollow">disj</a></code></td>
+</tr>
+<tr class="even">
+<td>Rel algebra</td>
+<td><code>(clojure.set/) <a href="http://clojuredocs.org/clojure_core/clojure.set/join" rel="nofollow">join</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/select" rel="nofollow">select</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/project" rel="nofollow">project</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/union" rel="nofollow">union</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/difference" rel="nofollow">difference</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/intersection" rel="nofollow">intersection</a></code></td>
+</tr>
+<tr class="odd">
+<td>Get map</td>
+<td><code>(clojure.set/) <a href="http://clojuredocs.org/clojure_core/clojure.set/index" rel="nofollow">index</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/rename-keys" rel="nofollow">rename-keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/rename" rel="nofollow">rename</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/map-invert" rel="nofollow">map-invert</a></code></td>
+</tr>
+<tr class="even">
+<td>Test</td>
+<td><code>(clojure.set/) <a href="http://clojuredocs.org/clojure_core/clojure.set/subset_q" rel="nofollow">subset?</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/superset_q" rel="nofollow">superset?</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Maps</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code>{} <a href="http://clojuredocs.org/clojure_core/clojure.core/hash-map" rel="nofollow">hash-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/array-map" rel="nofollow">array-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/zipmap" rel="nofollow">zipmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-map" rel="nofollow">sorted-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-map-by" rel="nofollow">sorted-map-by</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bean" rel="nofollow">bean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/frequencies" rel="nofollow">frequencies</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/group-by" rel="nofollow">group-by</a></code></td>
+</tr>
+<tr class="even">
+<td>Examine</td>
+<td><code><code>(:key my-map)</code> → <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get" rel="nofollow">get</a> my-map :key)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-in" rel="nofollow">get-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q" rel="nofollow">contains?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find" rel="nofollow">find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keys" rel="nofollow">keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals" rel="nofollow">vals</a></code></td>
+</tr>
+<tr class="odd">
+<td>'Change'</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assoc" rel="nofollow">assoc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/assoc-in" rel="nofollow">assoc-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dissoc" rel="nofollow">dissoc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/merge" rel="nofollow">merge</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/merge-with" rel="nofollow">merge-with</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/select-keys" rel="nofollow">select-keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/update-in" rel="nofollow">update-in</a></code></td>
+</tr>
+<tr class="even">
+<td>Entry</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/key" rel="nofollow">key</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/val" rel="nofollow">val</a></code></td>
+</tr>
+<tr class="odd">
+<td>Sorted maps</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rseq" rel="nofollow">rseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subseq" rel="nofollow">subseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rsubseq" rel="nofollow">rsubseq</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section --></div>
+<!-- /column -->
+<div class="column">
+<div class="section">
+<h3>Transients (<a href="http://clojure.org/transients" rel="nofollow">clojure.org/transients</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/transient" rel="nofollow">transient</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/persistent!" rel="nofollow">persistent!</a></code></td>
+</tr>
+<tr class="even">
+<td>Change</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/conj!" rel="nofollow">conj!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop!" rel="nofollow">pop!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/assoc!" rel="nofollow">assoc!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dissoc!" rel="nofollow">dissoc!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/disj!" rel="nofollow">disj!</a> Note: always use return value for later changes, never original!</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Misc</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Compare</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/=" rel="nofollow">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/==" rel="nofollow">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q" rel="nofollow">identical?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not=" rel="nofollow">not=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not" rel="nofollow">not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare" rel="nofollow">compare</a> <a href="http://clojuredocs.org/clojure_core/clojure.data/diff" rel="nofollow">clojure.data/diff</a></code></td>
+</tr>
+<tr class="even">
+<td>Test</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/true_q" rel="nofollow">true?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/false_q" rel="nofollow">false?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nil_q" rel="nofollow">nil?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/instance_q" rel="nofollow">instance?</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Sequences</h2>
+<h3>Creating a Lazy Seq</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>From collection</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/seq" rel="nofollow">seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals" rel="nofollow">vals</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keys" rel="nofollow">keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rseq" rel="nofollow">rseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subseq" rel="nofollow">subseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rsubseq" rel="nofollow">rsubseq</a></code></td>
+</tr>
+<tr class="even">
+<td>From producer fn</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-seq" rel="nofollow">lazy-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/repeatedly" rel="nofollow">repeatedly</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterate" rel="nofollow">iterate</a></code></td>
+</tr>
+<tr class="odd">
+<td>From constant</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/repeat" rel="nofollow">repeat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/range" rel="nofollow">range</a></code></td>
+</tr>
+<tr class="even">
+<td>From other</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/file-seq" rel="nofollow">file-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/line-seq" rel="nofollow">line-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/resultset-seq" rel="nofollow">resultset-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-seq" rel="nofollow">re-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/tree-seq" rel="nofollow">tree-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/xml-seq" rel="nofollow">xml-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterator-seq" rel="nofollow">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq" rel="nofollow">enumeration-seq</a></code></td>
+</tr>
+<tr class="odd">
+<td>From seq</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/keep" rel="nofollow">keep</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keep-indexed" rel="nofollow">keep-indexed</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Seq in, Seq out</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Get shorter</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/distinct" rel="nofollow">distinct</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filter" rel="nofollow">filter</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove" rel="nofollow">remove</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/for" rel="nofollow">for</a></code></td>
+</tr>
+<tr class="even">
+<td>Get longer</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/cons" rel="nofollow">cons</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj" rel="nofollow">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/concat" rel="nofollow">concat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-cat" rel="nofollow">lazy-cat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/mapcat" rel="nofollow">mapcat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/cycle" rel="nofollow">cycle</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/interleave" rel="nofollow">interleave</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/interpose" rel="nofollow">interpose</a></code></td>
+</tr>
+<tr class="odd">
+<td>Tail-items</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rest" rel="nofollow">rest</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nthrest" rel="nofollow">nthrest</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/fnext" rel="nofollow">fnext</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nnext" rel="nofollow">nnext</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/drop" rel="nofollow">drop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/drop-while" rel="nofollow">drop-while</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/take-last" rel="nofollow">take-last</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/for" rel="nofollow">for</a></code></td>
+</tr>
+<tr class="even">
+<td>Head-items</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/take" rel="nofollow">take</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/take-nth" rel="nofollow">take-nth</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/take-while" rel="nofollow">take-while</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/butlast" rel="nofollow">butlast</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/drop-last" rel="nofollow">drop-last</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/for" rel="nofollow">for</a></code></td>
+</tr>
+<tr class="odd">
+<td>'Change'</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/conj" rel="nofollow">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/concat" rel="nofollow">concat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/distinct" rel="nofollow">distinct</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/flatten" rel="nofollow">flatten</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/group-by" rel="nofollow">group-by</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/partition" rel="nofollow">partition</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/partition-all" rel="nofollow">partition-all</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/partition-by" rel="nofollow">partition-by</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/split-at" rel="nofollow">split-at</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/split-with" rel="nofollow">split-with</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filter" rel="nofollow">filter</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove" rel="nofollow">remove</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/replace" rel="nofollow">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/shuffle" rel="nofollow">shuffle</a></code></td>
+</tr>
+<tr class="even">
+<td>Rearrange</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/reverse" rel="nofollow">reverse</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sort" rel="nofollow">sort</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sort-by" rel="nofollow">sort-by</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare" rel="nofollow">compare</a></code></td>
+</tr>
+<tr class="odd">
+<td>Process items</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/map" rel="nofollow">map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pmap" rel="nofollow">pmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/map-indexed" rel="nofollow">map-indexed</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/mapcat" rel="nofollow">mapcat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/for" rel="nofollow">for</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/replace" rel="nofollow">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/seque" rel="nofollow">seque</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Using a Seq</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Extract item</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/first" rel="nofollow">first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/second" rel="nofollow">second</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/last" rel="nofollow">last</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rest" rel="nofollow">rest</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/next" rel="nofollow">next</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ffirst" rel="nofollow">ffirst</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nfirst" rel="nofollow">nfirst</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/fnext" rel="nofollow">fnext</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nnext" rel="nofollow">nnext</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nth" rel="nofollow">nth</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/nthnext" rel="nofollow">nthnext</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rand-nth" rel="nofollow">rand-nth</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-first" rel="nofollow">when-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/max-key" rel="nofollow">max-key</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/min-key" rel="nofollow">min-key</a></code></td>
+</tr>
+<tr class="even">
+<td>Construct coll</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/zipmap" rel="nofollow">zipmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into" rel="nofollow">into</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce" rel="nofollow">reduce</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reductions" rel="nofollow">reductions</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set" rel="nofollow">set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec" rel="nofollow">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array" rel="nofollow">into-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array-2d" rel="nofollow">to-array-2d</a></code></td>
+</tr>
+<tr class="odd">
+<td>Pass to fn</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/apply" rel="nofollow">apply</a></code></td>
+</tr>
+<tr class="even">
+<td>Search</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/some" rel="nofollow">some</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filter" rel="nofollow">filter</a></code></td>
+</tr>
+<tr class="odd">
+<td>Force evaluation</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/doseq" rel="nofollow">doseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dorun" rel="nofollow">dorun</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doall" rel="nofollow">doall</a></code></td>
+</tr>
+<tr class="even">
+<td>Check for forced</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/realized_q" rel="nofollow">realized?</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h3>Zippers (clojure.zip/)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.zip/zipper" rel="nofollow">zipper</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/seq-zip" rel="nofollow">seq-zip</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/vector-zip" rel="nofollow">vector-zip</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/xml-zip" rel="nofollow">xml-zip</a></code></td>
+</tr>
+<tr class="even">
+<td>Get loc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.zip/up" rel="nofollow">up</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/down" rel="nofollow">down</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/left" rel="nofollow">left</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/right" rel="nofollow">right</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/leftmost" rel="nofollow">leftmost</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/rightmost" rel="nofollow">rightmost</a></code></td>
+</tr>
+<tr class="odd">
+<td>Get seq</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.zip/lefts" rel="nofollow">lefts</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/rights" rel="nofollow">rights</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/path" rel="nofollow">path</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/children" rel="nofollow">children</a></code></td>
+</tr>
+<tr class="even">
+<td>'Change'</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.zip/make-node" rel="nofollow">make-node</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/replace" rel="nofollow">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/edit" rel="nofollow">edit</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/insert-child" rel="nofollow">insert-child</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/insert-left" rel="nofollow">insert-left</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/insert-right" rel="nofollow">insert-right</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/append-child" rel="nofollow">append-child</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/remove" rel="nofollow">remove</a></code></td>
+</tr>
+<tr class="odd">
+<td>Move</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.zip/next" rel="nofollow">next</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/prev" rel="nofollow">prev</a></code></td>
+</tr>
+<tr class="even">
+<td>Misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.zip/root" rel="nofollow">root</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/node" rel="nofollow">node</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/branch_q" rel="nofollow">branch?</a> <a href="http://clojuredocs.org/clojure_core/clojure.zip/end_q" rel="nofollow">end?</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>IO</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>to/from ...</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/spit" rel="nofollow">spit</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/slurp" rel="nofollow">slurp</a> (to writer/from reader, Socket, string with file name, URI, etc.)</code></td>
+</tr>
+<tr class="even">
+<td>to *out*</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/pr" rel="nofollow">pr</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/prn" rel="nofollow">prn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/print" rel="nofollow">print</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/printf" rel="nofollow">printf</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/println" rel="nofollow">println</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/newline" rel="nofollow">newline</a> (clojure.pprint/) <a href="http://clojuredocs.org/clojure_core/clojure.pprint/print-table" rel="nofollow">print-table</a></code></td>
+</tr>
+<tr class="odd">
+<td>to writer</td>
+<td><code>(clojure.pprint/) <a href="http://clojuredocs.org/clojure_core/clojure.pprint/pprint" rel="nofollow">pprint</a> <a href="http://clojuredocs.org/clojure_core/clojure.pprint/cl-format" rel="nofollow">cl-format</a> also: (binding [*out* writer] ...)</code></td>
+</tr>
+<tr class="even">
+<td>to string</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/format" rel="nofollow">format</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str" rel="nofollow">with-out-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pr-str" rel="nofollow">pr-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/prn-str" rel="nofollow">prn-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/print-str" rel="nofollow">print-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/println-str" rel="nofollow">println-str</a></code></td>
+</tr>
+<tr class="odd">
+<td>from *in*</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/read-line" rel="nofollow">read-line</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/read" rel="nofollow">read</a></code></td>
+</tr>
+<tr class="even">
+<td>from reader</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/line-seq" rel="nofollow">line-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/read" rel="nofollow">read</a> also: (binding [*in* reader] ...) <a href="http://java.sun.com/javase/6/docs/api/java/io/Reader.html" rel="nofollow">java.io.Reader</a></code></td>
+</tr>
+<tr class="odd">
+<td>from string</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/read-string" rel="nofollow">read-string</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str" rel="nofollow">with-in-str</a></code></td>
+</tr>
+<tr class="even">
+<td>Open</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/with-open" rel="nofollow">with-open</a> (clojure.java.io/) text: <a href="http://clojuredocs.org/clojure_core/clojure.java.io/reader" rel="nofollow">reader</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/writer" rel="nofollow">writer</a> binary: <a href="http://clojuredocs.org/clojure_core/clojure.java.io/input-stream" rel="nofollow">input-stream</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/output-stream" rel="nofollow">output-stream</a></code></td>
+</tr>
+<tr class="odd">
+<td>Binary</td>
+<td><code>(.write ostream byte-arr) (.read istream byte-arr) <a href="http://java.sun.com/javase/6/docs/api/java/io/OutputStream.html" rel="nofollow">java.io.OutputStream</a> <a href="http://java.sun.com/javase/6/docs/api/java/io/InputStream.html" rel="nofollow">java.io.InputStream</a> GitHub: <a href="http://github.com/ztellman/gloss" rel="nofollow">gloss</a> <a href="http://github.com/rosejn/byte-spec" rel="nofollow">byte-spec</a></code></td>
+</tr>
+<tr class="even">
+<td>Misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/flush" rel="nofollow">flush</a> (.close s) <a href="http://clojuredocs.org/clojure_core/clojure.core/file-seq" rel="nofollow">file-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*in*" rel="nofollow">*in*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*out*" rel="nofollow">*out*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*err*" rel="nofollow">*err*</a> (clojure.java.io/) <a href="http://clojuredocs.org/clojure_core/clojure.java.io/file" rel="nofollow">file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/copy" rel="nofollow">copy</a> GitHub: <a href="http://github.com/Raynes/fs" rel="nofollow">fs</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section --></div>
+<!-- /column --></div>
+<!-- /page -->
+<div class="page">
+<div class="column">
+<div class="section">
+<h2>Functions</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/fn" rel="nofollow">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" rel="nofollow">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" rel="nofollow">defn-</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline" rel="nofollow">definline</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identity" rel="nofollow">identity</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/constantly" rel="nofollow">constantly</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn" rel="nofollow">memfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comp" rel="nofollow">comp</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/complement" rel="nofollow">complement</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/partial" rel="nofollow">partial</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/juxt" rel="nofollow">juxt</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memoize" rel="nofollow">memoize</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/fnil" rel="nofollow">fnil</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/every-pred" rel="nofollow">every-pred</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/some-fn" rel="nofollow">some-fn</a></code></td>
+</tr>
+<tr class="even">
+<td>Call</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/-%3E" rel="nofollow">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/-%3E%3E" rel="nofollow">-&gt;&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/apply" rel="nofollow">apply</a></code></td>
+</tr>
+<tr class="odd">
+<td>Test</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/fn_q" rel="nofollow">fn?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ifn_q" rel="nofollow">ifn?</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Abstractions</h2>
+<h3>Protocols (<a href="http://clojure.org/protocols" rel="nofollow">clojure.org/protocols</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Define</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/defprotocol" rel="nofollow">defprotocol</a> <code>Slicey (slice [at]))</code></code></td>
+</tr>
+<tr class="even">
+<td>Extend</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/extend-type" rel="nofollow">extend-type</a> <code>String Slicey (slice [at] ...))</code></code></td>
+</tr>
+<tr class="odd">
+<td>Extend null</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/extend-type" rel="nofollow">extend-type</a> <code>nil Slicey (slice [_] nil))</code></code></td>
+</tr>
+<tr class="even">
+<td>Reify</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/reify" rel="nofollow">reify</a> <code>Slicey (slice [at] ...))</code></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Records (<a href="http://clojure.org/datatypes" rel="nofollow">clojure.org/datatypes</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Define</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/defrecord" rel="nofollow">defrecord</a> <code>Pair [h t])</code></code></td>
+</tr>
+<tr class="even">
+<td>Access</td>
+<td><code><code>(:h (Pair. 1 2))</code> → <code>1</code></code></td>
+</tr>
+<tr class="odd">
+<td>Create</td>
+<td><code>Pair. -&gt;Pair map-&gt;Pair</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Types (<a href="http://clojure.org/datatypes" rel="nofollow">clojure.org/datatypes</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Define</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/deftype" rel="nofollow">deftype</a> <code>Pair [h t])</code></code></td>
+</tr>
+<tr class="even">
+<td>Access</td>
+<td><code><code>(.h (Pair. 1 2))</code> → <code>1</code></code></td>
+</tr>
+<tr class="odd">
+<td>Create</td>
+<td><code>Pair. -&gt;Pair</code></td>
+</tr>
+<tr class="even">
+<td>With methods</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/deftype" rel="nofollow">deftype</a> <code>Pair [h t]<br />
+&nbsp;&nbsp;Object<br />
+&nbsp;&nbsp;(toString [this] (str "&lt;" h "," t "&gt;")))</code></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Multimethods (<a href="http://clojure.org/multimethods" rel="nofollow">clojure.org/multimethods</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Define</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmulti" rel="nofollow">defmulti</a> <code>my-mm dispatch-fn)</code></code></td>
+</tr>
+<tr class="even">
+<td>Method define</td>
+<td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmethod" rel="nofollow">defmethod</a> <code>my-mm :dispatch-value [args] ...)</code></code></td>
+</tr>
+<tr class="odd">
+<td>Dispatch</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/get-method" rel="nofollow">get-method</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/methods" rel="nofollow">methods</a></code></td>
+</tr>
+<tr class="even">
+<td>Remove</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/remove-method" rel="nofollow">remove-method</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove-all-methods" rel="nofollow">remove-all-methods</a></code></td>
+</tr>
+<tr class="odd">
+<td>Prefer</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/prefer-method" rel="nofollow">prefer-method</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/prefers" rel="nofollow">prefers</a></code></td>
+</tr>
+<tr class="even">
+<td>Relation</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/derive" rel="nofollow">derive</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/isa_q" rel="nofollow">isa?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/parents" rel="nofollow">parents</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ancestors" rel="nofollow">ancestors</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/descendants" rel="nofollow">descendants</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/make-hierarchy" rel="nofollow">make-hierarchy</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Macros</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro" rel="nofollow">defmacro</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline" rel="nofollow">definline</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand-1" rel="nofollow">macroexpand-1</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand" rel="nofollow">macroexpand</a></code></td>
+</tr>
+<tr class="even">
+<td>Branch</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/and" rel="nofollow">and</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/or" rel="nofollow">or</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when" rel="nofollow">when</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-not" rel="nofollow">when-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-let" rel="nofollow">when-let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-first" rel="nofollow">when-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if-not" rel="nofollow">if-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if-let" rel="nofollow">if-let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/cond" rel="nofollow">cond</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/condp" rel="nofollow">condp</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/case" rel="nofollow">case</a></code></td>
+</tr>
+<tr class="odd">
+<td>Loop</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/for" rel="nofollow">for</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doseq" rel="nofollow">doseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dotimes" rel="nofollow">dotimes</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/while" rel="nofollow">while</a></code></td>
+</tr>
+<tr class="even">
+<td>Arrange</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot" rel="nofollow">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto" rel="nofollow">doto</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/-%3E" rel="nofollow">-&gt;</a></code></td>
+</tr>
+<tr class="odd">
+<td>Scope</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/binding" rel="nofollow">binding</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/locking" rel="nofollow">locking</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/time" rel="nofollow">time</a> with-{<a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str" rel="nofollow">in-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars" rel="nofollow">local-vars</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-open" rel="nofollow">open</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str" rel="nofollow">out-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision" rel="nofollow">precision</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs" rel="nofollow">redefs</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs-fn" rel="nofollow">redefs-fn</a>}</code></td>
+</tr>
+<tr class="even">
+<td>Lazy</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-cat" rel="nofollow">lazy-cat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-seq" rel="nofollow">lazy-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/delay" rel="nofollow">delay</a></code></td>
+</tr>
+<tr class="odd">
+<td>Doc.</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assert" rel="nofollow">assert</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comment" rel="nofollow">comment</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/doc" rel="nofollow">doc</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Reader Macros</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>'</code></td>
+<td>Quote: <code>'<var>form</var></code> → <code>(quote <var>form</var>)</code></td>
+</tr>
+<tr class="even">
+<td><code>\</code></td>
+<td>Character literal</td>
+</tr>
+<tr class="odd">
+<td><code>;</code></td>
+<td>Single line comment</td>
+</tr>
+<tr class="even">
+<td><code>^</code></td>
+<td>Metadata (see Metadata section)</td>
+</tr>
+<tr class="odd">
+<td><code>@</code></td>
+<td>Deref: <code>@<var>form</var></code> → <code>(deref <var>form</var>)</code></td>
+</tr>
+<tr class="even">
+<td><code>`</code></td>
+<td>Syntax-quote</td>
+</tr>
+<tr class="odd">
+<td><code>~</code></td>
+<td>Unquote</td>
+</tr>
+<tr class="even">
+<td><code>~@</code></td>
+<td>Unquote-splicing</td>
+</tr>
+<tr class="odd">
+<td><code>#"<var>p</var>"</code></td>
+<td>Regex Pattern <var>p</var></td>
+</tr>
+<tr class="even">
+<td><code>#'</code></td>
+<td>Var quote: <code>#'<var>x</var></code> → <code>(var <var>x</var>)</code></td>
+</tr>
+<tr class="odd">
+<td><code>#()</code></td>
+<td><code>#(...)</code> → <code>(fn [args] (...))</code></td>
+</tr>
+<tr class="even">
+<td><code>#_</code></td>
+<td>Ignore next form</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Metadata (<a href="http://clojure.org/special_forms" rel="nofollow">clojure.org/special_forms</a>)</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>General</td>
+<td><code><code>^{:key1 val1 :key2 val2 ...}</code></code></td>
+</tr>
+<tr class="even">
+<td>Abbrevs</td>
+<td><code><code>^Type</code> → <code>^{:tag Type}</code><br />
+<code>^:key</code> → <code>^{:key true}</code></code></td>
+</tr>
+<tr class="odd">
+<td>Common</td>
+<td><code><code>^:dynamic ^:private ^:static ^:const</code></code></td>
+</tr>
+<tr class="even">
+<td>Examples</td>
+<td><code><code>(defn ^:private ^:static ^String my-fn ...)</code><br />
+<code>(def ^:dynamic *dyn-var* val)</code></code></td>
+</tr>
+<tr class="odd">
+<td>On Vars</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/meta" rel="nofollow">meta</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-meta" rel="nofollow">with-meta</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vary-meta" rel="nofollow">vary-meta</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/alter-meta!" rel="nofollow">alter-meta!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reset-meta!" rel="nofollow">reset-meta!</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/doc" rel="nofollow">doc</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/find-doc" rel="nofollow">find-doc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/test" rel="nofollow">test</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section --></div>
+<!-- /column -->
+<div class="column">
+<div class="section">
+<h2>Special Forms (<a href="http://clojure.org/special_forms" rel="nofollow">clojure.org/special_forms</a>)</h2>
+<div class="single_row"><code><a href="http://clojuredocs.org/clojure_core/clojure.core/def" rel="nofollow">def</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if" rel="nofollow">if</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/do" rel="nofollow">do</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/let" rel="nofollow">let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/quote" rel="nofollow">quote</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/var" rel="nofollow">var</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/fn" rel="nofollow">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/loop" rel="nofollow">loop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/recur" rel="nofollow">recur</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/throw" rel="nofollow">throw</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/try" rel="nofollow">try</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/monitor-enter" rel="nofollow">monitor-enter</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/monitor-exit" rel="nofollow">monitor-exit</a></code></div>
+<table>
+<tbody>
+<tr class="odd">
+<td>Binding Forms / Destructuring</td>
+<td><code>(<a href="http://clojure.org/special_forms#let" rel="nofollow">examples</a>) <a href="http://clojuredocs.org/clojure_core/clojure.core/let" rel="nofollow">let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/fn" rel="nofollow">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" rel="nofollow">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro" rel="nofollow">defmacro</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/loop" rel="nofollow">loop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/for" rel="nofollow">for</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doseq" rel="nofollow">doseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if-let" rel="nofollow">if-let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-let" rel="nofollow">when-let</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Vars and global environment (<a href="http://clojure.org/vars" rel="nofollow">clojure.org/vars</a>)</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Def variants</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/def" rel="nofollow">def</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" rel="nofollow">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" rel="nofollow">defn-</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline" rel="nofollow">definline</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro" rel="nofollow">defmacro</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmethod" rel="nofollow">defmethod</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmulti" rel="nofollow">defmulti</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defonce" rel="nofollow">defonce</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defrecord" rel="nofollow">defrecord</a></code></td>
+</tr>
+<tr class="even">
+<td>Interned vars</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/declare" rel="nofollow">declare</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/intern" rel="nofollow">intern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/binding" rel="nofollow">binding</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find-var" rel="nofollow">find-var</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/var" rel="nofollow">var</a></code></td>
+</tr>
+<tr class="odd">
+<td>Var objects</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars" rel="nofollow">with-local-vars</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/var-get" rel="nofollow">var-get</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/var-set" rel="nofollow">var-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/alter-var-root" rel="nofollow">alter-var-root</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/var_q" rel="nofollow">var?</a></code></td>
+</tr>
+<tr class="even">
+<td>Var validators</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/set-validator!" rel="nofollow">set-validator!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-validator" rel="nofollow">get-validator</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Namespace</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Current</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*ns*" rel="nofollow">*ns*</a></code></td>
+</tr>
+<tr class="even">
+<td>Create/Switch</td>
+<td><code>(<a href="http://blog.8thlight.com/colin-jones/2010/12/05/clojure-libs-and-namespaces-require-use-import-and-ns.html" rel="nofollow">tutorial</a>) <a href="http://clojuredocs.org/clojure_core/clojure.core/ns" rel="nofollow">ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/in-ns" rel="nofollow">in-ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/create-ns" rel="nofollow">create-ns</a></code></td>
+</tr>
+<tr class="odd">
+<td>Add</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/alias" rel="nofollow">alias</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/def" rel="nofollow">def</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/import" rel="nofollow">import</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/intern" rel="nofollow">intern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/refer" rel="nofollow">refer</a></code></td>
+</tr>
+<tr class="even">
+<td>Find</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/all-ns" rel="nofollow">all-ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find-ns" rel="nofollow">find-ns</a></code></td>
+</tr>
+<tr class="odd">
+<td>Examine</td>
+<td><code>ns-{<a href="http://clojuredocs.org/clojure_core/clojure.core/ns-name" rel="nofollow">name</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-aliases" rel="nofollow">aliases</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-map" rel="nofollow">map</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-interns" rel="nofollow">interns</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-publics" rel="nofollow">publics</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-refers" rel="nofollow">refers</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-imports" rel="nofollow">imports</a>}</code></td>
+</tr>
+<tr class="even">
+<td>From symbol</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/resolve" rel="nofollow">resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-resolve" rel="nofollow">ns-resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/namespace" rel="nofollow">namespace</a></code></td>
+</tr>
+<tr class="odd">
+<td>Remove</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ns-unalias" rel="nofollow">ns-unalias</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-unmap" rel="nofollow">ns-unmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove-ns" rel="nofollow">remove-ns</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Loading</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Load libs</td>
+<td><code>(<a href="http://blog.8thlight.com/colin-jones/2010/12/05/clojure-libs-and-namespaces-require-use-import-and-ns.html" rel="nofollow">tutorial</a>) <a href="http://clojuredocs.org/clojure_core/clojure.core/require" rel="nofollow">require</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/use" rel="nofollow">use</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/import" rel="nofollow">import</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/refer" rel="nofollow">refer</a></code></td>
+</tr>
+<tr class="even">
+<td>List loaded</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/loaded-libs" rel="nofollow">loaded-libs</a></code></td>
+</tr>
+<tr class="odd">
+<td>Load misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/load" rel="nofollow">load</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/load-file" rel="nofollow">load-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/load-reader" rel="nofollow">load-reader</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/load-string" rel="nofollow">load-string</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Concurrency</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>Atoms</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/atom" rel="nofollow">atom</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/swap!" rel="nofollow">swap!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reset!" rel="nofollow">reset!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare-and-set!" rel="nofollow">compare-and-set!</a></code></td>
+</tr>
+<tr class="even">
+<td>Futures</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/future" rel="nofollow">future</a> future-{<a href="http://clojuredocs.org/clojure_core/clojure.core/future-call" rel="nofollow">call</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-done_q" rel="nofollow">done?</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancel" rel="nofollow">cancel</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancelled_q" rel="nofollow">cancelled?</a>} <a href="http://clojuredocs.org/clojure_core/clojure.core/future_q" rel="nofollow">future?</a></code></td>
+</tr>
+<tr class="odd">
+<td>Threads</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/bound-fn" rel="nofollow">bound-fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bound-fn*" rel="nofollow">bound-fn*</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/get-thread-bindings" rel="nofollow">get</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/push-thread-bindings" rel="nofollow">push</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/pop-thread-bindings" rel="nofollow">pop</a>}-thread-bindings <a href="http://clojuredocs.org/clojure_core/clojure.core/thread-bound_q" rel="nofollow">thread-bound?</a></code></td>
+</tr>
+<tr class="even">
+<td>Misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/locking" rel="nofollow">locking</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pcalls" rel="nofollow">pcalls</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pvalues" rel="nofollow">pvalues</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pmap" rel="nofollow">pmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/seque" rel="nofollow">seque</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/promise" rel="nofollow">promise</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/deliver" rel="nofollow">deliver</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Refs and Transactions (<a href="http://clojure.org/refs" rel="nofollow">clojure.org/refs</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ref" rel="nofollow">ref</a></code></td>
+</tr>
+<tr class="even">
+<td>Examine</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/deref" rel="nofollow">deref</a> @ (</code>@<var>form</var> → <code>(deref <var>form</var>)</code>)</td>
+</tr>
+<tr class="odd">
+<td>Transaction</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/sync" rel="nofollow">sync</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dosync" rel="nofollow">dosync</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/io!" rel="nofollow">io!</a></code></td>
+</tr>
+<tr class="even">
+<td>In transaction</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ensure" rel="nofollow">ensure</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-set" rel="nofollow">ref-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/alter" rel="nofollow">alter</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/commute" rel="nofollow">commute</a></code></td>
+</tr>
+<tr class="odd">
+<td>Validators</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/set-validator!" rel="nofollow">set-validator!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-validator" rel="nofollow">get-validator</a></code></td>
+</tr>
+<tr class="even">
+<td>History</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ref-history-count" rel="nofollow">ref-history-count</a> ref-{<a href="http://clojuredocs.org/clojure_core/clojure.core/ref-min-history" rel="nofollow">min</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-max-history" rel="nofollow">max</a>}-history</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Agents and Asynchronous Actions (<a href="http://clojure.org/agents" rel="nofollow">clojure.org/agents</a>)</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/agent" rel="nofollow">agent</a></code></td>
+</tr>
+<tr class="even">
+<td>Examine</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/agent-error" rel="nofollow">agent-error</a></code></td>
+</tr>
+<tr class="odd">
+<td>Change state</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/send" rel="nofollow">send</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/send-off" rel="nofollow">send-off</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/restart-agent" rel="nofollow">restart-agent</a></code></td>
+</tr>
+<tr class="even">
+<td>Block waiting</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/await" rel="nofollow">await</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/await-for" rel="nofollow">await-for</a></code></td>
+</tr>
+<tr class="odd">
+<td>Ref validators</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/set-validator!" rel="nofollow">set-validator!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-validator" rel="nofollow">get-validator</a></code></td>
+</tr>
+<tr class="even">
+<td>Watchers</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/add-watch" rel="nofollow">add-watch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove-watch" rel="nofollow">remove-watch</a></code></td>
+</tr>
+<tr class="odd">
+<td>Thread handling</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/shutdown-agents" rel="nofollow">shutdown-agents</a></code></td>
+</tr>
+<tr class="even">
+<td>Error</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/error-handler" rel="nofollow">error-handler</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set-error-handler!" rel="nofollow">set-error-handler!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/error-mode" rel="nofollow">error-mode</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set-error-mode!" rel="nofollow">set-error-mode!</a></code></td>
+</tr>
+<tr class="odd">
+<td>Misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*agent*" rel="nofollow">*agent*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/release-pending-sends" rel="nofollow">release-pending-sends</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Java Interoperation (<a href="http://clojure.org/java_interop" rel="nofollow">clojure.org/java_interop</a>)</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>General</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot" rel="nofollow">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto" rel="nofollow">doto</a> Classname/ Classname. <a href="http://clojuredocs.org/clojure_core/clojure.core/new" rel="nofollow">new</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bean" rel="nofollow">bean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comparator" rel="nofollow">comparator</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq" rel="nofollow">enumeration-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/import" rel="nofollow">import</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterator-seq" rel="nofollow">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn" rel="nofollow">memfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set!" rel="nofollow">set!</a></code></td>
+</tr>
+<tr class="even">
+<td>Cast</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/boolean" rel="nofollow">boolean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/byte" rel="nofollow">byte</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/short" rel="nofollow">short</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char" rel="nofollow">char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/int" rel="nofollow">int</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/long" rel="nofollow">long</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/float" rel="nofollow">float</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/double" rel="nofollow">double</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bigdec" rel="nofollow">bigdec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bigint" rel="nofollow">bigint</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/num" rel="nofollow">num</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/cast" rel="nofollow">cast</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/biginteger" rel="nofollow">biginteger</a></code></td>
+</tr>
+<tr class="odd">
+<td>Exceptions</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/throw" rel="nofollow">throw</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/try" rel="nofollow">try</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/catch" rel="nofollow">catch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/finally" rel="nofollow">finally</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/pst" rel="nofollow">pst</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Arrays</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/make-array" rel="nofollow">make-array</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/object-array" rel="nofollow">object</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/boolean-array" rel="nofollow">boolean</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/byte-array" rel="nofollow">byte</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/short-array" rel="nofollow">short</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/char-array" rel="nofollow">char</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/int-array" rel="nofollow">int</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/long-array" rel="nofollow">long</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/float-array" rel="nofollow">float</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/double-array" rel="nofollow">double</a>}-array <a href="http://clojuredocs.org/clojure_core/clojure.core/aclone" rel="nofollow">aclone</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array" rel="nofollow">to-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array-2d" rel="nofollow">to-array-2d</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array" rel="nofollow">into-array</a></code></td>
+</tr>
+<tr class="even">
+<td>Use</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/aget" rel="nofollow">aget</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset" rel="nofollow">aset</a> aset-{<a href="http://clojuredocs.org/clojure_core/clojure.core/aset-boolean" rel="nofollow">boolean</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-byte" rel="nofollow">byte</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-short" rel="nofollow">short</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-char" rel="nofollow">char</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-int" rel="nofollow">int</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-long" rel="nofollow">long</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-float" rel="nofollow">float</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-double" rel="nofollow">double</a>} <a href="http://clojuredocs.org/clojure_core/clojure.core/alength" rel="nofollow">alength</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/amap" rel="nofollow">amap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/areduce" rel="nofollow">areduce</a></code></td>
+</tr>
+<tr class="odd">
+<td>Cast</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/booleans" rel="nofollow">booleans</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bytes" rel="nofollow">bytes</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/shorts" rel="nofollow">shorts</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/chars" rel="nofollow">chars</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ints" rel="nofollow">ints</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/longs" rel="nofollow">longs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/floats" rel="nofollow">floats</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doubles" rel="nofollow">doubles</a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Proxy</h3>
+<table>
+<tbody>
+<tr class="odd">
+<td>Create</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/proxy" rel="nofollow">proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-proxy-class" rel="nofollow">get-proxy-class</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/construct-proxy" rel="nofollow">construct</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/init-proxy" rel="nofollow">init</a>}-proxy</code></td>
+</tr>
+<tr class="even">
+<td>Misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/proxy-mappings" rel="nofollow">proxy-mappings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/proxy-super" rel="nofollow">proxy-super</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/update-proxy" rel="nofollow">update-proxy</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section -->
+<div class="section">
+<h2>Other</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td>XML</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.xml/parse" rel="nofollow">clojure.xml/parse</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/xml-seq" rel="nofollow">xml-seq</a></code></td>
+</tr>
+<tr class="even">
+<td>REPL</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*1" rel="nofollow">*1</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*2" rel="nofollow">*2</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*3" rel="nofollow">*3</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*e" rel="nofollow">*e</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*print-dup*" rel="nofollow">*print-dup*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*print-length*" rel="nofollow">*print-length*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*print-level*" rel="nofollow">*print-level*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*print-meta*" rel="nofollow">*print-meta*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*print-readably*" rel="nofollow">*print-readably*</a></code></td>
+</tr>
+<tr class="odd">
+<td>Code</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*compile-files*" rel="nofollow">*compile-files*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*compile-path*" rel="nofollow">*compile-path*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*file*" rel="nofollow">*file*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*warn-on-reflection*" rel="nofollow">*warn-on-reflection*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compile" rel="nofollow">compile</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gen-class" rel="nofollow">gen-class</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gen-interface" rel="nofollow">gen-interface</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/loaded-libs" rel="nofollow">loaded-libs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/test" rel="nofollow">test</a></code></td>
+</tr>
+<tr class="even">
+<td>Misc</td>
+<td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/eval" rel="nofollow">eval</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/force" rel="nofollow">force</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/hash" rel="nofollow">hash</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/name" rel="nofollow">name</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*clojure-version*" rel="nofollow">*clojure-version*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/clojure-version" rel="nofollow">clojure-version</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*command-line-args*" rel="nofollow">*command-line-args*</a></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- /section --></div>
+<!-- /column --></div>
+<!-- /page --><!-- ws:end:WikiTextMediaRule:0 --><br />
+<br />
+<a class="wiki_link_ext" href="https://github.com/jafingerhut/clojure-cheatsheets/blob/master/pdf/cheatsheet-usletter-color.pdf?raw=true" rel="nofollow">Download PDF version</a><br />
+<a class="wiki_link_ext" href="http://jafingerhut.github.com/" rel="nofollow">Download other versions</a><br />
+<br />
+Many thanks to:<br />
+<ul><li>Steve Tayon for creating and maintaining the cheat sheet</li><li>Andy Fingerhut for scripting the autogenerated links/formats</li><li>Version: Clojure 1.3.0 - v1.4, last updated Mar 22, 2012</li></ul>
+  <!-- google_ad_section_end -->
+  </div>
+  </div>
+
+<div id="pageEditor" class="editorWrapper editorLayer">
+  <iframe id="target_editor" name="target_editor" src="/s/blank.html" style="width:0px;height:0px;border:0"></iframe>
+    <form action="/page/edit/cheatsheet" method="post" class="editorForm" id="editorForm"><input type="hidden" name="wikispacesFormToken" value="9c9567269a34e7deca6ab814fea1bd64815e1d62"/><div class="jovise"><input type="text" name="wikispaces_user_id" value="user-1345532561"/></div><div class="mimw"><input type="text" name="goto" autocomplete = "off"/></div><div class="mimw"><input type="text" name="mode" autocomplete = "off"/></div><div class="movkp"><input type="text" name="version" autocomplete = "off"/></div><div class="movkp"><input type="text" name="pageComments" autocomplete = "off"/></div><div class="jowic"><input type="text" name="saveAndContinue" autocomplete = "off"/></div><div class="jowic"><input type="text" name="comment" autocomplete = "off"/></div><div class="mimw"><input type="text" name="commentsDisabled" autocomplete = "off"/></div><div class="jowic"><input type="text" name="contentPresent" autocomplete = "off"/></div><div class="jovise"><input type="text" name="editorCleanup" autocomplete = "off"/></div><div class="jovise"><input type="text" name="WikispacesEditorContent" autocomplete = "off"/></div><input type="hidden" name="wikispacesASFormToken" value="b68a40f508872e4a26d757be5e9a7f0f622574a4"/>
+    <input type="hidden" title="goto" name="3caf2f942cdcd77303001ff5c031bf167343ec51" value=""/>
+    <input type="hidden" title="mode" name="2011888659cbd2545d86d07f1962d49aedb17912" autocomplete="off" value="visual"/>
+    <input type="hidden" title="version" name="80cd2806a2b0195934bfd2feafac23b9ab58fffa" autocomplete="off" value="322378646"/>
+    <input type="hidden" title="pageComments" name="bc5888ee5ffa121e032b7218006bff388ff83870" autocomplete="off" value=""/>
+    <input type="hidden" title="saveAndContinue" name="bed77a1b4a34b741fe0ade507d72e0714f6eea68" value="0"/>
+    <input type="hidden" title="comment" name="e259a826819796b49e8eaafd67f0cd7b5d4f0cfa" value=""/>
+    <input type="hidden" title="commentsDisabled" name="25e05eb3001266e8f4e86914110b36d4a6f53edd" autocomplete="off" value=""/>
+    <input type="hidden" title="contentPresent" name="28d53199ecf88668bc964dc939c519dd99f080ef" autocomplete="off" value=""/>
+    <input type="hidden" title="editorCleanup" name="8be6ef44271d41135f883d39c9f2a094e774546e" autocomplete="off" value=""/>
+
+    <textarea id="wsMainEditor" title="content" class="noContentHide" name="c9a39fb22d89d8dcdffc29ce0294f0d1efd40f2e" style="width: 100%; height: 400px; position: absolute; top: -50000px; left: -50000px;" autocomplete="off"></textarea>
+
+  <noscript>
+    <h2>Javascript Required</h2>
+    <p>You need to enable Javascript in your browser to edit pages.</p>
+  </noscript>
+
+  </form>
+  
+  
+  
+  <div id="plainTextEditor" style="position:relative;display:none" class="editorLayer" >
+    <textarea id="textEditor" class="autogrow"></textarea>
+    <p style="clear:both;" align="right"><a href="http://help.wikispaces.com/help.wikitext" class="WikispacesHelpLink" data-help="help.wikitext">help on how to format text</a></p>
+  </div>
+</div>
+
+
+
+</div></div><div id="sentinel" style="clear:both"></div>									</div>
+				<div id="foot">
+					<div style="text-align: center;">Copyright 2008-2012 Rich Hickey</div>
+									</div>
+			</div>
+			<!-- /rightcolumn -->
+			<div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.</div>
+		</div>
+		<!-- /AllContentContainer -->
+	
+<div id="WikispacesHelp" style="display:none">
+  <div id="WikispacesHelpControls">
+    <span id="WikispacesHelpBreadcrumbs">
+      <span id="WikispacesHelpBreadcrumbHome" class="WikispacesHelpBreadcrumb WikispacesHelpBreadcrumbCurrent">
+        <a href="http://help.wikispaces.com/" onclick="return ws.help.gotoBreadcrumb(0);">Home</a>
+      </span>
+      <span id="WikispacesHelpBreadcrumbsEllipsis" style="display: none;">
+        &gt; ...
+      </span>
+      <span id="WikispacesHelpBreadcrumbSpinner"></span>
+    </span>
+  </div>
+  <div id="WikispacesHelpContent" class="wiki">Loading...</div>
+
+  <div id="WikispacesGettingStartedControls">
+    <span id="WikispacesGettingStartedBreadcrumbs">
+      <span id="WikispacesGettingStartedBreadcrumbHome" class="WikispacesHelpBreadcrumb WikispacesHelpBreadcrumbCurrent">
+        <a href="#" onclick="return ws.help.showGettingStartedHome();">Home</a>
+      </span>
+      <span id="WikispacesGettingStartedCategory"></span>
+    </span>
+
+    <a href="http://www.wikispaces.com/site/gettingstarted/off" style="position: absolute; right: 50px;">Turn Off "Getting Started"</a>
+
+  </div>
+  <div id="WikispacesGettingStartedContent" class="wiki">Loading...</div>
+</div>
+</div>
+<script src="http://c1.wikicdn.com/s/gz/387vvq1v-editorc.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+<!--
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+jQuery(document).ready(function() {
+  ws.help.attachHelpWindow();
+});
+
+  jQuery(document).ready(function() {
+    
+    function tipGravity() {
+      return jQuery(this).closest('.Buttons').is('.MoreMenuActive') ? 's' : 'n';
+    }
+
+    
+
+    jQuery('.MenuBar').each(function() {
+      $this = jQuery(this);
+      $this.find('.tipme').tipsy({fade: true, gravity: tipGravity});
+
+      
+      $this.find('.ButtonMore').click(ws.common.makeLinkClickFunction(function(e) {
+        if (jQuery(this).closest('.Buttons').hasClass('MoreMenuActive')) {
+          ws.common.hideMorePageBar();
+        } else {
+          ws.common.showMorePageBar();
+        }
+      }));
+
+      jQuery(document.body).click(function(e) {
+        if (!jQuery(e.target).closest('.MoreMenu').closest('.MenuBar').is($this)) {
+          ws.common.hideMorePageBar();
+        }
+      });
+      
+    });
+  });
+
+var editUrl = 'http://clojure.org/page/edit/cheatsheet';
+
+
+jQuery(document).ready(function() {
+  jQuery('#editFromTemplate').change(function() {
+    window.location = ws.common.addUriParams(editUrl, [['template', jQuery(this).val()]]);
+  });
+});
+
+
+jQuery(document).ready(function() {
+  ws.editor.loadEditorLibs('http://www.wikispaces.com/site/editorlibs/en_US/q2559j26.gz.js');
+});
+
+function startEditor(moreCoreOptions, moreMainOptions) {
+
+  var coreOptions = {
+    'content_css': 'http://clojure.org/stylesheet/editor/221886338-217420326D.gz.css'
+  };
+
+  var mainOptions = {
+    'wssave_cancel_url': '/cheatsheet',
+    'wsimage_upload_url': 'http://clojure.org/file/multiupload',
+    'wsimage_max_file_size_mb': '50',
+    'wsimage_page_view_group': ''
+  };
+
+  ws.editor.loadEditor(jQuery.extend(coreOptions, moreCoreOptions), jQuery.extend(mainOptions, moreMainOptions));
+}
+
+  var wikispaces_page_version = '322378646';
+
+  jQuery(document).ready(function() {
+    ws.editor.enableButtons(startEditor);
+  });
+
+
+
+--></script><!-- w17 102 mem:4:29(29) wki:1:2(2) tot:102:102(1) -->
+
+</body>
+	</html>
